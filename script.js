@@ -1,5 +1,5 @@
 async function loadGraphData(num) {
-    example = num ? num : 1
+    example = num ? num : 0
     file = "graph" + example + ".json"
     try {
         const response = await fetch(file);
@@ -27,8 +27,9 @@ function drawGraph(graphData) {
 
     const nodes = new vis.DataSet(graphData.nodes.map(node => ({
         ...node,
-        font: { size: 16, color: "white" },
-        shape: "circle",
+        font: { size: 16, color: "black" },
+        shape: "dot",
+        label: node.heuristic ? node.label + "\nh=" + node.heuristic : node.label,
         color: node.start
             ? { background: "#28a745", border: "#1e7e34" }
             : node.end
@@ -72,7 +73,7 @@ function drawTree(graphData) {
         idTranslate.set(newid,id)
         treeNodes.add({
             id: newid,
-            label: originalNode.label,
+            label: originalNode.heuristic ? originalNode.label + "\nh=" + originalNode.heuristic : originalNode.label,
             color: originalNode.start
                 ? { background: "#28a745", border: "#1e7e34" }
                 : originalNode.end
@@ -97,7 +98,7 @@ function drawTree(graphData) {
 
     new vis.Network(container, { nodes: treeNodes, edges: treeEdges }, {
         edges: { arrows: { to: false }, width: 2, font: { align: "top" } },
-        nodes: { borderWidth: 2, font: { size: 16, color: "white" } },
+        nodes: { shape: "box", borderWidth: 2, font: { size: 16, color: "white" } },
         layout: { hierarchical: { direction: "UD", sortMethod: "directed", levelSeparation: 100, nodeSpacing: 100 } },
         physics: false
     });

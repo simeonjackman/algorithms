@@ -10,14 +10,34 @@
 <body onload="loadGraphData()">
     <div class="container">
         <div class="sidebar">
-            <h2>Erklärung</h2>
-            <p>Diese Visualisierung zeigt einen Graphen auf der oberen Hälfte und dessen Baumstruktur darunter.</p>
-            <h3>Übungen</h3>
-            <ul>
-                <li>Analysiere die Struktur des Graphen und des Baums.</li>
-                <li>Finde kürzeste Wege zwischen Knoten.</li>
-                <li>Experimentiere mit unterschiedlichen Graph-Daten.</li>
-            </ul>
+            <h2>Graphen und Heuristiken</h2>
+            <p>
+                Diese Visualisierung zeigt einen Graphen auf der oberen Hälfte und dessen Baumstruktur darunter.
+                Die Knoten haben jeweils einen Namen. Der grüne Knoten ist immer der Startknoten, Der rote ist der Zielknoten.
+                Knoten sind mit Kanten verbunden. Das Traversieren einer Kante ist immer mit Kosten verbunden.
+                Die Kosten für jede Kante sind neben der jeweiligen Kante angegeben,
+                Das Ziel ist es, jeweils so schnell wie möglich vom Startknoten zum Zielknoten zu gelangen.
+            </p>
+            <h3>Einführungsbeispiel</h3>
+            <p>
+                Im Einführungsbeispiel ist ein möglicher Schulweg ans Gymnasium Muttenz abgebildet. 
+                Es gibt verschiedene Wege, wie Sie zur Schule läufen können.
+                Grundsätzlich möchten Sie natürlich möglichst schnell an der Schule ankommen.
+                An den Kanten ist jeweils beschrieben, wie lange es dauert, von der einten Strasse zu nächsten zu laufen.
+            </p>
+            <h3>Übungen 0</h3>
+            <ol>
+                <li>Analysieren Sie die Struktur des Graphen und des Baums.</li>
+                <li>Was wäre der schnellste Schulweg von zu hause bis zur Schule? Begründen Sie Ihre Antwort.</li>
+            </ol>
+            <h3>Beispiel 1 - Heuristik mit Anzahl Knotensprüngen</h3>
+            <p>In dieser Übung betrachten wir eine Heuristik, die die Anzahl der verbleibenden Sprünge zum Ziel schätzt.
+            Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel notwendig sind.</p>
+            <h3>Übungen 1</h3>
+            <ol>
+                <li>Versuchen Sie die oben genannte Heuristik anhand der Visualisierungen zu verstehen.</li>
+                <li>Gibt es Fälle, in denen diese Heuristik zu schlechten Entscheidungen führen kann?</li>
+            </ol>
         </div>
         <div class="content">
             <div id="graph-container" class="canvas"></div>
@@ -25,6 +45,7 @@
             <div class="editor-container">
                 <h2>Graph JSON Editor</h2>
                 <textarea id="json-editor"></textarea>
+                <button onclick="loadGraphData(0)">Einführung</button>
                 <button onclick="loadGraphData(1)">Beispiel 1</button>
                 <button onclick="loadGraphData(2)">Beispiel 2</button>
                 <button onclick="updateGraphData()">Aktualisieren</button>

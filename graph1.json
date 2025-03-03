@@ -1,8 +1,8 @@
 {
   "nodes": [
-    { "id": 1, "label": "S", "heuristic": 14, "start": true },
-    { "id": 2, "label": "A", "heuristic": 12 },
-    { "id": 3, "label": "B", "heuristic": 10 },
+    { "id": 1, "label": "S", "heuristic": 2, "start": true },
+    { "id": 2, "label": "A", "heuristic": 1 },
+    { "id": 3, "label": "B", "heuristic": 2 },
     { "id": 4, "label": "G", "heuristic": 0, "end": true }
   ],
   "edges": [
