@@ -1,0 +1,24 @@
+{
+    "nodes": [
+      { "id": 1, "label": "A", "heuristic": 10, "start": true },
+      { "id": 2, "label": "B", "heuristic": 5 },
+      { "id": 3, "label": "C", "heuristic": 2, "end": true },
+      { "id": 4, "label": "D", "heuristic": 8 },
+      { "id": 5, "label": "E", "heuristic": 6 },
+      { "id": 6, "label": "F", "heuristic": 4 },
+      { "id": 7, "label": "G", "heuristic": 7 },
+      { "id": 8, "label": "H", "heuristic": 3 }
+    ],
+    "edges": [
+      { "from": 1, "to": 2, "label": "5", "value": 5 },
+      { "from": 2, "to": 3, "label": "3", "value": 3 },
+      { "from": 1, "to": 3, "label": "7", "value": 7 },
+      { "from": 2, "to": 4, "label": "2", "value": 2 },
+      { "from": 4, "to": 5, "label": "4", "value": 4 },
+      { "from": 5, "to": 6, "label": "6", "value": 6 },
+      { "from": 6, "to": 3, "label": "5", "value": 5 },
+      { "from": 4, "to": 7, "label": "3", "value": 3 },
+      { "from": 7, "to": 8, "label": "4", "value": 4 },
+      { "from": 8, "to": 3, "label": "3", "value": 3 }
+    ]
+  }
