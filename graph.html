@@ -21,7 +21,7 @@
             <h3>Einführungsbeispiel</h3>
             <p>
                 Im Einführungsbeispiel ist ein möglicher Schulweg ans Gymnasium Muttenz abgebildet. 
-                Es gibt verschiedene Wege, wie Sie zur Schule läufen können.
+                Es gibt verschiedene Wege, wie Sie zur Schule laufen können.
                 Grundsätzlich möchten Sie natürlich möglichst schnell an der Schule ankommen.
                 An den Kanten ist jeweils beschrieben, wie lange es dauert, von der einten Strasse zu nächsten zu laufen.
             </p>
@@ -36,7 +36,8 @@
             <h3>Übungen 1</h3>
             <ol>
                 <li>Versuchen Sie die oben genannte Heuristik anhand der Visualisierungen zu verstehen.</li>
-                <li>Gibt es Fälle, in denen diese Heuristik zu schlechten Entscheidungen führen kann?</li>
+                <li>Was wäre der Weg ins Ziel, wenn Sie immer dem Knoten folgen, der die tiefste Heuristik besitzt?</li>
+                <li>Ist dieser Weg der schnellste Weg? Begründen Sie.</li>
             </ol>
         </div>
         <div class="content">
@@ -44,11 +45,12 @@
             <div id="tree-container" class="canvas"></div>
             <div class="editor-container">
                 <h2>Graph JSON Editor</h2>
-                <textarea id="json-editor"></textarea>
                 <button onclick="loadGraphData(0)">Einführung</button>
                 <button onclick="loadGraphData(1)">Beispiel 1</button>
                 <button onclick="loadGraphData(2)">Beispiel 2</button>
+                <button onclick="loadGraphData(3)">Beispiel 3</button>
                 <button onclick="updateGraphData()">Aktualisieren</button>
+                <textarea id="json-editor"></textarea>
             </div>
         </div>
     </div>
