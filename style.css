@@ -6,6 +6,13 @@ body {
     height: 100vh;
 }
 
+.banner{
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: lightblue;
+}
+
 .container {
     display: flex;
     width: 100%;
