@@ -1,6 +1,8 @@
-async function loadGraphData() {
+async function loadGraphData(num) {
+    example = num ? num : 1
+    file = "graph" + example + ".json"
     try {
-        const response = await fetch("graph.json");
+        const response = await fetch(file);
         const graphData = await response.json();
         drawGraph(graphData);
         drawTree(graphData);
