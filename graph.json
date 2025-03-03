@@ -6,8 +6,8 @@
       { "id": 4, "label": "D", "heuristic": 8 },
       { "id": 5, "label": "A", "heuristic": 6 },
       { "id": 6, "label": "F", "heuristic": 4 },
-      { "id": 7, "label": "G", "heuristic": 2 },
-      { "id": 8, "label": "E", "heuristic": 0, "end": true }
+      { "id": 7, "label": "E", "heuristic": 2 },
+      { "id": 8, "label": "G", "heuristic": 0, "end": true }
     ],
     "edges": [
       { "from": 1, "to": 2, "value": 3 },
