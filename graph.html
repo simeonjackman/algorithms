@@ -10,6 +10,10 @@
 <body onload="loadGraphData()">
     <div class="container">
         <div class="sidebar">
+            <button onclick="loadGraphData(0)">Einführung</button>
+            <button onclick="loadGraphData(1)">Beispiel 1</button>
+            <button onclick="loadGraphData(2)">Beispiel 2</button>
+            <button onclick="loadGraphData(3)">Beispiel 3</button>
             <h2>Graphen und Heuristiken</h2>
             <p>
                 Diese Visualisierung zeigt einen Graphen auf der oberen Hälfte und dessen Baumstruktur darunter.
@@ -39,16 +43,31 @@
                 <li>Was wäre der Weg ins Ziel, wenn Sie immer dem Knoten folgen, der die tiefste Heuristik besitzt?</li>
                 <li>Ist dieser Weg der schnellste Weg? Begründen Sie.</li>
             </ol>
+            <h3>Beispiel 2 - Heuristik mit Distanz zum Ziel</h3>
+            <p>
+                In dieser Übung betrachten wir eine Heuristik, die die verbleibende Distanz zum Ziel schätzt.
+                Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel kosten.
+                Dieser Prozess kann vom Ziel iterativ ausgeführt werden.
+            </p>
+            <h3>Übungen 2</h3>
+            <ol>
+                <li>Die Heuristischen Werte einiger Knoten sind bereits angegeben. Berechnen Sie die Heuristik der übrigen Knoten.</li>
+                <li>Tragen Sie die berechneten Werte im Graph JSON Editor ein.</li>
+                <li>Wie können Sie nun den kürzesten Weg ablesen?</li>
+            </ol>
+            <h3>Beispiel 3 - Heuristik in grossen Graphen</h3>
+            <p>In dieser Übung betrachten wir eine Heuristik, die die Anzahl der verbleibenden Sprünge zum Ziel schätzt.
+            Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel notwendig sind.</p>
+            <h3>Übungen 3</h3>
+            <ol>
+                <li>Blabla.</li>
+            </ol>
         </div>
         <div class="content">
             <div id="graph-container" class="canvas"></div>
             <div id="tree-container" class="canvas"></div>
             <div class="editor-container">
                 <h2>Graph JSON Editor</h2>
-                <button onclick="loadGraphData(0)">Einführung</button>
-                <button onclick="loadGraphData(1)">Beispiel 1</button>
-                <button onclick="loadGraphData(2)">Beispiel 2</button>
-                <button onclick="loadGraphData(3)">Beispiel 3</button>
                 <button onclick="updateGraphData()">Aktualisieren</button>
                 <textarea id="json-editor"></textarea>
             </div>
