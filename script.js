@@ -4,6 +4,8 @@ async function loadGraphData() {
         const graphData = await response.json();
         drawGraph(graphData);
         drawTree(graphData);
+        document.getElementById("json-editor").innerHTML = JSON.stringify(graphData);
+        console.log(graphData)
     } catch (error) {
         console.error("Fehler beim Laden der Graph-Daten:", error);
     }
@@ -37,7 +39,7 @@ function drawGraph(graphData) {
     new vis.Network(container, { nodes, edges }, {
         edges: { arrows: { to: false }, width: 2 },
         nodes: { borderWidth: 2 },
-        physics: { enabled: true, solver: "barnesHut" }
+        physics: { enabled: false, solver: "barnesHut" }
     });
 }
 

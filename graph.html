@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graph & Tree Visualization</title>
+    <title>Graph Visualisierung</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.js"></script>
-    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="loadGraphData();">
-    <div id="container">
-        <div id="graph-container"></div>
-        <div id="tree-container"></div>
+<body onload="loadGraphData()">
+    <div class="container">
+        <div class="sidebar">
+            <h2>Erklärung</h2>
+            <p>Diese Visualisierung zeigt einen Graphen auf der oberen Hälfte und dessen Baumstruktur darunter.</p>
+            <h3>Übungen</h3>
+            <ul>
+                <li>Analysiere die Struktur des Graphen und des Baums.</li>
+                <li>Finde kürzeste Wege zwischen Knoten.</li>
+                <li>Experimentiere mit unterschiedlichen Graph-Daten.</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="graph-container" class="canvas"></div>
+            <div id="tree-container" class="canvas"></div>
+            <div class="editor-container">
+                <h2>Graph JSON Editor</h2>
+                <textarea id="json-editor"></textarea>
+                <button onclick="updateGraphData()">Aktualisieren</button>
+            </div>
+        </div>
+        
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
