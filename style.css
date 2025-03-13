@@ -6,13 +6,6 @@ body {
     overflow: hidden;
 }
 
-.banner{
-    border-radius: 1rem;
-    padding: 1rem;
-    text-align: center;
-    background-color: lightblue;
-}
-
 .container {
     display: flex;
     height: 100%;
@@ -52,6 +45,13 @@ body {
 
 button{
     padding: .5rem;
+}
+
+.banner{
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: lightblue;
 }
 
 h2{
