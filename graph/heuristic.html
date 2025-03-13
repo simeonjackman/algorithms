@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Visualisierung</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+</head>
+<body onload="loadGraphData(1)">
+    <div class="container">
+        <div class="sidebar">
+            <h2>Heuristiken</h2>
+            <p>
+                Diese Visualisierung zeigt einen Graphen auf der oberen Hälfte und dessen Baumstruktur darunter.
+                Die Knoten beschreiben jeweils einen Zustand. Der grüne Knoten ist immer der <span style="color: green;"><b>Startknoten</b></span>, Der rote ist der <span style="color: red;"><b>Zielknoten</b></span>.
+                Knoten sind mit Kanten verbunden. Das Traversieren einer Kante ist mit Kosten verbunden welche neben der jeweiligen Kante angegeben sind.
+                Das Ziel ist es, jeweils so schnell wie möglich vom Startknoten zum Zielknoten zu gelangen.
+            </p>
+            
+            <h3>Beispiel 1 - Heuristik mit Anzahl Knotensprüngen</h3>
+            <button onclick="loadGraphData(1)">Beispiel 1 laden</button>
+            
+            <p>In dieser Übung betrachten wir eine Heuristik, die die Anzahl der verbleibenden Sprünge zum Ziel schätzt.
+            Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel notwendig sind.</p>
+            <div class="banner">
+                Eine <b>Heuristik</b> ist eine Schätzfunktion, die verwendet wird, um mit begrenztem Wissen dennoch zu wahrscheinlichen Aussagen oder praktikablen Lösungen zu kommen.
+                In unserem Fall wäre eine Lösung ein Pfad vom Start zum Ziel.
+            </div>
+            <p>
+                Heuristiken sind dann notwendig, wenn es extrem viele Möglichkeiten (in unserem Beispiel Pfade) zu entdecken gibt.
+                Dann kann man nämlich nicht mehr alle möglichen Kombinationen durchprobieren, da dies zu viel Zeit in Anspruch nehmen würde.
+                Also muss man vor allem die Pfade absuchen, welche möglicherweise eher zum Ziel führen.
+            </p>
+            <h3>Übungen 1</h3>
+            <ol>
+                <li>Versuchen Sie die oben genannte Heuristik anhand der Visualisierungen zu verstehen.</li>
+                <li>Was wäre der Weg ins Ziel, wenn Sie immer dem Knoten folgen, der die tiefste Heuristik besitzt?</li>
+                <li>Ist dieser Weg der schnellste Weg? Begründen Sie.</li>
+            </ol>
+            <h3>Beispiel 2 - Heuristik mit Distanz zum Ziel</h3>
+            <button onclick="loadGraphData(2)">Beispiel 2 laden</button>
+            <p>
+                In dieser Übung betrachten wir eine Heuristik, die die verbleibende Distanz zum Ziel schätzt.
+                Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel kosten.
+                Dieser Prozess kann vom Ziel iterativ ausgeführt werden.
+            </p>
+            <h3>Übungen 2</h3>
+            <ol>
+                <li>Die Heuristischen Werte einiger Knoten sind bereits angegeben. Berechnen Sie die Heuristik der übrigen Knoten.</li>
+                <li>Tragen Sie die berechneten Werte im Graph JSON Editor ein und drücken Sie dann auf aktualisieren.</li>
+                <li>Wie können Sie nun den kürzesten Weg ablesen?</li>
+            </ol>
+            <h3>Beispiel 3 - Heuristik in grossen Graphen</h3>
+            <button onclick="loadGraphData(3)">Beispiel 3 laden</button>
+            <p>
+                In grossen Graphen ist es natürlich nicht mehr sinnvoll, von Hand Heuristiken einzutragen.
+                Oftmals sind die Bäume dann auch zu gross, um alle Möglichkeiten durchzuprobieren.
+                In diesem Fall werden Algorithmen in Kombination mit Heuristiken verwendet, um nur die erfolgsversprechendsten Teile eines Baumes zu untersuchen.
+            </p>
+            <h3>Übungen 3</h3>
+            <ol>
+                <li>Wie würden Sie versuchen, denn kürzesten Weg zum Ziel hier zu berechnen?</li>
+                <li>Was für eine Heuristik könnten Sie hier verwenden, damit Sie ohne alles durchzuprobieren eine möglichst gute Lösung finden könnten?</li>
+            </ol>
+        </div>
+        <div class="content">
+            <h2>Graph</h2>
+            <div id="graph-container" class="canvas"></div>
+            <h2>Baum</h2>
+            <div id="tree-container" class="canvas"></div>
+            <h2>Graph JSON Editor</h2>
+            <div class="editor-container">
+                <button onclick="updateGraphData()">Aktualisieren</button>
+                <textarea id="json-editor"></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -54,6 +54,23 @@ button{
     background-color: lightblue;
 }
 
+.links{
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
 h2{
     text-align: center;
+}
+
+.links > a{
+    text-align: center;
+    text-decoration: none;
+    font-size: 5rem;
+}
+
+a:hover{
+    text-decoration: underline;
 }
