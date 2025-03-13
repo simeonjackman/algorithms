@@ -10,22 +10,17 @@
 <body onload="loadGraphData()">
     <div class="container">
         <div class="sidebar">
-            <button onclick="loadGraphData(0)">Einführung</button>
-            <button onclick="loadGraphData(1)">Beispiel 1</button>
-            <button onclick="loadGraphData(2)">Beispiel 2</button>
-            <button onclick="loadGraphData(3)">Beispiel 3</button>
             <h2>Graphen und Heuristiken</h2>
             <p>
                 Diese Visualisierung zeigt einen Graphen auf der oberen Hälfte und dessen Baumstruktur darunter.
-                Die Knoten beschreiben jeweils einen einen Zustand. Der grüne Knoten ist immer der Startknoten, Der rote ist der Zielknoten.
-                Knoten sind mit Kanten verbunden. Das Traversieren einer Kante ist mit Kosten verbunden.
-                Die Kosten für jede Kante sind neben der jeweiligen Kante angegeben,
+                Die Knoten beschreiben jeweils einen Zustand. Der grüne Knoten ist immer der Startknoten, Der rote ist der Zielknoten.
+                Knoten sind mit Kanten verbunden. Das Traversieren einer Kante ist mit Kosten verbunden welche neben der jeweiligen Kante angegeben sind.
                 Das Ziel ist es, jeweils so schnell wie möglich vom Startknoten zum Zielknoten zu gelangen.
             </p>
             <div class="banner">
                 Ein <b>Graph</b> ist eine aus Knoten und Kanten bestehende Struktur.
             </div>
-            <h3>Einführungsbeispiel</h3>
+            <h3>Einführungsbeispiel</h3><button onclick="loadGraphData(0)">Einführungsbeispiel laden</button>
             <p>
                 Im Einführungsbeispiel ist ein möglicher Schulweg ans Gymnasium Muttenz abgebildet. 
                 Es gibt verschiedene Wege, wie Sie zur Schule laufen können.
@@ -38,12 +33,14 @@
                 <li>Was wäre der schnellste Schulweg von zu hause bis zur Schule? Begründen Sie Ihre Antwort.</li>
             </ol>
             <h3>Beispiel 1 - Heuristik mit Anzahl Knotensprüngen</h3>
+            <button onclick="loadGraphData(1)">Beispiel 1 laden</button>
+            
+            <p>In dieser Übung betrachten wir eine Heuristik, die die Anzahl der verbleibenden Sprünge zum Ziel schätzt.
+            Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel notwendig sind.</p>
             <div class="banner">
                 Eine <b>Heuristik</b> ist eine Schätzfunktion, die verwendet wird, um mit begrenztem Wissen dennoch zu wahrscheinlichen Aussagen oder praktikablen Lösungen kommen.
                 In unserem Fall wäre eine Lösung ein Pfad vom Start zum Ziel.
             </div>
-            <p>In dieser Übung betrachten wir eine Heuristik, die die Anzahl der verbleibenden Sprünge zum Ziel schätzt.
-            Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel notwendig sind.</p>
             <h3>Übungen 1</h3>
             <ol>
                 <li>Versuchen Sie die oben genannte Heuristik anhand der Visualisierungen zu verstehen.</li>
@@ -51,6 +48,7 @@
                 <li>Ist dieser Weg der schnellste Weg? Begründen Sie.</li>
             </ol>
             <h3>Beispiel 2 - Heuristik mit Distanz zum Ziel</h3>
+            <button onclick="loadGraphData(2)">Beispiel 2 laden</button>
             <p>
                 In dieser Übung betrachten wir eine Heuristik, die die verbleibende Distanz zum Ziel schätzt.
                 Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel kosten.
@@ -63,6 +61,7 @@
                 <li>Wie können Sie nun den kürzesten Weg ablesen?</li>
             </ol>
             <h3>Beispiel 3 - Heuristik in grossen Graphen</h3>
+            <button onclick="loadGraphData(3)">Beispiel 3 laden</button>
             <p>
                 In grossen Graphen ist es natürlich nicht mehr sinnvoll, von Hand Heuristiken einzutragen.
                 Oftmals sind die Bäume dann auch zu gross, um überhaupt alle möglichen Heuristiken zu berechnen.
