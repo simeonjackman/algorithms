@@ -65,9 +65,7 @@ function drawTree(graphData) {
     let idTranslate = new Map()
     let counter = 0
     while (queue.length > 0) {
-        const visited = new Set();
         const { id, parent } = queue.shift();
-        visited.add(id);
         const originalNode = graphData.nodes.find(n => n.id === id);
         const newid = 100 + counter;
         idTranslate.set(newid,id)
@@ -89,9 +87,7 @@ function drawTree(graphData) {
 
         const neighbors = graphData.edges.filter(edge => edge.from === id).map(edge => edge.to);
         neighbors.forEach(neighbor => {
-            if (!visited.has(neighbor)) {
-                queue.push({ id: neighbor, parent: newid });
-            }
+            queue.push({ id: neighbor, parent: newid });
         });
     
     }
