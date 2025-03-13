@@ -64,11 +64,13 @@ function drawTree(graphData) {
     const queue = [{ id: startNode.id, parent: null }];
     let idTranslate = new Map()
     let counter = 0
+    let visited = new Set();
     while (queue.length > 0) {
         const { id, parent } = queue.shift();
+        visited.add(id);
         const originalNode = graphData.nodes.find(n => n.id === id);
         const newid = 100 + counter;
-        idTranslate.set(newid,id)
+        idTranslate.set(newid,id);
         treeNodes.add({
             id: newid,
             label: originalNode.heuristic ? originalNode.label + "\nh=" + originalNode.heuristic : originalNode.label,
@@ -79,17 +81,23 @@ function drawTree(graphData) {
                 : { background: "#007bff", border: "#0056b3" }
         });
         counter++;
-
         if (parent !== null) {
             const edge = graphData.edges.find(e => e.from === idTranslate.get(parent) && e.to === idTranslate.get(newid));
             treeEdges.add({ from: parent, to: newid, label: edge ? edge.value.toString() : "" });
         }
-
-        const neighbors = graphData.edges.filter(edge => edge.from === id).map(edge => edge.to);
+        if (id == endNode.id || idTranslate.get(id) == endNode.id){
+            continue;
+        }
+        const neighborsFrom = graphData.edges.filter(edge => edge.from === id).map(edge => edge.to);
+        const neighborsTo = graphData.edges.filter(edge => edge.to === id).map(edge => edge.from);
+        const neighbors = neighborsFrom.concat(neighborsTo);
         neighbors.forEach(neighbor => {
-            queue.push({ id: neighbor, parent: newid });
+            if (neighbor == endNode.id || !visited.has(neighbor)) {
+                queue.push({ id: neighbor, parent: newid, heuristic: graphData.nodes.find(n => n.id === neighbor || n.id === idTranslate.get(neighbor)).heuristic});
+                queue.sort((a, b) => a.heuristic - b.heuristic);
+                //console.log(JSON.stringify(queue));
+            }
         });
-    
     }
 
     new vis.Network(container, { nodes: treeNodes, edges: treeEdges }, {
