@@ -19,7 +19,7 @@ function updateGraphData(){
     console.log(newGraphData)
 }
 
-function drawGraph(graphData) {
+function drawGraph(graphData, treeDepth = 0) {
     const container = document.getElementById("graph-container");
 
     const minEdgeLength = 50, maxEdgeLength = 300;

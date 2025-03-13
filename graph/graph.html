@@ -42,8 +42,11 @@
                 Eine <b>Heuristik</b> ist eine Schätzfunktion, die verwendet wird, um mit begrenztem Wissen dennoch zu wahrscheinlichen Aussagen oder praktikablen Lösungen zu kommen.
                 In unserem Fall wäre eine Lösung ein Pfad vom Start zum Ziel.
             </div>
-            <p>Heuristiken sind dann notwendig, wenn es extrem viele Möglichkeiten (in unserem Beispiel Pfade) zu entdecken gibt.</p>
-            <p>Heuristiken sind dann notwendig, wenn es extrem viele Möglichkeiten (in unserem Beispiel Pfade) zu entdecken gibt.</p>
+            <p>
+                Heuristiken sind dann notwendig, wenn es extrem viele Möglichkeiten (in unserem Beispiel Pfade) zu entdecken gibt.
+                Dann kann man nämlich nicht mehr alle möglichen Kombinationen durchprobieren, da dies zu viel Zeit in Anspruch nehmen würde.
+                Also muss man vor allem die Pfade absuchen, welche möglicherweise eher zum Ziel führen.
+            </p>
             <h3>Übungen 1</h3>
             <ol>
                 <li>Versuchen Sie die oben genannte Heuristik anhand der Visualisierungen zu verstehen.</li>
@@ -60,19 +63,20 @@
             <h3>Übungen 2</h3>
             <ol>
                 <li>Die Heuristischen Werte einiger Knoten sind bereits angegeben. Berechnen Sie die Heuristik der übrigen Knoten.</li>
-                <li>Tragen Sie die berechneten Werte im Graph JSON Editor ein.</li>
+                <li>Tragen Sie die berechneten Werte im Graph JSON Editor ein und drücken Sie dann auf aktualisieren.</li>
                 <li>Wie können Sie nun den kürzesten Weg ablesen?</li>
             </ol>
             <h3>Beispiel 3 - Heuristik in grossen Graphen</h3>
             <button onclick="loadGraphData(3)">Beispiel 3 laden</button>
             <p>
                 In grossen Graphen ist es natürlich nicht mehr sinnvoll, von Hand Heuristiken einzutragen.
-                Oftmals sind die Bäume dann auch zu gross, um überhaupt alle möglichen Heuristiken zu berechnen.
-                In diesem Fall werden Algorithmen verwendet, um nur die erfolgsversprechendsten Teile eines Baumes zu traversieren.
+                Oftmals sind die Bäume dann auch zu gross, um alle Möglichkeiten durchzuprobieren.
+                In diesem Fall werden Algorithmen in Kombination mit Heuristiken verwendet, um nur die erfolgsversprechendsten Teile eines Baumes zu untersuchen.
             </p>
             <h3>Übungen 3</h3>
             <ol>
-                <li>Was für Informationen benötigen Sie, damit Sie am Start eine Entscheidung treffen können?</li>
+                <li>Wie würden Sie versuchen, denn kürzesten Weg zum Ziel hier zu berechnen?</li>
+                <li>Was für eine Heuristik könnten Sie hier verwenden, damit Sie ohne alles durchzuprobieren eine möglichst gute Lösung finden könnten?</li>
             </ol>
         </div>
         <div class="content">
