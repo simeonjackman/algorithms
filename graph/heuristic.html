@@ -12,10 +12,9 @@
         <div class="sidebar">
             <h2>Heuristiken</h2>
             <p>
-                Diese Visualisierung zeigt einen Graphen auf der oberen Hälfte und dessen Baumstruktur darunter.
-                Die Knoten beschreiben jeweils einen Zustand. Der grüne Knoten ist immer der <span style="color: green;"><b>Startknoten</b></span>, Der rote ist der <span style="color: red;"><b>Zielknoten</b></span>.
-                Knoten sind mit Kanten verbunden. Das Traversieren einer Kante ist mit Kosten verbunden welche neben der jeweiligen Kante angegeben sind.
-                Das Ziel ist es, jeweils so schnell wie möglich vom Startknoten zum Zielknoten zu gelangen.
+                Heuristiken sind dann notwendig, wenn es extrem viele Möglichkeiten (in unserem Beispiel Pfade) zu entdecken gibt.
+                Dann kann man nämlich nicht mehr alle möglichen Kombinationen durchprobieren, da dies zu viel Zeit in Anspruch nehmen würde.
+                Also muss man vor allem die Pfade absuchen, welche möglicherweise eher zum Ziel führen.
             </p>
             
             <h3>Beispiel 1 - Heuristik mit Anzahl Knotensprüngen</h3>
@@ -27,11 +26,6 @@
                 Eine <b>Heuristik</b> ist eine Schätzfunktion, die verwendet wird, um mit begrenztem Wissen dennoch zu wahrscheinlichen Aussagen oder praktikablen Lösungen zu kommen.
                 In unserem Fall wäre eine Lösung ein Pfad vom Start zum Ziel.
             </div>
-            <p>
-                Heuristiken sind dann notwendig, wenn es extrem viele Möglichkeiten (in unserem Beispiel Pfade) zu entdecken gibt.
-                Dann kann man nämlich nicht mehr alle möglichen Kombinationen durchprobieren, da dies zu viel Zeit in Anspruch nehmen würde.
-                Also muss man vor allem die Pfade absuchen, welche möglicherweise eher zum Ziel führen.
-            </p>
             <h3>Übungen 1</h3>
             <ol>
                 <li>Versuchen Sie die oben genannte Heuristik anhand der Visualisierungen zu verstehen.</li>
