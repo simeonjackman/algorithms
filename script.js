@@ -1,6 +1,4 @@
-async function loadGraphAndTreeData(num) {
-    example = num ? num : 0
-    filename = "graphs/graph" + example + ".json";
+async function loadGraphAndTreeData(filename) {
     try {
         const graphData = await loadJSON(filename);
         drawGraph(graphData);
@@ -11,9 +9,7 @@ async function loadGraphAndTreeData(num) {
     }
 }
 
-async function loadGraphData(num) {
-    example = num ? num : 0
-    filename = "graphs/graph" + example + ".json";
+async function loadGraphData(filename) {
     try {
         const graphData = await loadJSON(filename);
         drawGraph(graphData);
@@ -23,12 +19,9 @@ async function loadGraphData(num) {
     }
 }
 
-async function loadTreeData(num) {
-    example = num ? num : 0
-    filename = "trees/tree" + example + ".json";
+async function loadTreeData(filename) {
     try {
         const graphData = await loadJSON(filename);
-        console.log(JSON.stringify(graphData));
         drawTreeFromGraph(graphData);
     } catch (error) {
         console.error("Fehler beim Laden der Graph-Daten:", filename, error);
@@ -49,7 +42,6 @@ function updateGraphData(){
     newGraphData = JSON.parse(document.getElementById("json-editor").value);
     drawGraph(newGraphData);
     drawTreeFromGraph(newGraphData);
-    console.log(newGraphData)
 }
 
 function drawGraph(graphData, treeDepth = 0) {

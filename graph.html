@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="loadGraphAndTreeData()">
+<body onload="loadGraphAndTreeData('/graphs/graph0.json')">
     <div class="container">
         <div class="sidebar">
             <h2>Graphen und Bäume</h2>
@@ -20,7 +20,7 @@
             <div class="banner">
                 Ein <b>Graph</b> ist eine aus Knoten und Kanten bestehende Struktur.
             </div>
-            <h3>Einführungsbeispiel</h3><button onclick="loadGraphData(0)">Einführungsbeispiel laden</button>
+            <h3>Einführungsbeispiel</h3><button onclick="loadGraphAndTreeData('/graphs/graph0.json')">Einführungsbeispiel laden</button>
             <p>
                 Im Einführungsbeispiel ist ein möglicher Schulweg ans Gymnasium Muttenz abgebildet. 
                 Es gibt verschiedene Wege, wie Sie zur Schule laufen können.
