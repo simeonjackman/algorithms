@@ -1,0 +1,10 @@
+{
+    "nodes": [
+      { "id": 1, "label": "S", "heuristic": 2, "start": true },
+      { "id": 2, "label": "G", "heuristic": 0, "end": true }
+    ],
+    "edges": [
+      { "from": 1, "to": 2, "value": 1 }
+    ]
+  }
+  
