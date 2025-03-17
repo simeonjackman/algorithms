@@ -23,6 +23,7 @@ body {
 .content{
     width: 100%;
     overflow-y: auto;
+    padding-top: 1rem;
 }
 
 .canvas {
@@ -100,7 +101,7 @@ a{
     z-index: 2;
   }
   
-  .link:hover {
+.link:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0,255,255,0.5);
   }
