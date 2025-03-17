@@ -1,13 +1,25 @@
 async function loadGraphData(num) {
     example = num ? num : 0
-    filename = "graphs/graph" + example + ".json"
+    filename = "graphs/graph" + example + ".json";
     try {
         const graphData = await loadJSON(filename);
         drawGraph(graphData);
         drawTreeFromGraph(graphData);
         document.getElementById("json-editor").innerHTML = JSON.stringify(graphData, null, 4);
     } catch (error) {
-        console.error("Fehler beim Laden der Graph-Daten:", error);
+        console.error("Fehler beim Laden der Graph-Daten:", filename, error);
+    }
+}
+
+async function loadTreeData(num) {
+    example = num ? num : 0
+    filename = "trees/tree" + example + ".json";
+    try {
+        const graphData = await loadJSON(filename);
+        console.log(JSON.stringify(graphData));
+        drawTreeFromGraph(graphData);
+    } catch (error) {
+        console.error("Fehler beim Laden der Graph-Daten:", filename, error);
     }
 }
 
@@ -17,7 +29,7 @@ async function loadJSON(filename) {
         const graphData = await response.json();
         return graphData;
     } catch (error) {
-        console.error("Fehler beim Laden der Graph-Daten:", error);
+        console.error("Fehler beim Laden der Graph-Daten:", filename, error);
     }
 }
 
@@ -116,4 +128,3 @@ function drawTreeFromGraph(graphData) {
         physics: false
     });
 }
-
