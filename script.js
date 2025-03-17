@@ -1,10 +1,22 @@
-async function loadGraphData(num) {
+async function loadGraphAndTreeData(num) {
     example = num ? num : 0
     filename = "graphs/graph" + example + ".json";
     try {
         const graphData = await loadJSON(filename);
         drawGraph(graphData);
         drawTreeFromGraph(graphData);
+        document.getElementById("json-editor").innerHTML = JSON.stringify(graphData, null, 4);
+    } catch (error) {
+        console.error("Fehler beim Laden der Graph-Daten:", filename, error);
+    }
+}
+
+async function loadGraphData(num) {
+    example = num ? num : 0
+    filename = "graphs/graph" + example + ".json";
+    try {
+        const graphData = await loadJSON(filename);
+        drawGraph(graphData);
         document.getElementById("json-editor").innerHTML = JSON.stringify(graphData, null, 4);
     } catch (error) {
         console.error("Fehler beim Laden der Graph-Daten:", filename, error);

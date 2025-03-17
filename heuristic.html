@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="loadGraphData(1)">
+<body onload="loadGraphAndTreeData(1)">
     <div class="container">
         <div class="sidebar">
             <h2>Heuristiken</h2>
@@ -18,7 +18,7 @@
             </p>
             
             <h3>Beispiel 1 - Heuristik mit Anzahl Knotensprüngen</h3>
-            <button onclick="loadGraphData(1)">Beispiel 1 laden</button>
+            <button onclick="loadGraphAndTreeData(1)">Beispiel 1 laden</button>
             
             <p>In dieser Übung betrachten wir eine Heuristik, die die Anzahl der verbleibenden Sprünge zum Ziel schätzt.
             Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel notwendig sind.</p>
@@ -33,7 +33,7 @@
                 <li>Ist dieser Weg der schnellste Weg? Begründen Sie.</li>
             </ol>
             <h3>Beispiel 2 - Heuristik mit Distanz zum Ziel</h3>
-            <button onclick="loadGraphData(2)">Beispiel 2 laden</button>
+            <button onclick="loadGraphAndTreeData(2)">Beispiel 2 laden</button>
             <p>
                 In dieser Übung betrachten wir eine Heuristik, die die verbleibende Distanz zum Ziel schätzt.
                 Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel kosten.
@@ -46,7 +46,7 @@
                 <li>Wie können Sie nun den kürzesten Weg ablesen?</li>
             </ol>
             <h3>Beispiel 3 - Heuristik in grossen Graphen</h3>
-            <button onclick="loadGraphData(3)">Beispiel 3 laden</button>
+            <button onclick="loadGraphAndTreeData(3)">Beispiel 3 laden</button>
             <p>
                 In grossen Graphen ist es natürlich nicht mehr sinnvoll, von Hand Heuristiken einzutragen.
                 Oftmals sind die Bäume dann auch zu gross, um alle Möglichkeiten durchzuprobieren.
