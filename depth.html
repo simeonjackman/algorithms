@@ -45,11 +45,30 @@
                 <li>Geht so tief wie möglich: DFS folgt einem Pfad, bis es nicht mehr weitergeht, bevor es zurückkehrt.</li>
                 <li>Kein garantierter kürzester Pfad: Da DFS nicht systematisch alle Ebenen durchläuft, findet es nicht unbedingt den kürzesten Weg zum Ziel.</li>
             </ul>
+            <h3>Beispiel 1</h3>
+            <button class="link button" onclick="loadTreeData('/trees/tree1.json')">Beispiel 1 laden</button>
+            <h3>Übungen 1</h3>
+            <ol>
+                <li>Zeichnen Sie den Graphen, der aus welchem der dargestellte Baum abgeleitet werden könnte. Was fällt Ihnen auf?</li>
+                <button class="link button" onclick="loadGraphData('/trees/tree1.json')">Graphen laden</button>
+                <li>
+                    Der im Beispiel abgebildete Baum ist nicht vollständig.
+                    Was passiert, wenn Sie die Tiefensuche von E aus weiterführen und als Regel immer den Knoten als nächstes öffner, welcher im Alphabet zuerst kommt?
+                </li>
+                <li>
+                    Wann kann die Tiefensuche ohne Bedenken angewendet werden? Wann nicht?
+                </li>
+                <li>
+                    Wie könnten Sie einen Baum prunen, damit Sie immer die Tiefensuche anwenden könnten?
+                    Ist das überhaupt möglich?
+                </li>
+            </ol>
             <a class="link button" href="index.html">Zurück zum Menu</a>
         </div>
         <div class="content">
             <h2>Baum</h2>
             <div id="tree-container" class="canvas"></div>
+            <div id="graph-container" class="canvas" style="display:none;"></div>
         </div>
     </div>
     <script src="script.js"></script>
