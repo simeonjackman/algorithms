@@ -55,22 +55,43 @@ button{
 }
 
 .links{
-    margin: auto;
-    text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+h1{
+    text-align: center;
+    margin:auto;
+    margin: 1rem;
 }
 
 h2{
     text-align: center;
+    margin:auto;
 }
 
-.links > a{
-    text-align: center;
-    text-decoration: none;
-    font-size: 5rem;
-}
 
-a:hover{
-    text-decoration: underline;
-}
+.link {
+    min-width: 10rem;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .links > a {
+    color: #0ff;
+    font-size: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0,255,255,0.5);
+  }
