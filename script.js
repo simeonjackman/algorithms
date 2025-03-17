@@ -1,12 +1,21 @@
 async function loadGraphData(num) {
     example = num ? num : 0
-    file = "graphs/graph" + example + ".json"
+    filename = "graphs/graph" + example + ".json"
     try {
-        const response = await fetch(file);
-        const graphData = await response.json();
+        const graphData = await loadJSON(filename);
         drawGraph(graphData);
-        drawTree(graphData);
+        drawTreeFromGraph(graphData);
         document.getElementById("json-editor").innerHTML = JSON.stringify(graphData, null, 4);
+    } catch (error) {
+        console.error("Fehler beim Laden der Graph-Daten:", error);
+    }
+}
+
+async function loadJSON(filename) {
+    try {
+        const response = await fetch(filename);
+        const graphData = await response.json();
+        return graphData;
     } catch (error) {
         console.error("Fehler beim Laden der Graph-Daten:", error);
     }
@@ -15,7 +24,7 @@ async function loadGraphData(num) {
 function updateGraphData(){
     newGraphData = JSON.parse(document.getElementById("json-editor").value);
     drawGraph(newGraphData);
-    drawTree(newGraphData);
+    drawTreeFromGraph(newGraphData);
     console.log(newGraphData)
 }
 
@@ -53,7 +62,7 @@ function drawGraph(graphData, treeDepth = 0) {
     });
 }
 
-function drawTree(graphData) {
+function drawTreeFromGraph(graphData) {
     const container = document.getElementById("tree-container");
     const startNode = graphData.nodes.find(node => node.start);
     const endNode = graphData.nodes.find(node => node.end);
@@ -107,3 +116,4 @@ function drawTree(graphData) {
         physics: false
     });
 }
+
