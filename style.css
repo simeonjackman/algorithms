@@ -43,8 +43,8 @@ body {
     height: 30rem;
 }
 
-button{
-    padding: .5rem;
+button:hover{
+    cursor: pointer;
 }
 
 .banner{
@@ -74,8 +74,13 @@ h2{
     margin:auto;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
 
 .link {
+    color:white;
     min-width: 10rem;
     background: #111;
     display: flex;

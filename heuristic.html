@@ -18,7 +18,7 @@
             </p>
             
             <h3>Beispiel 1 - Heuristik mit Anzahl Knotensprüngen</h3>
-            <button onclick="loadGraphAndTreeData('/graphs/graph1.json')">Beispiel 1 laden</button>
+            <button class="link button" onclick="loadGraphAndTreeData('/graphs/graph1.json')">Beispiel 1 laden</button>
             
             <p>In dieser Übung betrachten wir eine Heuristik, die die Anzahl der verbleibenden Sprünge zum Ziel schätzt.
             Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel notwendig sind.</p>
@@ -33,7 +33,7 @@
                 <li>Ist dieser Weg der schnellste Weg? Begründen Sie.</li>
             </ol>
             <h3>Beispiel 2 - Heuristik mit Distanz zum Ziel</h3>
-            <button onclick="loadGraphAndTreeData('/graphs/graph2.json')">Beispiel 2 laden</button>
+            <button class="link button" onclick="loadGraphAndTreeData('/graphs/graph2.json')">Beispiel 2 laden</button>
             <p>
                 In dieser Übung betrachten wir eine Heuristik, die die verbleibende Distanz zum Ziel schätzt.
                 Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel kosten.
@@ -46,7 +46,7 @@
                 <li>Wie können Sie nun den kürzesten Weg ablesen?</li>
             </ol>
             <h3>Beispiel 3 - Heuristik in grossen Graphen</h3>
-            <button onclick="loadGraphAndTreeData('/graphs/graph3.json')">Beispiel 3 laden</button>
+            <button class="link button" onclick="loadGraphAndTreeData('/graphs/graph3.json')">Beispiel 3 laden</button>
             <p>
                 In grossen Graphen ist es natürlich nicht mehr sinnvoll, von Hand Heuristiken einzutragen.
                 Oftmals sind die Bäume dann auch zu gross, um alle Möglichkeiten durchzuprobieren.
@@ -65,7 +65,7 @@
             <div id="tree-container" class="canvas"></div>
             <h2>Graph JSON Editor</h2>
             <div class="editor-container">
-                <button onclick="updateGraphData()">Aktualisieren</button>
+                <button class="link button" onclick="updateGraphData()">Aktualisieren</button>
                 <textarea id="json-editor"></textarea>
             </div>
         </div>
