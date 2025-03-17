@@ -45,23 +45,27 @@
             <ol>
                 <li>Zeichnen Sie den Graphen, der aus welchem der dargestellte Baum abgeleitet werden könnte. Was fällt Ihnen auf?</li>
             </ol>
-            <h3>Beispiel 1</h3><button class="link button" onclick="loadTreeData('/trees/tree1.json')">Beispiel 1 laden</button>
+            <h3>Beispiel 1</h3>
+            <button class="link button" onclick="loadTreeData('/trees/tree1.json')">Beispiel 1 laden</button>
             <h3>Übungen 1</h3>
+            <div class="banner">
+                Als <b>Pruning</b> bezeichnet man das gezielte Abschneiden von Knoten oder Pfaden in einem Baum, um unnötige Berechnungen zu vermeiden und die Effizienz zu steigern, z. B. durch das Entfernen von Zyklen oder offensichtlichen Sackgassen.
+            </div>
             <ol>
                 <li>Zeichnen Sie den Graphen, der aus welchem der dargestellte Baum abgeleitet werden könnte. Was fällt Ihnen auf?</li>
+                <button class="link button" onclick="loadGraphData('/trees/tree1.json')">Graphen laden</button>
+                <li>
+                    Zeichnen Sie den Baum ohne Pruning auf ein Blatt Papier bis zu einer Tiefe von 5.
+                    Was passiert mit den Zyklen im Graphen?
+                </li>
             </ol>
-
-
-
-
-            
-
+            <a class="link button" href="index.html">Zurück zum Menu</a>
+        
         </div>
         <div class="content">
             <h2>Baum</h2>
             <div id="tree-container" class="canvas"></div>
-            <h2>Graph</h2>
-            <div id="graph-container" class="canvas"></div>
+            <div id="graph-container" class="canvas" style="display:none;"></div>
         </div>
     </div>
     <script src="script.js"></script>

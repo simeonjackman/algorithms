@@ -13,7 +13,9 @@ async function loadGraphData(filename) {
     try {
         const graphData = await loadJSON(filename);
         drawGraph(graphData);
-        document.getElementById("json-editor").innerHTML = JSON.stringify(graphData, null, 4);
+        if(document.getElementById("json-editor")){
+            document.getElementById("json-editor").innerHTML = JSON.stringify(graphData, null, 4);
+        }
     } catch (error) {
         console.error("Fehler beim Laden der Graph-Daten:", filename, error);
     }
@@ -46,6 +48,7 @@ function updateGraphData(){
 
 function drawGraph(graphData, treeDepth = 0) {
     const container = document.getElementById("graph-container");
+    container.style.display = "block";
 
     const minEdgeLength = 50, maxEdgeLength = 300;
     const maxValue = Math.max(...graphData.edges.map(edge => edge.value));
