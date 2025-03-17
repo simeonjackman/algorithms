@@ -14,7 +14,7 @@
             <div class="banner">
                 Die <b>Breitensuche</b> Die (Breadth-First Search, BFS) durchsucht einen Graphen schrittweise Ebene für Ebene, indem sie zuerst alle direkten Nachbarn eines Knotens besucht, bevor sie zu deren Nachfolgern weitergeht.
             </div>
-            <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadTreeData('/trees/tree0.json')">Einführungsbeispiel laden</button>
+            <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadTreeData('./trees/tree0.json')">Einführungsbeispiel laden</button>
             <p>
                 Die Breitensuche (BFS) ist ein Algorithmus zur Durchsuchung oder Traversierung eines Baumes oder Graphen.
                 Dabei werden alle Knoten einer Ebene zuerst besucht, bevor die nächste Ebene durchlaufen wird.
@@ -26,12 +26,12 @@
                 Die Kanten repräsentieren Verbindungen zwischen den Knoten.
                 Die BFS erkundet den Baum in folgender Reihenfolge:
             </p>
-            <ul>
+            <ol>
                 <li>Starte bei S und markiere ihn als besucht.</li>
                 <li>Besuche alle direkten Nachbarn von S: A und B.</li>
                 <li>Bewege dich zur nächsten Ebene und besuche alle Kinder von A und B: C, D, E und F.</li>
                 <li>Schliesslich besuche das letzte verbleibende Kind von D: G (das Ziel).</li>
-            </ul>
+            </ol>
             <p>
                 Die Reihenfolge der besuchten Knoten ist also:
                 S → A → B → C → D → E → F → G
@@ -41,11 +41,15 @@
                 <li>Ebenenweise Suche: BFS besucht erst alle Knoten einer Ebene, bevor es tiefer geht.</li>
                 <li>Findet den kürzesten Pfad: Wenn alle Kanten die gleiche Gewichtung haben, garantiert BFS den kürzesten Pfad zum Ziel.</li>
             </ul>
-            <h3>Übungen</h3>
+            <h3>Übungen 0</h3>
             <ol>
                 <li>Zeichnen Sie den Graphen, der aus welchem der dargestellte Baum abgeleitet werden könnte. Was fällt Ihnen auf?</li>
             </ol>
             <h3>Beispiel 1</h3><button class="link button" onclick="loadTreeData('/trees/tree1.json')">Beispiel 1 laden</button>
+            <h3>Übungen 1</h3>
+            <ol>
+                <li>Zeichnen Sie den Graphen, der aus welchem der dargestellte Baum abgeleitet werden könnte. Was fällt Ihnen auf?</li>
+            </ol>
 
 
 
