@@ -55,6 +55,10 @@ button{
 }
 
 .links{
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    max-width: 100rem;
     display: flex;
     flex-wrap: wrap;
 }
