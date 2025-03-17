@@ -7,17 +7,57 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="loadTreeData()">
+<body onload="loadTreeData(0)">
     <div class="container">
         <div class="sidebar">
             <h2>Breitensuche</h2>
             <div class="banner">
                 Die <b>Breitensuche</b> Die (Breadth-First Search, BFS) durchsucht einen Graphen schrittweise Ebene für Ebene, indem sie zuerst alle direkten Nachbarn eines Knotens besucht, bevor sie zu deren Nachfolgern weitergeht.
             </div>
+            <h3>Einführungsbeispiel</h3><button onclick="loadTreeData(0)">Einführungsbeispiel laden</button>
+            <p>
+                Die Breitensuche (BFS) ist ein Algorithmus zur Durchsuchung oder Traversierung eines Baumes oder Graphen.
+                Dabei werden alle Knoten einer Ebene zuerst besucht, bevor die nächste Ebene durchlaufen wird.
+                BFS eignet sich besonders gut zur Suche des kürzesten Pfads in ungewichteten Graphen, also dann, wenn alle Kanten gleich teuer sind.
+            </p>
+            <p>
+                Beispiel anhand des gegebenen Baumes:
+                Der Baum beginnt mit dem Startknoten S (1).
+                Die Kanten repräsentieren Verbindungen zwischen den Knoten.
+                Die BFS erkundet den Baum in folgender Reihenfolge:
+            </p>
+            <ul>
+                <li>Starte bei S und markiere ihn als besucht.</li>
+                <li>Besuche alle direkten Nachbarn von S: A und B.</li>
+                <li>Bewege dich zur nächsten Ebene und besuche alle Kinder von A und B: C, D, E und F.</li>
+                <li>Schliesslich besuche das letzte verbleibende Kind von D: G (das Ziel).</li>
+            </ul>
+            <p>
+                Die Reihenfolge der besuchten Knoten ist also:
+                S → A → B → C → D → E → F → G
+            </p>
+            <h3>Eigenschaften</h3>
+            <ul>
+                <li>Ebenenweise Suche: BFS besucht erst alle Knoten einer Ebene, bevor es tiefer geht.</li>
+                <li>Findet den kürzesten Pfad: Wenn alle Kanten die gleiche Gewichtung haben, garantiert BFS den kürzesten Pfad zum Ziel.</li>
+            </ul>
+            <h3>Übungen</h3>
+            <ol>
+                <li>Zeichnen Sie den Graphen, der aus welchem der dargestellte Baum abgeleitet werden könnte. Was fällt Ihnen auf?</li>
+            </ol>
+            <h3>Beispiel 1</h3><button onclick="loadTreeData(1)">Beispiel 1 laden</button>
+
+
+
+
+            
+
         </div>
         <div class="content">
             <h2>Baum</h2>
             <div id="tree-container" class="canvas"></div>
+            <h2>Graph</h2>
+            <div id="graph-container" class="canvas"></div>
         </div>
     </div>
     <script src="script.js"></script>

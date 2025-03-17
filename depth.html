@@ -14,6 +14,37 @@
             <div class="banner">
                 Die <b>Tiefensuche</b> (Depth-First Search, DFS) durchsucht einen Graphen, indem sie so tief wie möglich in einen Pfad eintaucht, bevor sie zurückgeht und alternative Wege erkundet.
             </div>
+            <h3>Einführungsbeispiel</h3><button onclick="loadTreeData(0)">Einführungsbeispiel laden</button>
+            <p>
+                Die Breitensuche (BFS) ist ein Algorithmus zur Durchsuchung oder Traversierung eines Baumes oder Graphen.
+                Dabei werden alle Knoten einer Ebene zuerst besucht, bevor die nächste Ebene durchlaufen wird.
+                BFS eignet sich besonders gut zur Suche des kürzesten Pfads in ungewichteten Graphen, also dann, wenn alle Kanten gleich teuer sind.
+            </p>
+            <p>
+                Beispiel anhand des gegebenen Baumes:
+                Der Baum beginnt mit dem Startknoten S (1).
+                Die Kanten repräsentieren Verbindungen zwischen den Knoten.
+                Die BFS erkundet den Baum in folgender Reihenfolge:
+            </p>
+            <ol>
+                <li>Starte bei S und markiere ihn als besucht.</li>
+                <li>Wähle einen Nachbarn von S – wir nehmen A.</li>
+                <li>Gehe weiter in die Tiefe zu C (ein Kind von A).</li>
+                <li>Da C keine weiteren Kinder hat, gehe zurück zu A und besuche D.</li>
+                <li>Von D gehe weiter zu G (das Ziel).</li>
+            </ol>
+            <p>
+                Eine mögliche Reihenfolge der besuchten Knoten ist:
+                <span>S → A → C → D → G</span>
+            </p>
+            <p>
+                <b>Wichtig</b>: Die genaue Reihenfolge hängt davon ab, in welcher Reihenfolge die Kinder eines Knotens besucht werden
+            </p>
+            <h3>Eigenschaften</h3>
+            <ul>
+                <li>Geht so tief wie möglich: DFS folgt einem Pfad, bis es nicht mehr weitergeht, bevor es zurückkehrt.</li>
+                <li>Kein garantierter kürzester Pfad: Da DFS nicht systematisch alle Ebenen durchläuft, findet es nicht unbedingt den kürzesten Weg zum Ziel.</li>
+            </ul>
         </div>
         <div class="content">
             <h2>Baum</h2>
