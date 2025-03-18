@@ -44,9 +44,18 @@
                 <li>Betrachten Sie den Graphen auf der rechten Seite und versuchen Sie zu verstehen, was dargestellt wird.</li>
                 <li>Wie viele mögliche Wege gibt es von Zuhause bis zur Schule?</li>
                 <li>Was wäre der schnellste Schulweg von Zuhause bis zur Schule? Begründen Sie Ihre Antwort.</li>
-                <li>Wie ändert sich der Baum, wenn Sie die Lerchenstrasse, welche Sie in einer Minute von der Gründenstrasse und von der Gartenstrsse erreichen, in den Graphen einfügen?</li>
+                <li>Wie ändert sich der Baum, wenn Sie die Lerchenstrasse, welche Sie in einer Minute von der Gründenstrasse und von der Gartenstrasse erreichen, in den Graphen einfügen?</li>
             </ol>
             <button class="link button" onclick="loadGraphAndTreeData('./graphs/graph0.1.json')">Lösung laden</button>
+            <p>
+                <i>Bemerkung zur Lösung</i>:
+                Da der Graph zyklisch ist würde der Baum unendlich gross werden.                
+                Um dies bei der Lösung zu verhindern, wurden Teile des Baumes weggeschnitten, mehr dazu aber später.
+                <div class="banner">
+                    Ein Graph ist <b>zyklisch</b>, wenn man im Graph Kreise drehen kann.
+                    Ein Beispiel wäre, wenn Sie von Zuhause zur Gartenstrasse, dann zur Kriegackerstrasse und dann wieder nach Zuhause gehen. 
+                </div>
+            </p>
             <a class="link button" href="index.html">Zurück zum Menu</a>
         </div>
         <div class="content">
