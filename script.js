@@ -69,7 +69,7 @@ function drawGraph(graphData, treeDepth = 0) {
         ...edge,
         font: { align: "top" },
         width: 2,
-        label: edge ? edge.value.toString() : "",
+        label: edge.value ? edge.value.toString() : "",
         scaling: { min: 2, max: 2 },
         length: minEdgeLength + ((maxEdgeLength - minEdgeLength) * (edge.value / maxValue))
     })));
@@ -111,7 +111,7 @@ function drawTreeFromGraph(graphData) {
         counter++;
         if (parent !== null) {
             const edge = graphData.edges.find(e => e.from === idTranslate.get(parent) && e.to === idTranslate.get(newid));
-            treeEdges.add({ from: parent, to: newid, label: edge ? edge.value.toString() : "" });
+            treeEdges.add({ from: parent, to: newid, label: edge.value ? edge.value.toString() : "" });
         }
         if (id == endNode.id || idTranslate.get(id) == endNode.id){
             continue;
