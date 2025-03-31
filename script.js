@@ -3,7 +3,9 @@ async function loadGraphAndTreeData(filename) {
         const graphData = await loadJSON(filename);
         drawGraph(graphData);
         drawTreeFromGraph(graphData);
-        document.getElementById("json-editor").innerHTML = JSON.stringify(graphData, null, 4);
+        if(document.getElementById("json-editor")){
+            document.getElementById("json-editor").innerHTML = JSON.stringify(graphData, null, 4);
+        }
     } catch (error) {
         console.error("Fehler beim Laden der Graph-Daten:", filename, error);
     }
@@ -50,9 +52,6 @@ function drawGraph(graphData, treeDepth = 0) {
     const container = document.getElementById("graph-container");
     container.style.display = "block";
 
-    const minEdgeLength = 50, maxEdgeLength = 300;
-    const maxValue = Math.max(...graphData.edges.map(edge => edge.value));
-
     const nodes = new vis.DataSet(graphData.nodes.map(node => ({
         ...node,
         font: { size: 16, color: "black" },
@@ -70,8 +69,7 @@ function drawGraph(graphData, treeDepth = 0) {
         font: { align: "top" },
         width: 2,
         label: edge.value ? edge.value.toString() : "",
-        scaling: { min: 2, max: 2 },
-        length: minEdgeLength + ((maxEdgeLength - minEdgeLength) * (edge.value / maxValue))
+        scaling: { min: 2, max: 2 }
     })));
 
     new vis.Network(container, { nodes, edges }, {
@@ -90,15 +88,15 @@ function drawTreeFromGraph(graphData) {
     const treeNodes = new vis.DataSet();
     const treeEdges = new vis.DataSet();
     const queue = [{ id: startNode.id, parent: null }];
-    let idTranslate = new Map()
+    let newIDs = new Map() // new IDs because we have repetition of nodes in trees
     let counter = 0
     let visited = new Set();
     while (queue.length > 0) {
         const { id, parent } = queue.shift();
         visited.add(id);
         const originalNode = graphData.nodes.find(n => n.id === id);
-        const newid = 100 + counter;
-        idTranslate.set(newid,id);
+        const newid = graphData.nodes.length + counter;
+        newIDs.set(newid,id);
         treeNodes.add({
             id: newid,
             label: originalNode.heuristic ? originalNode.label + "\nh=" + originalNode.heuristic : originalNode.label,
@@ -110,10 +108,10 @@ function drawTreeFromGraph(graphData) {
         });
         counter++;
         if (parent !== null) {
-            const edge = graphData.edges.find(e => e.from === idTranslate.get(parent) && e.to === idTranslate.get(newid));
-            treeEdges.add({ from: parent, to: newid, label: edge.value ? edge.value.toString() : "" });
+            const edge = graphData.edges.find(e => e.from === newIDs.get(parent) && e.to === newIDs.get(newid));
+            treeEdges.add({ from: parent, to: newid, label: edge && edge.value ? edge.value.toString() : "" });
         }
-        if (id == endNode.id || idTranslate.get(id) == endNode.id){
+        if (id == endNode.id || newIDs.get(id) == endNode.id){
             continue;
         }
         const neighborsFrom = graphData.edges.filter(edge => edge.from === id).map(edge => edge.to);
@@ -121,9 +119,8 @@ function drawTreeFromGraph(graphData) {
         const neighbors = neighborsFrom.concat(neighborsTo);
         neighbors.forEach(neighbor => {
             if (neighbor == endNode.id || !visited.has(neighbor)) {
-                queue.push({ id: neighbor, parent: newid, heuristic: graphData.nodes.find(n => n.id === neighbor || n.id === idTranslate.get(neighbor)).heuristic});
+                queue.push({ id: neighbor, parent: newid, heuristic: graphData.nodes.find(n => n.id === neighbor || n.id === newIDs.get(neighbor)).heuristic});
                 queue.sort((a, b) => a.heuristic - b.heuristic);
-                //console.log(JSON.stringify(queue));
             }
         });
     }
