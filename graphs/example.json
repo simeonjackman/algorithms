@@ -1,10 +1,32 @@
 {
-    "nodes": [
-      { "id": 1, "label": "S", "heuristic": 2, "start": true },
-      { "id": 2, "label": "G", "heuristic": 0, "end": true }
-    ],
-    "edges": [
-      { "from": 1, "to": 2, "value": 1 }
-    ]
-  }
-  
+  "nodes": [
+      {
+          "id": 1,
+          "label": "S",
+          "start": true
+      },
+      {
+          "id": 2,
+          "label": "A"
+      },
+      {
+          "id": 3,
+          "label": "B"
+      },
+      {
+          "id": 4,
+          "label": "G",
+          "end": true
+      }
+  ],
+  "edges": [
+      {
+          "from": 1,
+          "to": 2
+      },
+      {
+          "from": 2,
+          "to": 3
+      }
+  ]
+}
