@@ -48,7 +48,7 @@ function updateGraphData(){
     drawTreeFromGraph(newGraphData);
 }
 
-function drawGraph(graphData, treeDepth = 0) {
+function drawGraph(graphData) {
     const container = document.getElementById("graph-container");
     container.style.display = "block";
 
