@@ -119,4 +119,10 @@ a{
     margin: auto;
     padding: 1rem;
     display: flex;
+    flex-direction: column;
+}
+
+.img > a{
+    text-align: center;
+    color: black;
 }
