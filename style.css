@@ -24,6 +24,7 @@ body {
     width: 100%;
     overflow-y: auto;
     padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .canvas {
@@ -75,6 +76,7 @@ h1{
 h2{
     text-align: center;
     margin:auto;
+    margin-top: 1rem;
 }
 
 a{
@@ -110,4 +112,11 @@ a{
 
 .project{
     background-color: gray;
+}
+
+.img{
+    width: 80%;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
 }

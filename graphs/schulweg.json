@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    { "id": 1, "label": "S", "start": true },
+    { "id": 2, "label": "A"},
+    { "id": 3, "label": "B"},
+    { "id": 4, "label": "C"},
+    { "id": 5, "label": "D"},
+    { "id": 6, "label": "E"},
+    { "id": 7, "label": "F"},
+    { "id": 8, "label": "G"},
+    { "id": 9, "label": "H"},
+    { "id": 10, "label": "I"},
+    { "id": 11, "label": "J"},
+    { "id": 12, "label": "K"},
+    { "id": 13, "label": "Z", "end": true }
+  ],
+  "edges": [
+    { "from": 1, "to": 3, "value": 1 },
+    { "from": 1, "to": 5, "value": 1 },
+    { "from": 2, "to": 3, "value": 1 },
+    { "from": 2, "to": 4, "value": 1 },
+    { "from": 2, "to": 8, "value": 1 },
+    { "from": 4, "to": 5, "value": 1 },
+    { "from": 4, "to": 6, "value": 1 },
+    { "from": 5, "to": 7, "value": 1 },
+    { "from": 6, "to": 7, "value": 1 },
+    { "from": 6, "to": 9, "value": 1 },
+    { "from": 7, "to": 11, "value": 1 },
+    { "from": 8, "to": 9, "value": 1 },
+    { "from": 8, "to": 13, "value": 1 },
+    { "from": 9, "to": 12, "value": 1 },
+    { "from": 10, "to": 11, "value": 1 },
+    { "from": 11, "to": 12, "value": 1 },
+    { "from": 12, "to": 13, "value": 1 }
+  ]
+}
+
+  
