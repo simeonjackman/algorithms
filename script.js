@@ -108,7 +108,7 @@ function drawTreeFromGraph(graphData) {
         });
         counter++;
         if (parent !== null) {
-            const edge = graphData.edges.find(e => e.from === newIDs.get(parent) && e.to === newIDs.get(newid));
+            const edge = graphData.edges.find(e => (e.from === newIDs.get(parent) && e.to === newIDs.get(newid)) || e.from === newIDs.get(newid) && e.to === newIDs.get(parent));
             treeEdges.add({ from: parent, to: newid, label: edge && edge.value ? edge.value.toString() : "" });
         }
         if (endNodes.map(node => node.id).includes(id) || endNodes.map(node => node.id).includes(newIDs.get(id))){
