@@ -82,8 +82,8 @@ function drawGraph(graphData) {
 function drawTreeFromGraph(graphData) {
     const container = document.getElementById("tree-container");
     const startNode = graphData.nodes.find(node => node.start);
-    const endNode = graphData.nodes.find(node => node.end);
-    if (!startNode || !endNode) return console.error("Start oder Endknoten fehlt!");
+    const endNodes = graphData.nodes.filter(node => node.end);
+    if (!startNode || !endNodes) return console.error("Start oder Endknoten fehlt!");
 
     const treeNodes = new vis.DataSet();
     const treeEdges = new vis.DataSet();
@@ -111,14 +111,14 @@ function drawTreeFromGraph(graphData) {
             const edge = graphData.edges.find(e => e.from === newIDs.get(parent) && e.to === newIDs.get(newid));
             treeEdges.add({ from: parent, to: newid, label: edge && edge.value ? edge.value.toString() : "" });
         }
-        if (id == endNode.id || newIDs.get(id) == endNode.id){
+        if (endNodes.map(node => node.id).includes(id) || endNodes.map(node => node.id).includes(newIDs.get(id))){
             continue;
         }
         const neighborsFrom = graphData.edges.filter(edge => edge.from === id).map(edge => edge.to);
         const neighborsTo = graphData.edges.filter(edge => edge.to === id).map(edge => edge.from);
         const neighbors = neighborsFrom.concat(neighborsTo);
         neighbors.forEach(neighbor => {
-            if (neighbor == endNode.id || !visited.has(neighbor)) {
+            if (endNodes.map(node => node.id).includes(neighbor) || !visited.has(neighbor)) {
                 queue.push({ id: neighbor, parent: newid, heuristic: graphData.nodes.find(n => n.id === neighbor || n.id === newIDs.get(neighbor)).heuristic});
                 queue.sort((a, b) => a.heuristic - b.heuristic);
             }
