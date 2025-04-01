@@ -75,7 +75,7 @@ function drawGraph(graphData) {
     new vis.Network(container, { nodes, edges }, {
         edges: { arrows: { to: false }, width: 2 },
         nodes: { borderWidth: 2 },
-        physics: { enabled: false, solver: "barnesHut" }
+        physics: { enabled: true, solver: "barnesHut" }
     });
 }
 
