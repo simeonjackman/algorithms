@@ -35,6 +35,6 @@
     
     { "from": 13, "to": 14, "value": "" },
     { "from": 14, "to": 15, "value": "" },
-    { "from": 15, "to": 14, "value": "" }, { "from": 15, "to": 16, "value": "" }
+    { "from": 15, "to": 16, "value": "" }
   ]
 }
