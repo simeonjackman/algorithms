@@ -125,7 +125,7 @@ function drawTreeFromGraph(graphData = lastGraphData) {
             console.log(JSON.stringify(neighbor));
             if (endNodes.map(node => node.id).includes(neighbor) || !visited.has(neighbor)) {
                 queue.push({ id: neighbor, parent: newid, heuristic: graphData.nodes.find(n => n.id === neighbor || n.id === newIDs.get(neighbor)).heuristic, depth: depth + 1});
-                queue.sort((a, b) => a.heuristic - b.heuristic);
+                //queue.sort((a, b) => a.heuristic - b.heuristic);
             }
         });
     }
