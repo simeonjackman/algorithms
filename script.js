@@ -1,3 +1,7 @@
+var maxDepth = 5;
+var pruning = true;
+var lastGraphData;
+
 async function loadGraphAndTreeData(filename) {
     try {
         const graphData = await loadJSON(filename);
@@ -36,6 +40,7 @@ async function loadJSON(filename) {
     try {
         const response = await fetch(filename);
         const graphData = await response.json();
+        lastGraphData = graphData;
         return graphData;
     } catch (error) {
         console.error("Fehler beim Laden der Graph-Daten:", filename, error);
@@ -44,11 +49,12 @@ async function loadJSON(filename) {
 
 function updateGraphData(){
     newGraphData = JSON.parse(document.getElementById("json-editor").value);
+    lastGraphData = graphData;
     drawGraph(newGraphData);
     drawTreeFromGraph(newGraphData);
 }
 
-function drawGraph(graphData) {
+function drawGraph(graphData = lastGraphData) {
     const container = document.getElementById("graph-container");
     container.style.display = "block";
 
@@ -75,7 +81,7 @@ function drawGraph(graphData) {
     });
 }
 
-function drawTreeFromGraph(graphData) {
+function drawTreeFromGraph(graphData = lastGraphData) {
     const container = document.getElementById("tree-container");
     const startNode = graphData.nodes.find(node => node.start);
     const endNodes = graphData.nodes.filter(node => node.end);
@@ -83,22 +89,28 @@ function drawTreeFromGraph(graphData) {
 
     const treeNodes = new vis.DataSet();
     const treeEdges = new vis.DataSet();
-    const queue = [{ id: startNode.id, parent: null }];
+    const queue = [{ id: startNode.id, parent: null, depth: 0 }];
     let newIDs = new Map() // new IDs because we have repetition of nodes in trees
-    let counter = 0
+    let newIDCounter = 0
     let visited = new Set();
     while (queue.length > 0) {
-        const { id, parent } = queue.shift();
-        visited.add(id);
+        const { id, parent, depth } = queue.shift();
+        console.log(depth);
+        if (depth > maxDepth){
+            break;
+        }
+        if (pruning){
+            visited.add(id);
+        }
         const originalNode = graphData.nodes.find(n => n.id === id);
-        const newid = graphData.nodes.length + counter;
+        const newid = graphData.nodes.length + newIDCounter;
         newIDs.set(newid,id);
         treeNodes.add({
             id: newid,
             label: originalNode.heuristic ? originalNode.label + "\nh=" + originalNode.heuristic : originalNode.label,
             color: getNodeColor(originalNode)
         });
-        counter++;
+        newIDCounter++;
         if (parent !== null) {
             const edge = graphData.edges.find(e => (e.from === newIDs.get(parent) && e.to === newIDs.get(newid)) || e.from === newIDs.get(newid) && e.to === newIDs.get(parent));
             treeEdges.add({ from: parent, to: newid, label: edge && edge.value ? edge.value.toString() : "" });
@@ -110,8 +122,9 @@ function drawTreeFromGraph(graphData) {
         const neighborsTo = graphData.edges.filter(edge => edge.to === id).map(edge => edge.from);
         const neighbors = neighborsFrom.concat(neighborsTo);
         neighbors.forEach(neighbor => {
+            console.log(JSON.stringify(neighbor));
             if (endNodes.map(node => node.id).includes(neighbor) || !visited.has(neighbor)) {
-                queue.push({ id: neighbor, parent: newid, heuristic: graphData.nodes.find(n => n.id === neighbor || n.id === newIDs.get(neighbor)).heuristic});
+                queue.push({ id: neighbor, parent: newid, heuristic: graphData.nodes.find(n => n.id === neighbor || n.id === newIDs.get(neighbor)).heuristic, depth: depth + 1});
                 queue.sort((a, b) => a.heuristic - b.heuristic);
             }
         });
@@ -133,4 +146,14 @@ function getNodeColor(node){
         return { background: "#dc3545", border: "#a71d2a" }
     }
     return { background: "#007bff", border: "#0056b3" }
+}
+
+function increaseMaxDepth(){
+    maxDepth ++;
+    drawTreeFromGraph();
+}
+
+function decreaseMaxDepth(){
+    maxDepth --;
+    drawTreeFromGraph();
 }
