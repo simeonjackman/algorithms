@@ -132,3 +132,8 @@ a{
     align-items: center;
     justify-content: center;
 }
+
+#max-depth{
+    margin-right: 1rem;
+    margin-left: 1rem;
+}

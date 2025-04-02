@@ -89,6 +89,11 @@
         <div class="content">
             <h2>Baum</h2>
             <div id="tree-container" class="canvas"></div>
+            <div class="depth-buttons">
+                Tiefe: <span id="max-depth"></span>
+                <button onclick="decreaseMaxDepth()">-</button>
+                <button onclick="increaseMaxDepth()">+</button>
+            </div>
             <div id="graph-container" class="canvas" style="display:none;"></div>
         </div>
     </div>

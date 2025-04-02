@@ -1,5 +1,5 @@
 var maxDepth = 5;
-var pruning = true;
+document.getElementById("max-depth").innerHTML = maxDepth;
 var lastGraphData;
 
 async function loadGraphAndTreeData(filename) {
@@ -81,7 +81,7 @@ function drawGraph(graphData = lastGraphData) {
     });
 }
 
-function drawTreeFromGraph(graphData = lastGraphData) {
+function drawTreeFromGraph(graphData = lastGraphData, pruning = true) {
     const container = document.getElementById("tree-container");
     const startNode = graphData.nodes.find(node => node.start);
     const endNodes = graphData.nodes.filter(node => node.end);
@@ -150,10 +150,12 @@ function getNodeColor(node){
 
 function increaseMaxDepth(){
     maxDepth ++;
+    document.getElementById("max-depth").innerHTML = maxDepth;
     drawTreeFromGraph();
 }
 
 function decreaseMaxDepth(){
     maxDepth --;
+    document.getElementById("max-depth").innerHTML = maxDepth;
     drawTreeFromGraph();
 }
