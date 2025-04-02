@@ -57,11 +57,7 @@ function drawGraph(graphData) {
         font: { size: 16, color: "black" },
         shape: "dot",
         label: node.heuristic ? node.label + "\nh=" + node.heuristic : node.label,
-        color: node.start
-            ? { background: "#28a745", border: "#1e7e34" }
-            : node.end
-            ? { background: "#dc3545", border: "#a71d2a" }
-            : { background: "#007bff", border: "#0056b3" }
+        color: getNodeColor(node)
     })));
 
     const edges = new vis.DataSet(graphData.edges.map(edge => ({
