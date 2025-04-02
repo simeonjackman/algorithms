@@ -100,11 +100,7 @@ function drawTreeFromGraph(graphData) {
         treeNodes.add({
             id: newid,
             label: originalNode.heuristic ? originalNode.label + "\nh=" + originalNode.heuristic : originalNode.label,
-            color: originalNode.start
-                ? { background: "#28a745", border: "#1e7e34" }
-                : originalNode.end
-                ? { background: "#dc3545", border: "#a71d2a" }
-                : { background: "#007bff", border: "#0056b3" }
+            color: getNodeColor(originalNode)
         });
         counter++;
         if (parent !== null) {
@@ -131,4 +127,14 @@ function drawTreeFromGraph(graphData) {
         layout: { hierarchical: { direction: "UD", sortMethod: "directed", levelSeparation: 100, nodeSpacing: 100 } },
         physics: false
     });
+}
+
+function getNodeColor(node){
+    if (node.start){
+        return { background: "#28a745", border: "#1e7e34" }
+    }
+    if (node.end) {
+        return { background: "#dc3545", border: "#a71d2a" }
+    }
+    return { background: "#007bff", border: "#0056b3" }
 }
