@@ -30,7 +30,8 @@ body {
 .canvas {
     height: 30rem;
     border: 1px solid #ddd;
-    margin: 10px;
+    margin: 1rem;
+    margin-bottom: 0;
 }
 
 .editor-container{
@@ -77,6 +78,7 @@ h2{
     text-align: center;
     margin:auto;
     margin-top: 1rem;
+    padding-top: 1rem;
 }
 
 a{
@@ -128,13 +130,20 @@ a{
 }
 
 .options{
+    border: 1px solid black;
+    border-top: 0;
+    border-radius: 1rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: auto;
+    width: 30rem;
 }
 
 .option-buttons{
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
     border: 1px;
     border-radius: 1rem;
     padding: 1rem;

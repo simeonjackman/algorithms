@@ -6,7 +6,9 @@ setPruningText();
 
 async function loadGraphAndTreeData(filename,maxTreeDepth=5) {
     maxDepth = maxTreeDepth;
-    document.getElementById("max-depth").innerHTML = maxTreeDepth;
+    if(document.getElementById("max-depth")){
+        document.getElementById("max-depth").innerHTML = maxTreeDepth;
+    }
     try {
         const graphData = await loadJSON(filename);
         drawGraph(graphData);
