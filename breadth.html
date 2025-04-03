@@ -86,10 +86,15 @@
         <div class="content">
             <h2>Baum</h2>
             <div id="tree-container" class="canvas"></div>
-            <div class="option-buttons">
-                Tiefe: <span id="max-depth"></span>
-                <button onclick="decreaseMaxDepth()">-</button>
-                <button onclick="increaseMaxDepth()">+</button>
+            <div class="options">
+                <div class="option-buttons">
+                    Tiefe: <span id="max-depth"></span>
+                    <button class="button" onclick="decreaseMaxDepth()">-</button>
+                    <button class="button" onclick="increaseMaxDepth()">+</button>
+                </div>
+                <div class="option-buttons">
+                    <button id="toggle-pruning" class="button" onclick="togglePruning()"></button>
+                </div>
             </div>
             <div id="graph-container" class="canvas" style="display:none;"></div>
         </div>
