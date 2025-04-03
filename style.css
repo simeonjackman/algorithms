@@ -130,7 +130,7 @@ a{
 }
 
 .options{
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-top: 0;
     border-radius: 1rem;
     border-top-left-radius: 0;
