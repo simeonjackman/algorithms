@@ -85,14 +85,14 @@ a{
 }
 
 .link {
-    color:white;
-    min-width: 10rem;
     background: #111;
+    color:white;
+    border-radius: 15px;
+    min-width: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    border-radius: 15px;
     transition: all 0.5s ease;
     margin: 1rem;
     padding: 1rem;
@@ -127,11 +127,27 @@ a{
     color: black;
 }
 
-.depth-buttons{
+.option-buttons{
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+.option-buttons > button{
+    background: #111;
+    color:white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    transition: all 0.5s ease;
+}
+
+.option-buttons > button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0,255,255,0.5);
+  }
 
 #max-depth{
     margin-right: 1rem;

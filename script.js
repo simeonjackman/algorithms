@@ -1,6 +1,9 @@
 var maxDepth = 5;
-document.getElementById("max-depth").innerHTML = maxDepth;
 var lastGraphData;
+var pruning = true;
+
+document.getElementById("max-depth").innerHTML = maxDepth;
+
 
 async function loadGraphAndTreeData(filename) {
     try {
@@ -81,7 +84,7 @@ function drawGraph(graphData = lastGraphData) {
     });
 }
 
-function drawTreeFromGraph(graphData = lastGraphData, pruning = true) {
+function drawTreeFromGraph(graphData = lastGraphData) {
     const container = document.getElementById("tree-container");
     const startNode = graphData.nodes.find(node => node.start);
     const endNodes = graphData.nodes.filter(node => node.end);
