@@ -161,7 +161,7 @@ function increaseMaxDepth(){
 }
 
 function decreaseMaxDepth(){
-    maxDepth --;
+    maxDepth = Math.max(-- maxDepth, 0);
     document.getElementById("max-depth").innerHTML = maxDepth;
     drawTreeFromGraph();
 }
