@@ -3,7 +3,7 @@ var lastGraphData;
 var pruning = true;
 
 document.getElementById("max-depth").innerHTML = maxDepth;
-
+setPruningText();
 
 async function loadGraphAndTreeData(filename) {
     try {
@@ -159,4 +159,14 @@ function decreaseMaxDepth(){
     maxDepth --;
     document.getElementById("max-depth").innerHTML = maxDepth;
     drawTreeFromGraph();
+}
+
+function togglePruning(){
+    pruning = !pruning;
+    setPruningText()
+    drawTreeFromGraph();
+}
+
+function setPruningText(){
+    document.getElementById("toggle-pruning").innerHTML = pruning ? "Pruning ausschalten" : "Pruning einschalten";
 }

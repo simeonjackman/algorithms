@@ -127,7 +127,18 @@ a{
     color: black;
 }
 
+.options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .option-buttons{
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    border: 1px;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,8 +147,9 @@ a{
 .option-buttons > button{
     background: #111;
     color:white;
-    width: 2rem;
-    height: 2rem;
+    min-width: 3rem;
+    min-height: 3rem;
+    padding: .5rem;
     border-radius: 1rem;
     margin-left: .5rem;
     margin-right: .5rem;
