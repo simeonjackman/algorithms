@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="loadTreeData('./trees/tree0.json')">
+<body onload="loadTreeData('./trees/tree0.json',maxTreeDepth=3)">
     <div class="container">
         <div class="sidebar">
             <h2>Breitensuche</h2>
             <div class="banner">
                 Die <b>Breitensuche</b> Die (Breadth-First Search, BFS) durchsucht einen Graphen schrittweise Ebene für Ebene, indem sie zuerst alle direkten Nachbarn eines Knotens besucht, bevor sie zu deren Nachfolgern weitergeht.
             </div>
-            <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadTreeData('./trees/tree0.json')">Einführungsbeispiel laden</button>
+            <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadTreeData('./trees/tree0.json',maxTreeDepth=3)">Einführungsbeispiel laden</button>
             <p>
                 Die Breitensuche (BFS) ist ein Algorithmus zur Durchsuchung oder Traversierung eines Baumes oder Graphen.
                 Dabei werden alle Knoten einer Ebene zuerst besucht, bevor die nächste Ebene durchlaufen wird.
@@ -46,7 +46,7 @@
                 <li>Zeichnen Sie den Graphen, aus welchem der dargestellte Baum abgeleitet werden könnte. Was fällt Ihnen auf?</li>
             </ol>
             <h3>Beispiel 1</h3>
-            <button class="link button" onclick="loadTreeData('./trees/tree1.json')">Beispiel 1 laden</button>
+            <button class="link button" onclick="loadTreeData('./trees/tree1.json',maxTreeDepth=3)">Beispiel 1 laden</button>
             <h3>Übungen 1</h3>
             <p>
                 Dieses Beispiel zeigt einen Baum, welcher nicht vollständig ist, da er geprunt wurde.
@@ -68,7 +68,7 @@
                 </li>
             </ol>
             <h3>Schach Beispiel</h3>
-            <button class="link button" onclick="loadGraphAndTreeData('./graphs/chess.json')">Schachbeispiel laden</button>
+            <button class="link button" onclick="loadGraphAndTreeData('./graphs/chess.json',maxTreeDepth=3)">Schachbeispiel laden</button>
             <p>
                 Wir betrachten einen Graphen, welcher auf einem Viertel eines Schachbretts alle möglichen Wege vom Feld A1 bis Feld D1 abbildet.
             </p>

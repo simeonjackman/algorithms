@@ -1,11 +1,12 @@
-var maxDepth = 5;
+var maxDepth;
 var lastGraphData;
 var pruning = true;
 
-document.getElementById("max-depth").innerHTML = maxDepth;
 setPruningText();
 
-async function loadGraphAndTreeData(filename) {
+async function loadGraphAndTreeData(filename,maxTreeDepth=5) {
+    maxDepth = maxTreeDepth;
+    document.getElementById("max-depth").innerHTML = maxTreeDepth;
     try {
         const graphData = await loadJSON(filename);
         drawGraph(graphData);
@@ -30,7 +31,9 @@ async function loadGraphData(filename) {
     }
 }
 
-async function loadTreeData(filename) {
+async function loadTreeData(filename,maxTreeDepth=5) {
+    maxDepth = maxTreeDepth;
+    document.getElementById("max-depth").innerHTML = maxTreeDepth;
     try {
         const graphData = await loadJSON(filename);
         drawTreeFromGraph(graphData);
@@ -168,5 +171,7 @@ function togglePruning(){
 }
 
 function setPruningText(){
-    document.getElementById("toggle-pruning").innerHTML = pruning ? "Pruning ausschalten" : "Pruning einschalten";
+    if(document.getElementById("toggle-pruning")){
+        document.getElementById("toggle-pruning").innerHTML = pruning ? "Pruning ausschalten" : "Pruning einschalten";
+    }
 }

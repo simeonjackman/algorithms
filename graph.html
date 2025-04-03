@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="loadGraphAndTreeData('./graphs/graph0.json')">
+<body onload="loadGraphAndTreeData('./graphs/graph0.json',maxTreeDepth=3)">
     <div class="container">
         <div class="sidebar">
             <h2>Graphen und Bäume</h2>
@@ -35,7 +35,7 @@
             <div class="banner">
                 Ein <b>Suchbaum</b> ist ein spezieller gerichteter Graph, der als baumartige Struktur organisiert ist, wobei jeder Knoten maximal einen Elternknoten und mehrere Kindknoten haben kann, um eine hierarchische Anordnung der Daten zu ermöglichen.
             </div>
-            <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadGraphAndTreeData('./graphs/graph0.json')">Einführungsbeispiel laden</button>
+            <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadGraphAndTreeData('./graphs/graph0.json',maxTreeDepth=3)">Einführungsbeispiel laden</button>
             <p>
                 Im Einführungsbeispiel ist ein möglicher Schulweg ans Gymnasium Muttenz abgebildet. 
                 Es gibt verschiedene Wege, wie Sie zur Schule laufen können.
@@ -49,7 +49,7 @@
                 <li>Was wäre der schnellste Schulweg von Zuhause bis zur Schule? Begründen Sie Ihre Antwort.</li>
                 <li>Wie ändert sich der Baum, wenn Sie die Lerchenstrasse, welche Sie in einer Minute von der Gründenstrasse und von der Gartenstrasse erreichen, in den Graphen einfügen?</li>
             </ol>
-            <button class="link button" onclick="loadGraphAndTreeData('./graphs/graph0.1.json')">Lösung laden</button>
+            <button class="link button" onclick="loadGraphAndTreeData('./graphs/graph0.1.json',maxTreeDepth=3)">Lösung laden</button>
             <p>
                 <i>Bemerkung zur Lösung</i>:
                 Da der Graph zyklisch ist würde der Baum unendlich gross werden.                
