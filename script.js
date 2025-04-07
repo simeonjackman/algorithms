@@ -165,7 +165,7 @@ function getNodeColor(node){
 }
 
 function increaseMaxDepth(){
-    maxDepth ++;
+    maxDepth = Math.min(++ maxDepth, 11);
     document.getElementById("max-depth").innerHTML = maxDepth;
     drawTreeFromGraph();
 }

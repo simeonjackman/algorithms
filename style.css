@@ -84,7 +84,6 @@ h2{
 
 a{
     text-decoration: none;
-    color: gray;
 }
 
 .link {
@@ -100,7 +99,6 @@ a{
 }
   
 .links > a {
-    color: #0ff;
     font-size: 2rem;
     position: relative;
     z-index: 2;
@@ -108,10 +106,16 @@ a{
 
 .theory{
     background-color: black;
+    color: white;
 }
 
 .example{
     background-color: darkgray;
+    color: black;
+}
+
+.example a{
+    color: black;
 }
   
 .link:hover {
