@@ -69,6 +69,7 @@ button:hover{
 }
 
 h1{
+    font-size: 8rem;
     text-align: center;
     margin:auto;
     margin: 1rem;
@@ -87,8 +88,6 @@ a{
 }
 
 .link {
-    background: #111;
-    color:white;
     border-radius: 15px;
     min-width: 10rem;
     display: flex;
@@ -98,14 +97,22 @@ a{
     transition: all 0.5s ease;
     margin: 1rem;
     padding: 1rem;
-  }
+}
   
-  .links > a {
+.links > a {
     color: #0ff;
     font-size: 2rem;
     position: relative;
     z-index: 2;
-  }
+}
+
+.theory{
+    background-color: black;
+}
+
+.example{
+    background-color: darkgray;
+}
   
 .link:hover {
     transform: scale(1.05);
@@ -117,7 +124,7 @@ a{
 }
 
 .img{
-    width: 80%;
+    max-width: 80%;
     margin: auto;
     padding: 1rem;
     display: flex;
@@ -153,7 +160,7 @@ a{
     justify-content: center;
 }
 
-.option-buttons > button{
+.button{
     background: #111;
     color:white;
     min-width: 3rem;
