@@ -12,19 +12,38 @@
         <div class="sidebar">
             <h2>Graphen und Bäume</h2>
             <p>
-                Graphen sind eine abstrakte Struktur, die es uns erlaubt, Objekte (als Knoten) und deren Verbindungen (als Kanten zwischen den Knoten) einfach darzustellen.
+                Graphen sind eine abstrakte Struktur, die es uns erlaubt, Zustände (als Knoten) und deren Zusammenhänge (als Kanten zwischen den Knoten) einfach darzustellen.
+            </p>
+            <p>
                 In der Informatik finden Graphen für unterschiedlichste Probleme eine Verwendung.
                 Wir betrachten für unseren Zweck das "Pathfinding" Problem. 
                 Wir versuchen (oftmals so schnell wie möglich) von einem Punkt A zu einem Punkt B zu gelangen.
             </p>
             <div class="banner">
-                Ein <b>Graph</b> ist eine aus Knoten und Kanten bestehende Struktur.
+                Ein <b>Graph</b> ist eine aus Knoten (Kreise) und Kanten (Linien zwischen Kreisen) bestehende Struktur.
             </div>
             <p>
-                Diese Visualisierung rechts zeigt auf der oberen Hälfte einen solchen Graphen.
+                Die Visualisierung rechts zeigt auf der oberen Hälfte einen solchen Graphen.
                 Der grüne Knoten ist immer der <span style="color: green;"><b>Startknoten</b></span>. Der rote ist der <span style="color: red;"><b>Zielknoten</b></span>.
-                Das Traversieren einer Kante, also das ändern des Zustandes, ist mit Kosten verbunden, welche neben der jeweiligen Kante angegeben sind.
-                Das Ziel hier konkret ist es, jeweils so schnell wie möglich vom Startknoten zum Zielknoten zu gelangen.
+                Jeder Knoten steht hier für einen Zustand.
+                Der Startknoten bedeutet verdeutscht also: "Ich bin Zuhause".
+                Von diesem Zustand kann ich mich in einer Minute zu den folgenden Zuständen bewegen:
+                <ul>
+                    <li>
+                        "Ich bin auf der Gartenstrasse"
+                    </li>
+                    <li>
+                        "Ich bin auf der Kriegackerstrasse"
+                    </li>
+                    <li>
+                        "Ich bin auf der Gründenstrasse"
+                    </li>
+                </ul>
+                Die Relationen sind durch Kanten angegeben.
+            </p>
+            <p>
+                Das Traversieren einer Kante, also das Ändern des Zustandes, ist mit Kosten verbunden, welche neben der jeweiligen Kante angegeben sind.
+                Das Ziel hier konkret ist es, jeweils so schnell wie möglich vom <span style="color: green;"><b>Startknoten</b></span> "Zuhause" zum  <span style="color: red;"><b>Zielknoten</b></span> "Schule" zu gelangen.
             </p>
             <p>
                 In der unteren Hälfte ist der Suchbaum des Graphen abgebildet.
@@ -33,8 +52,14 @@
                 In einem Baum können Pfade durch einen Graphen abgebildet werden.
             </p>
             <div class="banner">
-                Ein <b>Suchbaum</b> ist ein spezieller gerichteter Graph, der als baumartige Struktur organisiert ist, wobei jeder Knoten maximal einen Elternknoten und mehrere Kindknoten haben kann, um eine hierarchische Anordnung der Daten zu ermöglichen.
+                Ein <b>Suchbaum</b> ist ein gerichteter Graph (gerichtet bedeutet, dass die Kanten nur in eine Richtung zeigen), der als baumartige Struktur organisiert ist, wobei jeder Knoten maximal einen Elternknoten und mehrere Kindknoten haben kann, um eine hierarchische Anordnung der Daten zu ermöglichen.
             </div>
+            <h3>Eigenschaften</h3>
+            <ul>
+                <li>In Graphen kommt jeder Zustand nur ein einziges mal vor.</li>
+                <li>In Bäumen kann jeder Zustand beliebig oft vorkommen, da man einen Zustand möglicherweise über verschiedene Wege erreichen kann.</li>
+                <li>Die Tiefe eines Baumes gibt an, wieviele "Schritte" man vom Startzustand vornimmt.</li>
+            </ul>
             <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadGraphAndTreeData('../graphs/graph0.json',maxTreeDepth=3)">Einführungsbeispiel laden</button>
             <p>
                 Im Einführungsbeispiel ist ein möglicher Schulweg ans Gymnasium Muttenz abgebildet. 
