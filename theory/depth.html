@@ -11,14 +11,14 @@
     <div class="container">
         <div class="sidebar">
             <h2>Tiefensuche</h2>
-            <div class="banner">
-                Die <b>Tiefensuche</b> (Depth-First Search, DFS) durchsucht einen Graphen, indem sie so tief wie möglich in einen Pfad eintaucht, bevor sie zurückgeht und alternative Wege erkundet.
-            </div>
-            <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadTreeData('../trees/tree0.json',maxTreeDepth=3)">Einführungsbeispiel laden</button>
             <p>
                 Die Tiefensuche (DFS) ist ein Algorithmus zur Durchsuchung oder Traversierung eines Baumes oder Graphen.
                 Im Gegensatz zur Breitensuche geht DFS so tief wie möglich in eine Richtung, bevor es zurückgeht und andere Pfade erkundet.
             </p>
+            <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadTreeData('../trees/tree0.json',maxTreeDepth=3);hideGraph()">Einführungsbeispiel laden</button>
+            <div class="banner">
+                Die <b>Tiefensuche</b> (Depth-First Search, DFS) durchsucht einen Graphen, indem sie so tief wie möglich in einen Pfad eintaucht, bevor sie zurückgeht und alternative Wege erkundet.
+            </div>
             <p>
                 Beispiel anhand des gegebenen Baumes:
                 Der Baum beginnt mit dem Startknoten S (1).
@@ -44,7 +44,7 @@
                 <li>Kein garantierter kürzester Pfad: Da DFS nicht systematisch alle Ebenen durchläuft, findet es nicht unbedingt den kürzesten Weg zum Ziel.</li>
             </ul>
             <h3>Beispiel 1</h3>
-            <button class="link button" onclick="loadTreeData('../trees/tree1.json',maxTreeDepth=3)">Beispiel 1 laden</button>
+            <button class="link button" onclick="loadTreeData('../trees/tree1.json',maxTreeDepth=3);hideGraph()">Beispiel 1 laden</button>
             <h3>Übungen 1</h3>
             <ol>
                 <li>Zeichnen Sie den Graphen, der aus welchem der dargestellte Baum abgeleitet werden könnte. Was fällt Ihnen auf?</li>
@@ -52,6 +52,11 @@
                 <li>
                     Der im Beispiel abgebildete Baum ist nicht vollständig, weil bereits einige Knoten gepruned wurden.
                     Was passiert, wenn Sie im Graphen die Tiefensuche von S aus beginnen und als Regel immer den Knoten als nächstes öffnen, welcher im Alphabet zuerst kommt?
+                    Schalten Sie dazu beim Baum rechts Pruning aus.
+                </li>
+                <li>
+                    Was passiert, wenn Sie im Graphen die Tiefensuche von S aus beginnen und als Regel immer den Knoten als nächstes öffnen, welcher im Alphabet an zweiter Stelle kommt?
+                    Schalten Sie dazu beim Baum rechts Pruning aus.
                 </li>
                 <li>
                     Falls Sie mit der Tiefensuche eine Lösung zum Ziel finden, ist es jeweils zwingend die kürzeste Lösung zum Ziel?
@@ -62,6 +67,7 @@
                 <li>
                     Wie könnten Sie einen Baum prunen, damit Sie immer die Tiefensuche anwenden könnten?
                     Ist das überhaupt möglich?
+                    Schalten Sie dazu Pruning aus, und setzen Sie die Tiefe des Baumes auf 4.
                 </li>
             </ol>
             <a class="link button" href="../index.html">Zurück zum Menu</a>
