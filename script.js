@@ -89,6 +89,16 @@ function drawGraph(graphData = lastGraphData) {
     });
 }
 
+function hideGraph() {
+    const container = document.getElementById("graph-container");
+    container.style.display = "none";
+}
+
+function hideTree() {
+    const container = document.getElementById("tree-container");
+    container.style.display = "none";
+}
+
 function drawTreeFromGraph(graphData = lastGraphData) {
     const container = document.getElementById("tree-container");
     const startNode = graphData.nodes.find(node => node.start);

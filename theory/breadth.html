@@ -11,15 +11,15 @@
     <div class="container">
         <div class="sidebar">
             <h2>Breitensuche</h2>
-            <div class="banner">
-                Die <b>Breitensuche</b> Die (Breadth-First Search, BFS) durchsucht einen Graphen schrittweise Ebene für Ebene, indem sie zuerst alle direkten Nachbarn eines Knotens besucht, bevor sie zu deren Nachfolgern weitergeht.
-            </div>
-            <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadTreeData('../trees/tree0.json',maxTreeDepth=3)">Einführungsbeispiel laden</button>
             <p>
                 Die Breitensuche (BFS) ist ein Algorithmus zur Durchsuchung oder Traversierung eines Baumes oder Graphen.
                 Dabei werden alle Knoten einer Ebene zuerst besucht, bevor die nächste Ebene durchlaufen wird.
                 BFS eignet sich besonders gut zur Suche des kürzesten Pfads in ungewichteten Graphen, also dann, wenn alle Kanten gleich teuer sind.
             </p>
+            <div class="banner">
+                Die <b>Breitensuche</b> Die (Breadth-First Search, BFS) durchsucht einen Graphen schrittweise Ebene für Ebene, indem sie zuerst alle direkten Nachbarn eines Knotens besucht, bevor sie zu deren Nachfolgern weitergeht.
+            </div>
+            <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadTreeData('../trees/tree0.json',maxTreeDepth=3);hideGraph()">Einführungsbeispiel laden</button>
             <p>
                 Beispiel anhand des gegebenen Baumes:
                 Der Baum beginnt mit dem Startknoten S (1).
@@ -44,20 +44,23 @@
             <h3>Übungen 0</h3>
             <ol>
                 <li>Zeichnen Sie den Graphen, aus welchem der dargestellte Baum abgeleitet werden könnte. Was fällt Ihnen auf?</li>
+                <button class="link button" onclick="loadGraphData('../trees/tree0.json')">Graphen laden</button>
             </ol>
             <h3>Beispiel 1</h3>
-            <button class="link button" onclick="loadTreeData('../trees/tree1.json',maxTreeDepth=3)">Beispiel 1 laden</button>
+            <button class="link button" onclick="loadTreeData('../trees/tree1.json',maxTreeDepth=3);hideGraph()">Beispiel 1 laden</button>
             <h3>Übungen 1</h3>
+            <ol>
+                <li>Zeichnen Sie den Graphen, der aus welchem der dargestellte Baum abgeleitet werden könnte. Was fällt Ihnen auf?</li>
+                <button class="link button" onclick="loadGraphData('../trees/tree1.json')">Graphen laden</button>
+            </ol>
             <p>
-                Dieses Beispiel zeigt einen Baum, welcher nicht vollständig ist, da er geprunt wurde.
+                Die gezeigten Bäume, sind grundsätzlich nicht vollständig.
                 Es wurden also einige Knoten weggeschnitten, um den Baum zu verkleinern.
             </p>
             <div class="banner">
                 Als <b>Pruning</b> bezeichnet man das gezielte Abschneiden von Knoten oder Pfaden in einem Baum, um unnötige Berechnungen zu vermeiden und die Effizienz zu steigern, z. B. durch das Entfernen von Zyklen oder offensichtlichen Sackgassen.
             </div>
-            <ol>
-                <li>Zeichnen Sie den Graphen, der aus welchem der dargestellte Baum abgeleitet werden könnte. Was fällt Ihnen auf?</li>
-                <button class="link button" onclick="loadGraphData('../trees/tree1.json')">Graphen laden</button>
+            <ol start="2">
                 <li>Was ist der schnellste Weg zum Ziel? Begründen Sie, warum Sie wissen, das es der schnellste Weg ist.</li>
                 <li>
                     Zeichnen Sie den Baum ohne Pruning auf ein Blatt Papier bis zu einer Tiefe von 3 (3 Schritte vom Start).
@@ -66,6 +69,8 @@
                 </li>
                 <li>
                     Welche Teile des Baumes würden Sie prunen und warum?
+                </li>
+                <li>
                     Versuchen Sie herauszufinden, nach welchen Regeln der Baum rechts gepruned wurde, indem Sie die Bäume mit und ohne Pruning vergleichen.
                 </li>
             </ol>
@@ -73,13 +78,21 @@
             <button class="link button" onclick="loadGraphAndTreeData('../graphs/chess.json',maxTreeDepth=3)">Schachbeispiel laden</button>
             <p>
                 Wir betrachten einen Graphen, welcher auf einem Viertel eines Schachbretts alle möglichen Wege vom Feld A1 bis Feld D1 abbildet.
+                Intuitiv ist dieses Problem einfach zu verstehen.
+                Es gibt jedoch bereits extrem viele Möglichkeiten um vom Start zum Ziel zu gelangen.
             </p>
             <ol>
                 <li>
                     Suchen Sie den schnellsten Weg von A1 nach D4 im Graphen und dann im Baum.
                 </li>
                 <li>
-                    Der Suchbaum ist riesig, wie würden Sie den Baum sinnvoll prunen, um die Suche zu vereinfachen?
+                    Überlegen Sie sich, wieviele Mögliche Wege es gibt, um in ier Zügen von A1 nach D4 zu gelangen.
+                    Validieren Sie dann Ihre Vermutung, indem Sie die Tiefe auf 4 ändern und zählen, wie oft das Ziel auf dieser Tiefe vorkommt.
+                    Schalten Sie dann bei einer Tiefe von 4 Pruning aus, um ein Gefühl zu bekommen, wie gross diese Problem wäre, wenn Sie nicht Prunen.
+                    <span style="color: red;"><b>Achtung: Ihr Browser könnte bei diesem Schritt abstürzen, da Sie grosse Mengen an Daten laden. Falls dies passiert, schliessen Sie den Tab und öffnen Sie ihn erneut.</b>
+                </li>
+                <li>
+                    Der Suchbaum ist trotz pruning bereits nach einer Tiefe von drei sehr gross, wie würden Sie den Baum sinnvoll weiter prunen, um die Suche zu vereinfachen?
                 </li>
             </ol>
             <a class="link button" href="../index.html">Zurück zum Menu</a>
