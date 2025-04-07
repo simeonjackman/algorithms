@@ -15,6 +15,8 @@ body {
     width: 30%;
     min-width: 20rem;
     overflow-y: scroll;
+    scrollbar-color: white lightgray;
+    scrollbar-width: thin;
     background-color: #f4f4f4;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -23,6 +25,8 @@ body {
 .content{
     width: 100%;
     overflow-y: auto;
+    scrollbar-color: white lightgray;
+    scrollbar-width: thin;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -51,12 +55,12 @@ button:hover{
 }
 
 .banner{
-    border-radius: 1rem;
     padding: 1rem;
     margin-top: .5rem;
     margin-bottom: .5rem;
     text-align: center;
-    background-color: lightblue;
+    background-color: lightgray;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .links{
