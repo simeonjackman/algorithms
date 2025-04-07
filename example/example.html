@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Türme von Hanoi</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Eigenes Beispiel</title>
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="loadGraphAndTreeData('./graphs/hanoi.json',maxTreeDepth=5)">
+<body onload="loadGraphAndTreeData('../graphs/example.json')">
     <div class="container">
         <div class="sidebar">
             <h2>Graph JSON Editor</h2>
@@ -15,7 +15,7 @@
                 <button  class="link button" onclick="updateGraphData()">Aktualisieren</button>
                 <textarea id="json-editor"></textarea>
             </div>
-            <a class="link button" href="index.html">Zurück zum Menu</a>
+            <a class="link button" href="../index.html">Zurück zum Menu</a>
         </div>
         <div class="content">
             <h2>Graph</h2>
@@ -34,6 +34,6 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

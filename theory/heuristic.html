@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heuristiken</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="loadGraphAndTreeData('./graphs/graph1.json',maxTreeDepth=3)">
+<body onload="loadGraphAndTreeData('../graphs/graph1.json',maxTreeDepth=3)">
     <div class="container">
         <div class="sidebar">
             <h2>Heuristiken</h2>
@@ -18,7 +18,7 @@
             </p>
             
             <h3>Beispiel 1 - Heuristik mit Anzahl Knotensprüngen</h3>
-            <button class="link button" onclick="loadGraphAndTreeData('./graphs/graph1.json',maxTreeDepth=3)">Beispiel 1 laden</button>
+            <button class="link button" onclick="loadGraphAndTreeData('../graphs/graph1.json',maxTreeDepth=3)">Beispiel 1 laden</button>
             
             <p>In dieser Übung betrachten wir eine Heuristik, die die Anzahl der verbleibenden Sprünge zum Ziel schätzt.
             Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel notwendig sind.</p>
@@ -33,7 +33,7 @@
                 <li>Ist dieser Weg der schnellste Weg? Begründen Sie.</li>
             </ol>
             <h3>Beispiel 2 - Heuristik mit Distanz zum Ziel</h3>
-            <button class="link button" onclick="loadGraphAndTreeData('./graphs/graph2.json',maxTreeDepth=3)">Beispiel 2 laden</button>
+            <button class="link button" onclick="loadGraphAndTreeData('../graphs/graph2.json',maxTreeDepth=3)">Beispiel 2 laden</button>
             <p>
                 In dieser Übung betrachten wir eine Heuristik, die die verbleibende Distanz zum Ziel schätzt.
                 Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel kosten.
@@ -58,7 +58,7 @@
                 <li>Wie würden Sie versuchen, denn kürzesten Weg zum Ziel hier zu berechnen?</li>
                 <li>Was für eine Heuristik könnten Sie hier verwenden, damit Sie ohne alles durchzuprobieren eine möglichst gute Lösung finden könnten?</li>
             </ol>
-            <a class="link button" href="index.html">Zurück zum Menu</a>
+            <a class="link button" href="../index.html">Zurück zum Menu</a>
         </div>
         <div class="content">
             <h2>Graph</h2>
@@ -82,6 +82,6 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiefensuche</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="loadTreeData('./trees/tree0.json',maxTreeDepth=3)">
+<body onload="loadTreeData('../trees/tree0.json',maxTreeDepth=3)">
     <div class="container">
         <div class="sidebar">
             <h2>Tiefensuche</h2>
             <div class="banner">
                 Die <b>Tiefensuche</b> (Depth-First Search, DFS) durchsucht einen Graphen, indem sie so tief wie möglich in einen Pfad eintaucht, bevor sie zurückgeht und alternative Wege erkundet.
             </div>
-            <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadTreeData('./trees/tree0.json',maxTreeDepth=3)">Einführungsbeispiel laden</button>
+            <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadTreeData('../trees/tree0.json',maxTreeDepth=3)">Einführungsbeispiel laden</button>
             <p>
                 Die Tiefensuche (DFS) ist ein Algorithmus zur Durchsuchung oder Traversierung eines Baumes oder Graphen.
                 Im Gegensatz zur Breitensuche geht DFS so tief wie möglich in eine Richtung, bevor es zurückgeht und andere Pfade erkundet.
@@ -44,11 +44,11 @@
                 <li>Kein garantierter kürzester Pfad: Da DFS nicht systematisch alle Ebenen durchläuft, findet es nicht unbedingt den kürzesten Weg zum Ziel.</li>
             </ul>
             <h3>Beispiel 1</h3>
-            <button class="link button" onclick="loadTreeData('./trees/tree1.json',maxTreeDepth=3)">Beispiel 1 laden</button>
+            <button class="link button" onclick="loadTreeData('../trees/tree1.json',maxTreeDepth=3)">Beispiel 1 laden</button>
             <h3>Übungen 1</h3>
             <ol>
                 <li>Zeichnen Sie den Graphen, der aus welchem der dargestellte Baum abgeleitet werden könnte. Was fällt Ihnen auf?</li>
-                <button class="link button" onclick="loadGraphData('./trees/tree1.json')">Graphen laden</button>
+                <button class="link button" onclick="loadGraphData('../trees/tree1.json')">Graphen laden</button>
                 <li>
                     Der im Beispiel abgebildete Baum ist nicht vollständig, weil bereits einige Knoten gepruned wurden.
                     Was passiert, wenn Sie im Graphen die Tiefensuche von S aus beginnen und als Regel immer den Knoten als nächstes öffnen, welcher im Alphabet zuerst kommt?
@@ -64,7 +64,7 @@
                     Ist das überhaupt möglich?
                 </li>
             </ol>
-            <a class="link button" href="index.html">Zurück zum Menu</a>
+            <a class="link button" href="../index.html">Zurück zum Menu</a>
         </div>
         <div class="content">
             <h2>Baum</h2>
@@ -82,6 +82,6 @@
             <div id="graph-container" class="canvas" style="display:none;"></div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
