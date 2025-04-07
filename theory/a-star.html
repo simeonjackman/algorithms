@@ -7,18 +7,52 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="">
+<body onload="loadGraphData('../graphs/a-star.json')">
     <div class="container">
         <div class="sidebar">
             <h2>A*</h2>
-            <p>A* ist ein Suchalgorithmus, der wie Dijkstra den kürzesten Pfad sucht, dabei aber zusätzlich eine Heuristik verwendet, um gezielter in Richtung Ziel zu suchen.</p>
+            <p>
+                A* ist ein Suchalgorithmus, der wie Dijkstra den kürzesten Pfad sucht, dabei aber zusätzlich eine Heuristik verwendet, um gezielter in Richtung Ziel zu suchen.
+            </p>
+            <p>
+                Um A* durchzuführen, werden für die Priorisierung eines Knoten n drei Metriken verwendet:
+            </p>
+            <ul>
+                <li>
+                    <b>g(n)</b>: ist die Kosten (z.B. Distanz) die aufgewendet wurden, um n zu erreichen.
+                </li>
+                <li>
+                    <b>h(n)</b>: ist die Heuristik von n, also die Schätzung der Kosten von n bis zum Ziel.
+                </li>
+                <li>
+                    <b>f(n)</b>: ist definiert als g(n) + h(n) und Bewertet jeden Knoten (inklusive Weg zum Knoten).
+                </li>
+            </ul>
             <div class="banner">
                 <b>A*</b>  untersucht den Knoten n, bei welchem <i>f(n)  = g(n) + h(n)</i> minimal ist.
-                <i>g(n)</i> sind dabei die Kosten vom Start bis <i>n</i> und <i>h(n)</i> ist die heuristische Schätzung von <i>n</i> bis zum Ziel.
             </div>
+            <h3>Beispiel 1 - Heuristik mit Anzahl Knotensprüngen</h3>
+            <button class="link button" onclick="loadGraphData('../graphs/a-star.json',maxTreeDepth=3)">Beispiel 1 laden</button>
+            <p>Wir eine Heuristik, die die Anzahl der verbleibenden Sprünge zum Ziel schätzt.
+            Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel notwendig sind.</p>
+            <h3>Übungen 1</h3>
+            <ol>
+                <li>
+                    Wenden Sie A* an und zeichnen Sie den Baum, welcher daraus resultiert.
+                    In welcher Reihenfolge werden die verschiedenen Pfade abgesucht?
+                    <div class="flex">
+                        <button class="link button" onclick="loadTreeData('../trees/a-star.json')">Zwischenschritt laden</button>
+                        <button class="link button" onclick="loadTreeData('../trees/a-star2.json')">Lösung laden</button>
+                    </div>                
+                </li>
+            </ol>
             <a class="link button" href="../index.html">Zurück zum Menu</a>
         </div>
         <div class="content">
+            <h2>Graph</h2>
+            <div id="graph-container" class="canvas"></div>
+            <h2>Baum</h2>
+            <div id="tree-container" class="canvas"></div>
         </div>
     </div>
     <script src="../script.js"></script>

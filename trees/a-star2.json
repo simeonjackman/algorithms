@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    { "id": 1, "label": "S\nf=2\ng=0", "heuristic": 2, "start": true },
+    { "id": 2, "label": "A\nf=4\ng=3", "heuristic": 1 },
+    { "id": 3, "label": "B\nf=3\ng=1", "heuristic": 2 },
+    { "id": 4, "label": "G\nf=7\ng=7", "heuristic": 0, "end": true },
+    { "id": 5, "label": "B\nf=6\ng=4", "heuristic": 2 },
+    { "id": 6, "label": "S\nf=8\ng=6", "heuristic": 2, "start": true  },
+    { "id": 7, "label": "A\nf=3\ng=2", "heuristic": 1 },
+    { "id": 8, "label": "S\nf=4\ng=2", "heuristic": 2, "start": true  },
+    { "id": 9, "label": "A\nf=6\ng=5", "heuristic": 1 },
+    { "id": 10, "label": "B\nf=7\ng=5", "heuristic": 2 },
+    { "id": 11, "label": "B\nf=5\ng=3", "heuristic": 2 },
+    { "id": 12, "label": "S\nf=7\ng=5", "heuristic": 2, "start": true  },
+    { "id": 13, "label": "G\nf=6\ng=6", "heuristic": 0, "end": true },
+    { "id": 14, "label": "A\nf=10\ng=9", "heuristic": 1 },
+    { "id": 15, "label": "B\nf=9\ng=7", "heuristic": 2 },
+    { "id": 16, "label": "A\nf=7\ng=5", "heuristic": 1 },
+    { "id": 17, "label": "S\nf=7\ng=5", "heuristic": 2, "start": true  }
+  ],
+  "edges": [
+    { "from": 1, "to": 3, "value": 1 },
+    { "from": 1, "to": 2, "value": 3 },
+    { "from": 2, "to": 4, "value": 4 },
+    { "from": 2, "to": 5, "value": 1 },
+    { "from": 2, "to": 6, "value": 3 },
+    { "from": 3, "to": 7, "value": 1 },
+    { "from": 3, "to": 8, "value": 1 },
+    { "from": 8, "to": 9, "value": 3 },
+    { "from": 8, "to": 10, "value": 1 },
+    { "from": 7, "to": 11, "value": 1 },
+    { "from": 7, "to": 12, "value": 3 },
+    { "from": 7, "to": 13, "value": 4 },
+    { "from": 6, "to": 14, "value": 3 },
+    { "from": 6, "to": 15, "value": 1 },
+    { "from": 5, "to": 16, "value": 1 },
+    { "from": 5, "to": 17, "value": 1 }
+  ]
+}
