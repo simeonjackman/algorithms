@@ -35,7 +35,9 @@ async function loadGraphData(filename) {
 
 async function loadTreeData(filename,maxTreeDepth=5) {
     maxDepth = maxTreeDepth;
-    document.getElementById("max-depth").innerHTML = maxTreeDepth;
+    if(document.getElementById("max-depth")){
+        document.getElementById("max-depth").innerHTML = maxTreeDepth;
+    }
     try {
         const graphData = await loadJSON(filename);
         drawTreeFromGraph(graphData);
@@ -101,6 +103,7 @@ function hideTree() {
 
 function drawTreeFromGraph(graphData = lastGraphData) {
     const container = document.getElementById("tree-container");
+    container.style.display = "block";
     const startNode = graphData.nodes.find(node => node.start);
     const endNodes = graphData.nodes.filter(node => node.end);
     if (!startNode || !endNodes) return console.error("Start oder Endknoten fehlt!");

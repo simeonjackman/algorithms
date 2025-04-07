@@ -1,0 +1,26 @@
+{
+  "nodes": [
+    { "id": 1, "label": "S", "heuristic": "?", "start": true },
+    { "id": 2, "label": "B", "heuristic": "?" },
+    { "id": 3, "label": "C", "heuristic": "?" },
+    { "id": 4, "label": "D", "heuristic": "7" },
+    { "id": 5, "label": "A", "heuristic": "?" },
+    { "id": 6, "label": "F", "heuristic": 4 },
+    { "id": 7, "label": "E", "heuristic": 3 },
+    { "id": 8, "label": "G", "heuristic": 0, "end": true }
+  ],
+  "edges": [
+    { "from": 1, "to": 2, "value": 3 },
+    { "from": 1, "to": 3, "value": 4 },
+    { "from": 2, "to": 4, "value": 2 },
+    { "from": 3, "to": 5, "value": 5 },
+    { "from": 4, "to": 6, "value": 3 },
+    { "from": 5, "to": 4, "value": 2 }, 
+    { "from": 6, "to": 8, "value": 4 },
+    { "from": 7, "to": 8, "value": 3 },
+    { "from": 2, "to": 5, "value": 6 },
+    { "from": 3, "to": 6, "value": 4 },
+    { "from": 4, "to": 7, "value": 5 },
+    { "from": 5, "to": 6, "value": 3 }
+  ]
+}

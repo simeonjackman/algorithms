@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="">
+<body onload="loadGraphData('../graphs/dijkstra0.json',maxTreeDepth=3)">
     <div class="container">
         <div class="sidebar">
             <h2>Dijkstra's Algorithmus</h2>
@@ -18,17 +18,21 @@
             <h2>Funktionsweise</h2>
             <ol>
                 <li>
-                    <b>Initialisierung:</b> Weise allen Knoten die beiden Eigenschaften (Attribute) „Distanz“ und „Vorgänger“ zu.
+                    <b>Initialisierung:</b> Weise allen Knoten die beiden Eigenschaften „Distanz“ und „Vorgänger“ zu.
+                    (Wir bilden den Vorgängerknoten direkt im Suchbaum ab, und fügen die Distanz als Information im Knoten hinzu.)
                     Initialisiere die Distanz im Startknoten mit 0 und in allen anderen Knoten mit "unendlich".
                 </li>
                 <li>
-                    Solange es noch unbesuchte Knoten gibt, wähle darunter denjenigen mit minimaler (aufsummierter) Distanz aus und
+                    Solange es noch unbesuchte Knoten gibt, tue folgendes:
                     <ol>
                         <li>
-                            Speichere, dass dieser Knoten schon besucht wurde.
+                            <b>Knoten auswählen:</b> Wähle darunter denjenigen mit minimaler (aufsummierter) Distanz aus.
                         </li>
                         <li>
-                            Berechne für alle noch unbesuchten Nachbarknoten die Gesamtdistanz des Pfades über die Summe des jeweiligen Kantengewichtes und der bereits berechneten Distanz des Pfades vom Startknoten zum aktuellen Knoten.
+                            <b>Speichern:</b> Speichere, dass dieser Knoten schon besucht wurde.
+                        </li>
+                        <li>
+                            <b>Berechnen:</b> Berechne für alle noch unbesuchten Nachbarknoten die Gesamtdistanz des Pfades über die Summe des jeweiligen Kantengewichtes und der bereits berechneten Distanz des Pfades vom Startknoten zum aktuellen Knoten.
                         </li>
                         <li>
                             <b>Update:</b> Ist dieser Wert für einen Knoten kleiner als die dort gespeicherte bisherige aufsummierte Distanz des Pfades, aktualisiere sie und setze den aktuellen Knoten als Vorgänger.
@@ -36,9 +40,67 @@
                     </ol>
                 </li>
             </ol>
+            <h3>Beispiel 1 - Dijkstra</h3>
+            <button class="link button" onclick="loadGraphData('../graphs/dijkstra0.json',maxTreeDepth=3); hideTree()">Beispiel 1 laden</button>
+            <ol>
+                <li>
+                    Wir initialisieren unser Suchproblem.
+                    <button class="link button" onclick="loadGraphData('../graphs/dijkstra1.json'); hideTree()">Schritt anzeigen</button>
+                </li>
+                <li>
+                    Wir wählen als nächstes den Knoten mit der geringsten Entfernung (0), Knoten S.
+                    Wir speichern, dass wir S besucht haben und berechnen dann für alle Nachbarn die Gesamtdistanz.
+                    Vom Startknoten aus entspricht die Gesamtdistanz eifach den Kosten der Kanten zum jeweiligen Zustand.
+                    Wir fügen dann diese Werte den Nachbarn von S: B und C hinzu.
+                    <button class="link button" onclick="loadGraphData('../graphs/dijkstra2.json'); loadTreeData('../trees/dijkstra2.json', maxTreeDepth=1)">Schritt anzeigen</button>
+                </li>
+                <li>
+                    Wir wählen als nächstes den unbesuchten Knoten mit der geringsten Entfernung (3), Knoten B.
+                    Wir speichern, dass wir B besucht haben (Besucht: S, B) und berechnen dann für alle Nachbarn die Gesamtdistanz.
+                    Wir fügen dann diese Werte den Nachbarn von B: A und D hinzu.
+                    <button class="link button" onclick="loadGraphData('../graphs/dijkstra3.json'); loadTreeData('../trees/dijkstra3.json', maxTreeDepth=2)">Schritt anzeigen</button>
+                </li>
+                <li>
+                    Wir wählen wieder den Knoten mit der geringsten Entfernung (4), Knoten C.
+                    Wir speichern, dass wir C besucht haben (Besucht: S, B, C) und berechnen dann für alle Nachbarn die Gesamtdistanz.
+                    Wir fügen dann diese Werte den Nachbarn von B: A hinzu, weil der neu berechnete Wert kleiner ist, als der Wert der bereits bei A steht.
+                    Wir haben herausgefunden, dass wir schneller über C nach gelangen können als über B.
+                    <button class="link button" onclick="loadGraphData('../graphs/dijkstra4.json'); loadTreeData('../trees/dijkstra4.json', maxTreeDepth=2)">Schritt anzeigen</button>
+                </li>
+                <li>
+                    Wir wählen wieder den Knoten mit der geringsten Entfernung (6), Knoten A oder D.
+                    Wir nehmen A, weil er zuerst im Alphabet vorkommt.
+                    Wir speichern, dass wir A besucht haben (Besucht: S, B, C, A) und berechnen dann für alle Nachbarn die Gesamtdistanz.
+                    Wir fügen dann diese Werte den Nachbarn von A: G hinzu, weil da noch kein Wert steht.
+                    Wir haben nun einen Weg vom Start zum Ziel gefunden.
+                    <button class="link button" onclick="loadGraphData('../graphs/dijkstra5.json'); loadTreeData('../trees/dijkstra5.json', maxTreeDepth=3)">Schritt anzeigen</button>
+                </li>
+                <li>
+                    Wir wählen wieder den Knoten mit der geringsten Entfernung (6), D.
+                    Wir speichern, dass wir D besucht haben (Besucht: S, B, C, D).
+                    Jetzt haben wir alle Knoten besucht.
+                    Wir berechnen dann für alle Nachbarn die Gesamtdistanz.
+                    Wir fügen dann diese Werte den Nachbarn von D: G hinzu, weil der neu berechnete Wert kleiner ist, als der Wert der bereits bei G steht.
+                    Wir haben nun einen kürzeren Weg vom Start zum Ziel gefunden.
+                    <button class="link button" onclick="loadGraphData('../graphs/dijkstra6.json'); loadTreeData('../trees/dijkstra6.json', maxTreeDepth=3)">Schritt anzeigen</button>
+                </li>
+            </ol>
+            <p>
+                Der Suchbaum zeigt uns nun den schnellsten Weg vom Startknoten zu jedem anderen Knoten im Graphen.
+            </p>
+            <h3>Beispiel 2</h3>
+            <button class="link button" onclick="loadGraphData('../graphs/graph2ex.json'); hideTree()">Beispiel 2 laden</button>
+            <h3>Übungen 2</h3>
+            <ol>
+                <li>Schreiben Sie diese Beispiel auf Papier ab und finden Sie den schnellsten Weg vom Startknoten zum Zielknoten mit Dijkstra's Algorithmus. </li>
+                <button class="link button" onclick="loadGraphData('../graphs/graph2sol.json'); hideTree()">Lösung laden</button>
+            </ol>
             <a class="link button" href="../index.html">Zurück zum Menu</a>
         </div>
         <div class="content">
+            <h2>Graph</h2>
+            <div id="graph-container" class="canvas"></div>
+            <div id="tree-container" class="canvas" style="display:none;"></div>
         </div>
     </div>
     <script src="../script.js"></script>
