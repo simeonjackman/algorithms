@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijkstra's Algorithmus</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+</head>
+<body onload="">
+    <div class="container">
+        <div class="sidebar">
+            <h2>Dijkstra's Algorithmus</h2>
+            <p>
+                Dijkstras Algorithmus ist ein Verfahren zur Bestimmung der kürzesten Wege von einem Startknoten zu allen anderen Knoten in einem gewichteten Graphen mit nicht-negativen Kantenkosten.
+                Er arbeitet, indem er schrittweise die günstigsten Pfade ausgehend vom Startknoten erweitert und dabei die bisher kürzesten bekannten Distanzen aktualisiert.
+            </p>
+            <h2>Funktionsweise</h2>
+            <ol>
+                <li>
+                    <b>Initialisierung:</b> Weise allen Knoten die beiden Eigenschaften (Attribute) „Distanz“ und „Vorgänger“ zu.
+                    Initialisiere die Distanz im Startknoten mit 0 und in allen anderen Knoten mit "unendlich".
+                </li>
+                <li>
+                    Solange es noch unbesuchte Knoten gibt, wähle darunter denjenigen mit minimaler (aufsummierter) Distanz aus und
+                    <ol>
+                        <li>
+                            Speichere, dass dieser Knoten schon besucht wurde.
+                        </li>
+                        <li>
+                            Berechne für alle noch unbesuchten Nachbarknoten die Gesamtdistanz des Pfades über die Summe des jeweiligen Kantengewichtes und der bereits berechneten Distanz des Pfades vom Startknoten zum aktuellen Knoten.
+                        </li>
+                        <li>
+                            <b>Update:</b> Ist dieser Wert für einen Knoten kleiner als die dort gespeicherte bisherige aufsummierte Distanz des Pfades, aktualisiere sie und setze den aktuellen Knoten als Vorgänger.
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+            <a class="link button" href="../index.html">Zurück zum Menu</a>
+        </div>
+        <div class="content">
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>
