@@ -93,7 +93,12 @@
             <h3>Übungen 2</h3>
             <ol>
                 <li>Schreiben Sie diese Beispiel auf Papier ab und finden Sie den schnellsten Weg vom Startknoten zum Zielknoten mit Dijkstra's Algorithmus. </li>
-                <button class="link button" onclick="loadGraphData('../graphs/graph2sol.json'); hideTree()">Lösung laden</button>
+                <button class="link button" onclick="loadGraphData('../graphs/graph2sol.json'); loadTreeData('../trees/graph2sol.json',maxTreeDepth=3)">Lösung laden</button>
+                <li>
+                    Versuchen Sie zu erklären, was eigentlich der Unterschied zwischen Dijkstra's Algorithmus und der Breitensuche ist.
+                    Sind die Voraussetzungen gleich?
+                    Welche Arten von Graphen können nicht optimal mit der Breitensuche, aber mit Dijkstra's Algorithmus gelöst werden?
+                </li>
             </ol>
             <a class="link button" href="../index.html">Zurück zum Menu</a>
         </div>
