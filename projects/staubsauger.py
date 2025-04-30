@@ -106,17 +106,19 @@ def search(start):
             heuristic_value = 0
             if (x, y) in visited:
                 continue
-            if (x, y) in current.d:
-                # Zustand ist Dreck, wir haben also ein gesaugt
-                # Der Dreck wird entfernt
-                updated_dirt = copy.deepcopy(current.d)
-                updated_dirt.remove((x,y))
-                queue.append(Node(x, y, current, g=current.g + 1, h=heuristic_value, d=updated_dirt))
-                continue
             if (x, y) in obstacles:
                 # Zustand ist ein Hindernis
                 continue
+            if (x, y) in current.d:
+                # Zustand ist Dreck, wir haben also ein Dreck gesaugt
+                # Der Dreck wird entfernt
+                updated_dirt = copy.deepcopy(current.d)
+                updated_dirt.remove((x,y))
+                # Neuer Zustand mit einem Dreck weniger
+                queue.append(Node(x, y, current, g=current.g + 1, h=heuristic_value, d=updated_dirt))
+                continue
             else: 
+                # Neuer Zustand mit gleich viel Dreck
                 queue.append(Node(x, y, current, g=current.g + 1, h=heuristic_value, d=current.d))
         # Mit dieser Funktion können Sie die Liste der noch nicht besuchten Knoten sortieren:
         # queue.sort(key=lambda n: n.h)
