@@ -190,3 +190,8 @@ function setPruningText(){
         document.getElementById("toggle-pruning").innerHTML = pruning ? "Pruning ausschalten" : "Pruning einschalten";
     }
 }
+
+function show(id) {
+    const container = document.getElementById(id);
+    container.style.display = "block";
+}
