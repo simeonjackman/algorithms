@@ -43,15 +43,23 @@
             </ul>
             <h3>Übungen 0</h3>
             <ol>
-                <li>Zeichnen Sie den Graphen, aus welchem der dargestellte Baum abgeleitet werden könnte auf ein Blatt Papier. Was fällt Ihnen auf?</li>
-                <button class="link button" onclick="loadGraphData('../trees/tree0.json')">Lösung laden</button>
+                <li>
+                    Zeichnen Sie den Graphen, aus welchem der dargestellte Baum abgeleitet werden könnte auf ein Blatt Papier.
+                    Was fällt Ihnen auf?
+                    <button class="link button" onclick="loadGraphAndTreeData('../trees/tree0.json',3)">Lösung laden</button>
+                </li>
+                
             </ol>
             <h3>Beispiel 1</h3>
             <button class="link button" onclick="loadTreeData('../trees/tree1.json',maxTreeDepth=3);hideGraph()">Beispiel 1 laden</button>
             <h3>Übungen 1</h3>
             <ol>
-                <li>Zeichnen Sie den Graphen, der aus welchem der dargestellte Baum abgeleitet werden könnte auf ein Blatt Papier. Was fällt Ihnen auf?</li>
-                <button class="link button" onclick="loadGraphData('../trees/tree1.json')">Lösung laden</button>
+                <li>
+                    Zeichnen Sie den Graphen, der aus welchem der dargestellte Baum abgeleitet werden könnte auf ein Blatt Papier.
+                    <i>Tipp: Jeder Knoten kann in einem Baum nur ein einziges Mal vorkommen.</i>
+                    Was fällt Ihnen auf?
+                    <button class="link button" onclick="loadGraphAndTreeData('../trees/tree1.json',3)">Lösung laden</button>
+                </li>
             </ol>
             <p>
                 Die gezeigten Bäume, sind grundsätzlich nicht vollständig.
@@ -61,7 +69,14 @@
                 Als <b>Pruning</b> bezeichnet man das gezielte Abschneiden von Knoten oder Pfaden in einem Baum, um unnötige Berechnungen zu vermeiden und die Effizienz zu steigern, z. B. durch das Entfernen von Zyklen oder offensichtlichen Sackgassen.
             </div>
             <ol start="2">
-                <li>Was ist der schnellste Weg zum Ziel? Begründen Sie, warum Sie wissen, das es der schnellste Weg ist.</li>
+                <li>
+                    Was ist der schnellste Weg zum Ziel? Begründen Sie, warum Sie wissen, das es der schnellste Weg ist.
+                    <button class="link button" onclick="show('A')">Lösung laden</button>
+                    <p class="solution" id="A">
+                        Der schnellste Weg zum Ziel ist:  S → A → G.
+                        Es gibt keinen anderen Weg, mit dem man das Ziel in zwei Schritten erreichen kann.
+                    </p>
+                </li>
                 <li>
                     Zeichnen Sie den Baum ohne Pruning auf ein Blatt Papier bis zu einer Tiefe von 3 (3 Schritte vom Start).
                     Was passiert mit den Zyklen im Graphen?
@@ -69,30 +84,52 @@
                 </li>
                 <li>
                     Welche Teile des Baumes würden Sie prunen und warum?
+                    <button class="link button" onclick="show('B')">Lösung laden</button>
+                    <p class="solution" id="B">
+                        Wenn ein Knoten bereits in einer höheren Eben des Baumes gefunden wurde, wissen wir, dass wir den Knoten bereits in kürzerer Distanz erreicht haben.
+                        Ein Beispiel dafür wäre, dass wir E in der Tiefe 2 prunen können, da wir E schon nach einem Schritt erreicht haben.
+                    </p>
                 </li>
                 <li>
                     Versuchen Sie herauszufinden, nach welchen Regeln der Baum rechts gepruned wurde, indem Sie die Bäume mit und ohne Pruning vergleichen.
+                    <button class="link button" onclick="show('C')">Lösung laden</button>
+                    <p class="solution" id="C">
+                        In den auf dieser Webseite angezeigten Bäume wird ein Knoten geprunt, wenn er bereits in einer höheren Eben des Baumes gefunden wurde und kein Zielknoten ist.
+                        Es gibt jedoch sehr viel weitere Strategien, wie ein Suchbaum geprunt werden könnte.
+                    </p>
                 </li>
             </ol>
             <h3>Schach Beispiel</h3>
             <button class="link button" onclick="loadGraphAndTreeData('../graphs/chess.json',maxTreeDepth=3)">Schachbeispiel laden</button>
             <p>
-                Wir betrachten einen Graphen, welcher auf einem Viertel eines Schachbretts alle möglichen Wege vom Feld A1 bis Feld D1 abbildet.
+                Wir betrachten einen Graphen, welcher auf einem Viertel eines Schachbretts alle möglichen Wege für die Königsfigur vom Feld A1 bis Feld D1 abbildet.
                 Intuitiv ist dieses Problem einfach zu verstehen.
                 Es gibt jedoch bereits extrem viele Möglichkeiten um vom Start zum Ziel zu gelangen.
             </p>
             <ol>
                 <li>
                     Suchen Sie den schnellsten Weg von A1 nach D4 im Graphen und dann im Baum.
+                    <button class="link button" onclick="show('D')">Lösung laden</button>
+                    <p class="solution" id="D">
+                        A1 → B2 → C3 → D4. Jewils diagonal ziehen.
+                    </p>
                 </li>
                 <li>
-                    Überlegen Sie sich, wieviele Mögliche Wege es gibt, um in ier Zügen von A1 nach D4 zu gelangen.
+                    Überlegen Sie sich, wieviele Mögliche Wege es gibt, um in vier Zügen von A1 nach D4 zu gelangen.
                     Validieren Sie dann Ihre Vermutung, indem Sie die Tiefe auf 4 ändern und zählen, wie oft das Ziel auf dieser Tiefe vorkommt.
                     Schalten Sie dann bei einer Tiefe von 4 Pruning aus, um ein Gefühl zu bekommen, wie gross diese Problem wäre, wenn Sie nicht Prunen.
                     <span style="color: red;"><b>Achtung: Ihr Browser könnte bei diesem Schritt abstürzen, da Sie grosse Mengen an Daten laden. Falls dies passiert, schliessen Sie den Tab und öffnen Sie ihn erneut.</b>
+                    <button class="link button" onclick="show('E')">Lösung laden</button>
+                    <p class="solution" id="E">
+                        Es gibt 12 Wege, um in vier Zügen nach D4 zu gelangen.
+                    </p>
                 </li>
                 <li>
                     Der Suchbaum ist trotz pruning bereits nach einer Tiefe von drei sehr gross, wie würden Sie den Baum sinnvoll weiter prunen, um die Suche zu vereinfachen?
+                    <button class="link button" onclick="show('F')">Lösung laden</button>
+                    <p class="solution" id="F">
+                        Man könnte beispielweise von den Knoten, welche auf der gleichen Ebene zweimal gefunden wurden einen prunen.
+                    </p>
                 </li>
             </ol>
             <a class="link button" href="../index.html">Zurück zum Menu</a>
