@@ -153,7 +153,7 @@ def search(start_state):
                 continue
             # Hier können Sie eine Heuristik definieren
             heuristic_value = 0
-            queue.append(Node(new_stacks,current,h=heuristic_value))
+            queue.append(Node(new_stacks,current,h=heuristic_value, g=current.g+1))
         # Mit dieser Funktion können Sie die Liste der noch nicht besuchten Knoten sortieren:
         # queue.sort(key=lambda n: n.h)
     return [], counter # Kein Pfad gefunden
