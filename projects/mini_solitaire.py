@@ -17,8 +17,8 @@ class Node:
         self.stacks = stacks # die Stapel in diesem Zustand
         self.parent = parent # von welchem Knoten man gekommen ist
         self.g = g # Kosten vom Start bis zum Knoten
-        self.h = 0 # Schätzung vom Knoten bis zum Ziel
-        self.f = 0 # Bewertungsfunktion des Knoten (üblicherweise in Abhängigkeit von g und h)
+        self.h = h # Schätzung vom Knoten bis zum Ziel
+        self.f = f # Bewertungsfunktion des Knoten (üblicherweise in Abhängigkeit von g und h)
 
 def initialize_cards():
     slots = max(len(colors),slot_count) # Anzahl Plätze für Karten
