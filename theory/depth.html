@@ -53,16 +53,42 @@
                     Der im Beispiel abgebildete Baum ist nicht vollständig, weil bereits einige Knoten gepruned wurden.
                     Was passiert, wenn Sie im Graphen die Tiefensuche von S aus beginnen und als Regel immer den Knoten als nächstes öffnen, welcher im Alphabet zuerst kommt?
                     Schalten Sie dazu beim Baum rechts Pruning aus.
+                    <button class="link button" onclick="show('A')">Lösung laden</button>
+                    <p class="solution" id="A">
+                        Sie beginnen bei S und wählen dann als nächsten Knoten A, weil der Buchstabe vor den anderen Optionen (B und E) liegt.
+                        Wenn diesen Prozess weiterführen resultiert daraus folgender Pfad: <br>
+                        S → A → E → A → E → A → E... <br>
+                        Sie drehen sich also unendlich oft im Kreis. 
+                    </p>
                 </li>
                 <li>
                     Was passiert, wenn Sie im Graphen die Tiefensuche von S aus beginnen und als Regel immer den Knoten als nächstes öffnen, welcher im Alphabet an zweiter Stelle kommt?
                     Schalten Sie dazu beim Baum rechts Pruning aus.
+                    <button class="link button" onclick="show('B')">Lösung laden</button>
+                    <p class="solution" id="B">
+                        Sie beginnen bei S und wählen dann als nächsten Knoten B, weil der Buchstabe an zweiter Stelle im Alphabet liegt (nach A und vor E).
+                        Wenn diesen Prozess weiterführen resultiert daraus folgender Pfad: <br>
+                        S → B → D → G <br>
+                    </p>
                 </li>
                 <li>
                     Falls Sie mit der Tiefensuche eine Lösung zum Ziel finden, ist es jeweils zwingend die kürzeste Lösung zum Ziel?
+                    <button class="link button" onclick="show('C')">Lösung laden</button>
+                    <p class="solution" id="C">
+                        Nein, wie das Beispiel oben gezeigt hat, finden sie zwar einen Weg zum Ziel, dieser ist jedoch nicht optimal.
+                        Es gäbe einen kürzeren Weg: <br>
+                        S → A → G
+                    </p>
                 </li>
                 <li>
                     Wann kann die Tiefensuche ohne Bedenken angewendet werden? Wann nicht?
+                    <button class="link button" onclick="show('D')">Lösung laden</button>
+                    <p class="solution" id="D">
+                        Die Tiefensuche kann dann ohne Bedenken angewendet werden, wenn der Graph azyklisch ist (Sie sich also nicht im Kreis drehen können).
+                        Diese Eigenschaft kann von einem Graph selbst bereits gegeben sein, falls nicht,  erreichen Sie diese Eigenschaft, indem Sie Knoten im Suchbaum prunen, die Sie bereits besucht haben.
+                        Ansonsten ist nicht garantiert, dass die Tiefensuche terminiert (ein Ende findet).
+                        Es ist theoretisch aber möglich, dass Sie auch in einem zyklischen Graphen mit der Tiefensuche eine Lösung finden.
+                    </p>
                 </li>
             </ol>
             <a class="link button" href="../index.html">Zurück zum Menu</a>
