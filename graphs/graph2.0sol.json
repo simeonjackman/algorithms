@@ -1,10 +1,10 @@
 {
   "nodes": [
-    { "id": 1, "label": "S", "heuristic": "?", "start": true },
-    { "id": 2, "label": "B", "heuristic": "?" },
-    { "id": 3, "label": "C", "heuristic": "?" },
+    { "id": 1, "label": "S", "heuristic": 12, "start": true },
+    { "id": 2, "label": "B", "heuristic": 9 },
+    { "id": 3, "label": "C", "heuristic": 8 },
     { "id": 4, "label": "D", "heuristic": 7 },
-    { "id": 5, "label": "A", "heuristic": "?" },
+    { "id": 5, "label": "A", "heuristic": 7 },
     { "id": 6, "label": "F", "heuristic": 4 },
     { "id": 7, "label": "E", "heuristic": 3 },
     { "id": 8, "label": "G", "heuristic": 0, "end": true }

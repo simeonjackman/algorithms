@@ -27,22 +27,71 @@
             <h3>Übungen 1</h3>
             <ol>
                 <li>Versuchen Sie die oben genannte Heuristik anhand der Visualisierungen zu verstehen.</li>
-                <li>Was wäre der Weg ins Ziel, wenn Sie immer dem Knoten folgen, der die tiefste Heuristik besitzt?</li>
-                <li>Ist dieser Weg der schnellste Weg? Begründen Sie.</li>
+                <li>
+                    Was wäre der Weg ins Ziel, wenn Sie immer dem Knoten folgen, der die tiefste Heuristik besitzt?
+                    <button class="link button" onclick="show('A')">Lösung laden</button>
+                    <p class="solution" id="A">
+                        S → A → G
+                    </p>
+                </li>
+                <li>
+                    Ist dieser Weg der schnellste Weg? Begründen Sie.
+                    <button class="link button" onclick="show('B')">Lösung laden</button>
+                    <p class="solution" id="B">
+                        S → B → A → G wäre der schnellste Weg, da bei diesem Weg die Summe der Kosten der Kanten minimal ist.
+                        Dies zeigt, dass eine Heuristik allein nur eine Schätzung ist.
+                        Schätzungen können auch falsch liegen.
+                    </p>
+                </li>
             </ol>
             <h3>Beispiel 2 - Heuristik mit Distanz zum Ziel</h3>
             <button class="link button" onclick="loadGraphAndTreeData('../graphs/graph2.json',maxTreeDepth=3)">Beispiel 2 laden</button>
             <p>
                 In dieser Übung betrachten wir eine Heuristik, die die verbleibende Distanz zum Ziel schätzt.
-                Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel kosten.
+                Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel die kürzesten Wege bis zum Ziel kosten.
+                Machen Sie dies, indem Sie die Kosten der Kanten der jeweiligen Wege aufaddieren.
                 Dieser Prozess kann vom Ziel iterativ ausgeführt werden.
             </p>
             <h3>Übungen 2</h3>
             <ol>
-                <li>Die Heuristischen Werte einiger Knoten sind bereits angegeben. Berechnen Sie die Heuristik der übrigen Knoten.</li>
-                <li>Tragen Sie die berechneten Werte im Graph JSON Editor ein und drücken Sie dann auf aktualisieren.</li>
-                <li>Wie können Sie nun den kürzesten Weg ablesen?</li>
-                <li>Warum können Sie die hier verwendete Heuristik in vielen anderen Problemen nicht anwenden?</li>
+                <li>
+                    Die Heuristischen Werte einiger Knoten sind bereits angegeben. Berechnen Sie die Heuristik der übrigen Knoten.
+                    <button class="link button" onclick="show('C')">Lösung laden</button>
+                    <p class="solution" id="C">
+                        A(G → F → A): h=7 <br>
+                        B(G → F → D → B): h=9 <br>
+                        C(G → F → C): h=8 <br>
+                        S(G → F → C → S): h=12 <br> oder <br> S(G → F → D → B → S): h=12 <br>
+                        Es gibt also zwei schnellste Wege vom Ziel zum Start.
+                    </p>
+                </li>
+                <li>
+                    Tragen Sie die berechneten Werte im Graph JSON Editor ein und drücken Sie dann auf aktualisieren.
+                    <button class="link button" onclick="loadGraphAndTreeData('../graphs/graph2.0sol.json',3)">Lösung laden</button>
+                </li>
+                <li>
+                    Wie können Sie nun vom Start aus den kürzesten Weg ablesen?
+                    <button class="link button" onclick="show('D')">Lösung laden</button>
+                    <p class="solution" id="D">
+                        Sie schauen, bei welchem der möglichen Kindknoten, die Sie von einem Knoten aus erreichen können, der Wert <i>Heuristik des Kindknoten + Kantenkosten zum Kindknoten</i> minimal ist.<br>
+                        Beispiel: Von B aus können wir S, A oder D erreichen. <br>
+                        <b>S</b>: <i>Heuristik + Kantenkosten zum Kindknoten</i> = 12 + 3 = 15<br>
+                        <b>A</b>: <i>Heuristik + Kantenkosten zum Kindknoten</i> = 7 + 6 = 13<br>
+                        <b>D</b>: <i>Heuristik + Kantenkosten zum Kindknoten</i> = 7 + 2 = 9<br>
+                        D besitz hier den minimalen Wert, ist also der nächste Knoten auf dem Weg zum Ziel.
+                    </p>
+                </li>
+                <li>
+                    Warum können Sie die hier verwendete Heuristik in vielen anderen Problemen nicht anwenden?
+                    <button class="link button" onclick="show('E')">Lösung laden</button>
+                    <p class="solution" id="E">
+                        Weil Sie die Distanzen vom Ziel aus oftmals noch gar nicht wissen. 
+                        Für viele Probleme müssen Sie den Suchbaum und/oder den Graphen laufend aufbauen.
+                        Das Verfahren, welches Sie hier angewendet haben, lässt sich jedoch vom Start aus Problemlos ausführen.
+                        Dieses Verfahren heist Dijstras Algorithmus.
+                        Diesen Algorithmus lernen Sie auf der nächsten Seite.
+                    </p>
+                </li>
             </ol>
             <h3>Beispiel 3 - Heuristik in grossen Graphen</h3>
             <button class="link button" onclick="loadGraphAndTreeData('../graphs/graph3.json',maxTreeDepth=0)">Beispiel 3 laden</button>
@@ -56,9 +105,14 @@
                 <li>
                     Wie würden Sie versuchen, denn kürzesten Weg zum Ziel hier zu berechnen?
                     Erhöhen Sie dazu jeweils Schritt für Schritt die Tiefe des Baumes und überlegen Sie sich, welchen Knoten Sie als nächstes untersuchen würden.
-                </li>
-                <li>
-                    Falls Sie eine Lösung finden, wie können Sie garantieren, dass es die schnellste Lösung ist?
+                    <button class="link button" onclick="show('F')">Lösung laden</button>
+                    <p class="solution" id="F">
+                        Es gibt viele Ansätze, die Sie hier verfolgen könnten.
+                        Ein naiver Ansatz wäre, einfach alles Wege durchzuprobieren.
+                        Dies funktioniert jedoch bei grossen Suchproblemen nicht mehr.
+                        Eine andere Möglichkeit wäre, die Distanz von jedem Knoten bis zum Ziel zu messen, und dies als Heuristik zu verwenden.
+                        Alternativ könnten Sie auch das Verfahren aus der Aufgabe 2 vom Start aus durchführen.
+                    </p>
                 </li>
             </ol>
             <a class="link button" href="../index.html">Zurück zum Menu</a>
