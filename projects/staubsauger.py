@@ -15,13 +15,12 @@ enable_obstacles = False # Ob es auch "Möbel" im Zimmer haben sollte (auf True 
 
 # Knotenklasse zur Speicherung von Position und Pfadkosten
 class Node:
-    def __init__(self, x, y, parent=None, g=0, h=0, f=0, d={}):
+    def __init__(self, x, y, parent=None, g=0, h=0, d={}):
         self.x, self.y = x, y # x und y Position des Zustands
         self.parent = parent # von welchem Knoten man gekommen ist
         self.d = d # Welcher dreck gesammelt wurde
         self.g = g # Kosten vom Start bis zum Knoten
         self.h = h # Schätzung vom Knoten bis zum Ziel
-        self.f = f # Bewertungsfunktion des Knoten (üblicherweise in Abhängigkeit von g und h)
 
 # Funktion für um zufälligen Dreck zu erzeugen
 def generate_dirt():

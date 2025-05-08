@@ -14,13 +14,12 @@ order_count = 3 # Wieviel essen geliefert werden muss
 
 # Knotenklasse zur Speicherung von Position und Pfadkosten
 class Node:
-    def __init__(self, x, y, parent=None, g=0, h=0, f=0, o={}):
+    def __init__(self, x, y, parent=None, g=0, h=0, o={}):
         self.x, self.y = x, y # x und y Position des Zustands
         self.parent = parent # von welchem Knoten man gekommen ist
         self.o = o # Welche Bestellungen bereits geliefert wurden
         self.g = g # Kosten vom Start bis zum Knoten
         self.h = h # Schätzung vom Knoten bis zum Ziel
-        self.f = f # Bewertungsfunktion des Knoten (üblicherweise in Abhängigkeit von g und h)
 
 # Funktion um zufällige Bestellungen zu erzeugen
 def generate_orders():

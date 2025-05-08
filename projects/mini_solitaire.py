@@ -13,12 +13,11 @@ manual_try = True # Manueller Versuch
 
 # Knotenklasse zur Speicherung von Position und Pfadkosten
 class Node:
-    def __init__(self, stacks, parent=None, g=0, h=0, f=0):
+    def __init__(self, stacks, parent=None, g=0, h=0):
         self.stacks = stacks # die Stapel in diesem Zustand
         self.parent = parent # von welchem Knoten man gekommen ist
         self.g = g # Kosten vom Start bis zum Knoten
         self.h = h # Schätzung vom Knoten bis zum Ziel
-        self.f = f # Bewertungsfunktion des Knoten (üblicherweise in Abhängigkeit von g und h)
 
 def initialize_cards():
     slots = max(len(colors),slot_count) # Anzahl Plätze für Karten
