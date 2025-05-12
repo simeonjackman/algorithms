@@ -7,17 +7,50 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="loadGraphAndTreeData('../graphs/hanoi.json',maxTreeDepth=5)">
+<body>
     <div class="container">
         <div class="sidebar">
-            <h2>Graph JSON Editor</h2>
-            <div class="editor-container">
-                <button  class="link button" onclick="updateGraphData()">Aktualisieren</button>
-                <textarea id="json-editor"></textarea>
+            <h2>Die Türme von Hanoi</h2>
+            <div class="banner">
+                Dieses Planungsproblem können Sie nachspielen. Legen Sie dafür zwei unterschiedliche Münzen (oder ähnliche Objekt, welche stapelbar sindw) bereit.
             </div>
+            <div class="img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Tower_of_Hanoi.jpeg"></img>
+            </div>
+            <p>
+
+                In diesem Beispiel schauen wir uns das Spiel Türme von Hanoi etwas genauer an.
+                (<a target="_blank" href="https://de.wikipedia.org/wiki/T%C3%BCrme_von_Hanoi">Türme von Hanoi auf Wikipedia</a>)
+                Ziel des Spiels ist es, den kompletten Scheiben-Stapel (in unserem Beispiel gibt es genau zwei Scheiben) vom linken Stapel auf einen anderen Stapel zu versetzen. Hierbei gelten zwei Regeln:
+            </p>
+            <ul>
+                <li>Es darf immer nur eine Scheibe aufs Mal bewegt werden.</li>
+                <li>Die bewegte Scheibe darf nicht auf eine kleinere Scheibe gelegt werden.</li>
+            </ul>
+            <h3>Übungen</h3>
+            <ol>
+                <li>
+                    Überlegen Sie sich, wie Sie dieses Spiel in ein Planungsproblem überführen können.
+                    Wie können Sie jeden Zustand in diesem Spiel eindeutig beschreiben?
+                    <button class="link button" onclick="show('A')">Lösung laden</button>
+                    <p class="solution" id="A">
+                        Es gibt mehrere sinnvolle Antworten zu dieser Frage. Wichtig ist, dass jeder Zustand wirklich eindeutig beschrieben werden kann.
+                        Eine mögliche Notation wäre wenn wir für die grössere Scheibe die Zahl 2, für die kleinere Scheibe die Zahl 1 verwenden würden.
+                        Leere Stapel geben wir mit einem _ (Unterstrich/Underscore) an.
+                        Nun geben wir für jeden Stapel von unten nach oben alle Scheiben an und trennen die Stapel jeweils mit einem ";".
+                        Der Startzustand wäre also:<br>
+                        <b>21;_;_</b>
+                    </p>
+                </li>
+                <li>
+                    Zeichnen Sie den Graphen, für das Spiel. Starten Sie hierfür vom Zustand <b>21;_;_</b> (oder verwenden Sie Ihre eigene Notation).
+                    Spielen Sie das Spiel nach, indem Sie jeweils mit Münzen und drei Stapelplätzen vom Startzustand Stück für Stück alle Zustände "erkunden".
+                    <button class="link button" onclick="loadGraphAndTreeData('../graphs/hanoi.json',maxTreeDepth=5)">Lösung laden</button>
+                </li>
+            </ol>
             <a class="link button" href="../index.html">Zurück zum Menu</a>
         </div>
-        <div class="content">
+        <div class="content" id="content">
             <h2>Graph</h2>
             <div id="graph-container" class="canvas"></div>
             <h2>Baum</h2>

@@ -203,3 +203,7 @@ a{
     margin-bottom: .5rem;
     text-align: center;
 }
+
+.hide{
+    display: none;
+}
