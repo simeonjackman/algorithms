@@ -21,33 +21,38 @@
             </p>
             <div class="banner">
                 Ein <b>Graph</b> ist eine aus Knoten (Kreise) und Kanten (Linien zwischen Kreisen) bestehende Struktur.
-                Bei einem <b>ungewichteten</b> Graphen sind alle Kanten gleich teuer.
-                Bei einem <b>gewichteten</b> Graphen können Kanten unterschiedliche Kosten (Bsp. Zeit, Distanz) aufweisen.
             </div>
             <p>
                 Die Visualisierung rechts zeigt auf der oberen Hälfte einen solchen Graphen.
+                Betrachten Sie den Graphen auf der rechten Seite und versuchen Sie zu verstehen, was dargestellt wird. Vergleichen Sie den Graphen mit <a target="_blank" href="https://www.google.com/maps/d/edit?mid=1DwD2ApHiZAeVD1fZmqD9gofU2B7l52w&usp=sharing"><b>Google Maps</b></a>.
+            </p>
+            <p>
                 Der grüne Knoten ist immer der <span style="color: green;"><b>Startknoten</b></span>. Der rote ist der <span style="color: red;"><b>Zielknoten</b></span>.
                 Jeder Knoten steht hier für einen Zustand.
                 Der Startknoten bedeutet verdeutscht also: "Ich bin Zuhause".
                 Von diesem Zustand kann ich mich in einer Minute zu den folgenden Zuständen bewegen:
                 <ul>
                     <li>
-                        "Ich bin auf der Gartenstrasse"
+                        "Ich bin bei der FOS Mittelschule"
                     </li>
                     <li>
-                        "Ich bin auf der Kriegackerstrasse"
+                        "Ich bin beim ZBA"
                     </li>
                     <li>
-                        "Ich bin auf der Gründenstrasse"
+                        "Ich bin beim BBZBL"
                     </li>
                 </ul>
                 Die Relationen sind durch Kanten angegeben.
             </p>
             <p>
                 Das Traversieren einer Kante, also das Ändern des Zustandes, ist mit Kosten verbunden, welche neben der jeweiligen Kante angegeben sind.
-                In unserem Beispiel handelt es sich der Einfachheit halber um einen ungewichten Graphen, das alle Kanten gleichteuer sind (es dauert immer genau eine Minute um die Strasse zu wechseln).
+                In unserem Beispiel handelt es sich der Einfachheit halber um einen ungewichten Graphen, da alle Kanten gleichteuer sind (es dauert immer genau eine Minute um die Strasse zu wechseln).
                 Wir betrachten zu einem späteren Zeitpunkt noch gewichtete Graphen.
             </p>
+            <div class="banner">
+                Bei einem <b>ungewichteten</b> Graphen sind alle Kanten gleich teuer.
+                Bei einem <b>gewichteten</b> Graphen können Kanten unterschiedliche Kosten (Bsp. Zeit, Distanz) aufweisen.
+            </div>
             <p>
                 Das Ziel in diesem Beispiel ist es, jeweils so schnell wie möglich vom <span style="color: green;"><b>Startknoten</b></span> "Zuhause" zum  <span style="color: red;"><b>Zielknoten</b></span> "Schule" zu gelangen.
             </p>
@@ -58,13 +63,13 @@
                 In einem Baum können Pfade durch einen Graphen abgebildet werden.
             </p>
             <div class="banner">
-                Ein <b>Suchbaum</b> ist ein gerichteter Graph (gerichtet bedeutet, dass die Kanten nur in eine Richtung zeigen), der als baumartige Struktur organisiert ist, wobei jeder Knoten maximal einen Elternknoten und mehrere Kindknoten haben kann, um eine hierarchische Anordnung der Daten zu ermöglichen.
+                Ein <b>Suchbaum</b> ist ein gerichteter Graph (gerichtet bedeutet, dass die Kanten nur in eine Richtung zeigen), der als baumartige Struktur organisiert ist, wobei jeder Knoten maximal einen Elternknoten und mehrere Kindknoten haben kann, um eine hierarchische Anordnung der Informationen zu ermöglichen.
             </div>
             <h3>Eigenschaften</h3>
             <ul>
-                <li>In Graphen kommt jeder Zustand nur ein einziges mal vor.</li>
+                <li>In Graphen kommt jeder Zustand (Knoten) nur ein einziges mal vor.</li>
                 <li>In Bäumen kann jeder Zustand beliebig oft vorkommen, da man einen Zustand möglicherweise über verschiedene Wege erreichen kann.</li>
-                <li>Die Tiefe eines Baumes gibt an, wieviele "Schritte" man vom Startzustand vornimmt.</li>
+                <li>Die Tiefe eines Baumes gibt an, wieviele "Schritte" man vom Startzustand vorgenommen hat.</li>
             </ul>
             <h3>Einführungsbeispiel</h3><button class="link button" onclick="loadGraphAndTreeData('../graphs/graph0.json',maxTreeDepth=3)">Einführungsbeispiel laden</button>
             <p>
@@ -75,13 +80,12 @@
             </p>
             <h3>Übungen</h3>
             <ol>
-                <li>Betrachten Sie den Graphen auf der rechten Seite und versuchen Sie zu verstehen, was dargestellt wird. Vergleichen Sie den Graphen mit <a target="_blank" href="https://www.google.com/maps/place/Birsfelderstrasse+51,+4132+Muttenz/@47.5339766,7.6372771,543m/data=!3m1!1e3!4m6!3m5!1s0x4791b786fb23828f:0x11347a21b92f8020!8m2!3d47.5346312!4d7.6332812!16s%2Fg%2F11w3jhpt8b?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D">Google Maps</a>.</li>
                 <li>
                     Wie viele mögliche Wege gibt es von Zuhause bis zur Schule?
                     <button class="link button" onclick="show('A')">Lösung laden</button>
                     <p class="solution" id="A">
                         Es gibt unendlich viele Wege, da Sie sich im Kreis drehen können.
-                        Ein Beispiel dafür wäre, wenn Sie von Zuhause zur Gartenstrasse, dann zur Kriegackerstrasse und dann wieder zurück nach Hause laufen würden.
+                        Ein Beispiel dafür wäre, wenn Sie von Zuhause zur Gartenstrasse, dann zur ZBA und dann wieder zurück nach Hause laufen würden.
                         Dies könnten Sie ja beliebig oft wiederholen.
                     </p>
                 </li>
@@ -90,13 +94,13 @@
                     <button class="link button" onclick="show('B')">Lösung laden</button>
                     <p class="solution" id="B">
                         Es gibt zwei schnellste Wege in diesem Beispiel.
-                        Von Zuhause über die Gartenstrasse zur Schule, oder von Zuhause über die Gründenstrasse zur Schule.
+                        Von Zuhause über die Gartenstrasse zur Schule, oder von Zuhause über die BBZBL zur Schule.
                         Beides sind schnellste Wege, da die Summe der Kosten der Kanten bei diesen zwei Wegen minimal (2) sind.
                         Es gibt keinen anderen Weg, bei dem Sie mit zwei Schritten (also in zwei Minuten) bei der Schule sind.
                     </p>
                 </li>
                 <li>
-                    Wie ändert sich der Baum, wenn Sie die Lerchenstrasse, welche Sie in einer Minute von der Gründenstrasse und von der Gartenstrasse erreichen, in den Graphen einfügen?
+                    Wie ändert sich der Baum, wenn Sie die FHNW, welche Sie in einer Minute von der BBZBL und von der Gartenstrasse erreichen, in den Graphen einfügen?
                     <button class="link button" onclick="loadGraphAndTreeData('../graphs/graph0.1.json',maxTreeDepth=3)">Lösung laden</button>
                 </li>
                 
@@ -107,7 +111,7 @@
                 Um dies bei der Lösung zu verhindern, wurden Teile des Baumes weggeschnitten, mehr dazu aber später.
                 <div class="banner">
                     Ein Graph ist <b>zyklisch</b>, wenn man im Graph Kreise drehen kann.
-                    Ein Beispiel wäre, wenn Sie von Zuhause zur Gartenstrasse, dann zur Kriegackerstrasse und dann wieder nach Zuhause gehen. 
+                    Ein Beispiel wäre, wenn Sie von Zuhause zur Gartenstrasse, dann zur ZBA und dann wieder nach Zuhause gehen. 
                 </div>
             </p>
             <a class="link button" href="../index.html">Zurück zum Menu</a>

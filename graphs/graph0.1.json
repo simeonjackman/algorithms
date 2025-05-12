@@ -1,11 +1,11 @@
 {
   "nodes": [
     { "id": 1, "label": "Zuhause", "start": true },
-    { "id": 2, "label": "Gartenstrasse"},
-    { "id": 3, "label": "Kriegackerstrasse"},
-    { "id": 4, "label": "Gründenstrasse"},
+    { "id": 2, "label": "BBZBL"},
+    { "id": 3, "label": "FMS / ZBA"},
+    { "id": 4, "label": "FOS Mittelschule"},
     { "id": 5, "label": "Schule", "end": true },
-    { "id": 6, "label": "Lerchenstrasse"}
+    { "id": 6, "label": "FHNW"}
   ],
   "edges": [
     { "from": 1, "to": 2, "value": 1 },
@@ -13,10 +13,11 @@
     { "from": 1, "to": 4, "value": 1 },
     { "from": 2, "to": 5, "value": 1 },
     { "from": 2, "to": 3, "value": 1 },
+    { "from": 2, "to": 4, "value": 1 },
+    { "from": 3, "to": 6, "value": 1 },
     { "from": 3, "to": 5, "value": 1 },
     { "from": 4, "to": 5, "value": 1 },
-    { "from": 4, "to": 6, "value": 1 },
-    { "from": 2, "to": 6, "value": 1 }
+    { "from": 5, "to": 6, "value": 1 }
   ]
 }
 
