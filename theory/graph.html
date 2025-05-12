@@ -24,9 +24,12 @@
             </div>
             <p>
                 Die Visualisierung rechts zeigt auf der oberen Hälfte einen solchen Graphen.
-                Betrachten Sie den Graphen auf der rechten Seite und versuchen Sie zu verstehen, was dargestellt wird. Vergleichen Sie den Graphen mit <a target="_blank" href="https://www.google.com/maps/d/edit?mid=1DwD2ApHiZAeVD1fZmqD9gofU2B7l52w&usp=sharing"><b>Google Maps</b></a>.
+                In diesem Beispiel in das Ziel, von Zuhause einen Weg zur Schule, das Gymnasium Muttenz, zu finden.
+                Es gibt verschiedene Wege um zum Ziel zu gelangen. 
+                Wir laufen auf dem Weg zum Gym Muttenz jeweils immer mindestens an einer anderen Schule vorbei.
             </p>
             <p>
+                Betrachten Sie den Graphen auf der rechten Seite und versuchen Sie zu verstehen, was dargestellt wird. Vergleichen Sie den Graphen mit <a target="_blank" href="https://www.google.com/maps/d/edit?mid=1DwD2ApHiZAeVD1fZmqD9gofU2B7l52w&usp=sharing"><b>Google Maps</b></a>.
                 Der grüne Knoten ist immer der <span style="color: green;"><b>Startknoten</b></span>. Der rote ist der <span style="color: red;"><b>Zielknoten</b></span>.
                 Jeder Knoten steht hier für einen Zustand.
                 Der Startknoten bedeutet verdeutscht also: "Ich bin Zuhause".
@@ -42,11 +45,11 @@
                         "Ich bin beim BBZBL"
                     </li>
                 </ul>
-                Die Relationen sind durch Kanten angegeben.
+                Diese Beziehungen sind durch Kanten angegeben.
             </p>
             <p>
                 Das Traversieren einer Kante, also das Ändern des Zustandes, ist mit Kosten verbunden, welche neben der jeweiligen Kante angegeben sind.
-                In unserem Beispiel handelt es sich der Einfachheit halber um einen ungewichten Graphen, da alle Kanten gleichteuer sind (es dauert immer genau eine Minute um die Strasse zu wechseln).
+                In unserem Beispiel handelt es sich der Einfachheit halber um einen ungewichten Graphen, da alle Kanten gleichteuer sind (es dauert immer genau eine Minute um von der einten Schule zur nächsten zu laufen).
                 Wir betrachten zu einem späteren Zeitpunkt noch gewichtete Graphen.
             </p>
             <div class="banner">
@@ -54,7 +57,11 @@
                 Bei einem <b>gewichteten</b> Graphen können Kanten unterschiedliche Kosten (Bsp. Zeit, Distanz) aufweisen.
             </div>
             <p>
-                Das Ziel in diesem Beispiel ist es, jeweils so schnell wie möglich vom <span style="color: green;"><b>Startknoten</b></span> "Zuhause" zum  <span style="color: red;"><b>Zielknoten</b></span> "Schule" zu gelangen.
+                Wir wollen nun so schnell wie möglich vom <span style="color: green;"><b>Startknoten</b></span> "Zuhause" zum  <span style="color: red;"><b>Zielknoten</b></span> "Schule" zu gelangen.
+                Für Sie mag die Antwort zu dieser Frage offensichtlich klingen.
+                Doch in der Praxis sollte ein Algorithmus in der Lage sein, für zwei beliebige Orte den schnellsten Weg zu ermitteln.
+                Auch dann, wenn es mehrere Tausend oder gar mehrere Millionen mögliche Wege vom Start zum Ziel gibt.
+                Dafür eignen sich Suchbäume, um verschiedene Wege strukturiert abzubilden.
             </p>
             <p>
                 In der unteren Hälfte ist der Suchbaum des Graphen abgebildet.
@@ -85,7 +92,7 @@
                     <button class="link button" onclick="show('A')">Lösung laden</button>
                     <p class="solution" id="A">
                         Es gibt unendlich viele Wege, da Sie sich im Kreis drehen können.
-                        Ein Beispiel dafür wäre, wenn Sie von Zuhause zur Gartenstrasse, dann zur ZBA und dann wieder zurück nach Hause laufen würden.
+                        Ein Beispiel dafür wäre, wenn Sie von Zuhause zum BBZBL, dann zur FMS und dann wieder zurück nach Hause laufen würden.
                         Dies könnten Sie ja beliebig oft wiederholen.
                     </p>
                 </li>
@@ -93,14 +100,16 @@
                     Was wäre der schnellste Schulweg von Zuhause bis zur Schule? Begründen Sie Ihre Antwort.
                     <button class="link button" onclick="show('B')">Lösung laden</button>
                     <p class="solution" id="B">
-                        Es gibt zwei schnellste Wege in diesem Beispiel.
-                        Von Zuhause über die Gartenstrasse zur Schule, oder von Zuhause über die BBZBL zur Schule.
-                        Beides sind schnellste Wege, da die Summe der Kosten der Kanten bei diesen zwei Wegen minimal (2) sind.
+                        Es gibt drei schnellste Wege in diesem Beispiel.<br>
+                        Von Zuhause über die FMS zur Schule<br>
+                        Von Zuhause über das BBZBL zur Schule<br>
+                        Von Zuhause über die FOS Mittelschule zum Gymnasium<br>
+                        Alle drei sind schnellste Wege, da die Summe der Kosten der Kanten bei diesen drei Wegen minimal (2) sind.
                         Es gibt keinen anderen Weg, bei dem Sie mit zwei Schritten (also in zwei Minuten) bei der Schule sind.
                     </p>
                 </li>
                 <li>
-                    Wie ändert sich der Baum, wenn Sie die FHNW, welche Sie in einer Minute von der BBZBL und von der Gartenstrasse erreichen, in den Graphen einfügen?
+                    Wie ändert sich der Baum, wenn Sie die FHNW, welche Sie in einer Minute von der FMS und vom Gymnasium erreichen, in den Graphen einfügen?
                     <button class="link button" onclick="loadGraphAndTreeData('../graphs/graph0.1.json',maxTreeDepth=3)">Lösung laden</button>
                 </li>
                 
@@ -111,7 +120,6 @@
                 Um dies bei der Lösung zu verhindern, wurden Teile des Baumes weggeschnitten, mehr dazu aber später.
                 <div class="banner">
                     Ein Graph ist <b>zyklisch</b>, wenn man im Graph Kreise drehen kann.
-                    Ein Beispiel wäre, wenn Sie von Zuhause zur Gartenstrasse, dann zur ZBA und dann wieder nach Zuhause gehen. 
                 </div>
             </p>
             <a class="link button" href="../index.html">Zurück zum Menu</a>
