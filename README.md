@@ -12,7 +12,7 @@ theory/: Theoretische Grundlagen zu den vorgestellten Algorithmen.
 trees/: Datenstrukturen und Algorithmen im Zusammenhang mit Bäumen im JSON Format.
 
 # 🌐 Web-Oberfläche
-Eine interaktive Web-Oberfläche ist verfügbar, um einige der Graphen, Bäume und Algorithmen visuell darzustellen und mit ihnen zu interagieren:
+Eine interaktive Web-Oberfläche ist [hier](https://simeonjackman.github.io/algorithms/) verfügbar, um einige der Graphen, Bäume und Algorithmen visuell darzustellen und mit ihnen zu interagieren:
 
 index.html: Hauptdatei und Einstiegspunkt der Web-Oberfläche.
 
