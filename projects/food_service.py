@@ -100,12 +100,10 @@ def search(start):
                 # Die gemachte Lieferung wird aus der noch zu machenden Lieferung entfernt
                 updated_orders = copy.deepcopy(current.o)
                 updated_orders.remove((x,y))
-                heuristic_value = heuristic(x,y,updated_orders)
-                queue.append(Node(x, y, current, g=current.g + 1, h=heuristic_value, o=updated_orders))
+                queue.append(Node(x, y, current, g=current.g + 1, h=heuristic(x,y,updated_orders), o=updated_orders))
                 continue
             else: 
-                heuristic_value = heuristic(x,y,current.o)
-                queue.append(Node(x, y, current, g=current.g + 1, h=heuristic_value, o=current.o))
+                queue.append(Node(x, y, current, g=current.g + 1, h=heuristic(x,y,current.o), o=current.o))
         # Mit dieser Funktion können Sie die Liste der noch nicht besuchten Knoten sortieren:
         # queue.sort(key=lambda n: n.h)
     return [], counter

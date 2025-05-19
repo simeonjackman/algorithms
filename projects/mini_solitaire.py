@@ -120,7 +120,12 @@ def is_sorted(stacks):
                 return False
             
     return True
-    
+
+# Hier können Sie eine Heuristik definieren
+def heuristic(stacks):
+    heuristic_value = 0
+    return heuristic_value
+
 def search(start_state):
     print("Beginne Suche...")
     counter = 0
@@ -150,9 +155,7 @@ def search(start_state):
             new_stacks = move_card(new_stacks, src, dest)
             if(repr(new_stacks) in visited):
                 continue
-            # Hier können Sie eine Heuristik definieren
-            heuristic_value = 0
-            queue.append(Node(new_stacks,current,h=heuristic_value, g=current.g+1))
+            queue.append(Node(new_stacks,current,h=heuristic(new_stacks), g=current.g+1))
         # Mit dieser Funktion können Sie die Liste der noch nicht besuchten Knoten sortieren:
         # queue.sort(key=lambda n: n.h)
     return [], counter # Kein Pfad gefunden
