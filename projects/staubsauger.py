@@ -74,6 +74,11 @@ def draw_board(current=None, offset=0, path=[]):
             fillPath()
     delay(100)
 
+# Hier können Sie eine Heuristik definieren
+def heuristic(x,y,dirt):
+    heuristic_value = 0
+    return heuristic_value
+
 # Ihre Suche
 def search(start):
     print("Beginne Suche...")
@@ -114,11 +119,11 @@ def search(start):
                 updated_dirt = copy.deepcopy(current.d)
                 updated_dirt.remove((x,y))
                 # Neuer Zustand mit einem Dreck weniger
-                queue.append(Node(x, y, current, g=current.g + 1, h=heuristic_value, d=updated_dirt))
+                queue.append(Node(x, y, current, g=current.g + 1, h=heuristic(x,y,updated_dirt), d=updated_dirt))
                 continue
             else: 
                 # Neuer Zustand mit gleich viel Dreck
-                queue.append(Node(x, y, current, g=current.g + 1, h=heuristic_value, d=current.d))
+                queue.append(Node(x, y, current, g=current.g + 1, h=heuristic(x,y,current.d), d=current.d))
         # Mit dieser Funktion können Sie die Liste der noch nicht besuchten Knoten sortieren:
         # queue.sort(key=lambda n: n.h)
     return [], counter
