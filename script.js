@@ -72,6 +72,7 @@ function drawGraph(graphData = lastGraphData) {
         ...node,
         font: { size: 16, color: "black" },
         shape: "dot",
+        x: node.x ? node.x : undefined,
         label: node.heuristic ? node.label + "\nh=" + node.heuristic : node.label,
         color: getNodeColor(node)
     })));

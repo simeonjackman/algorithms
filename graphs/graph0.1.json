@@ -1,11 +1,11 @@
 {
   "nodes": [
-    { "id": 1, "label": "Zuhause", "start": true },
-    { "id": 2, "label": "BBZBL"},
-    { "id": 3, "label": "FMS / ZBA"},
-    { "id": 4, "label": "FOS Mittelschule"},
-    { "id": 5, "label": "Schule", "end": true },
-    { "id": 6, "label": "FHNW"}
+    { "id": 1, "label": "Zuhause", "start": true, "x": 0, "y": 0 },
+    { "id": 2, "label": "BBZBL", "x": 200, "y": 20  },
+    { "id": 3, "label": "FMS / ZBA", "x": 300, "y": -50 },
+    { "id": 4, "label": "FOS Mittelschule", "x": 100, "y": 100 },
+    { "id": 5, "label": "Schule", "end": true, "x": 450, "y": 100  },
+    { "id": 6, "label": "FHNW", "x": 500, "y": -100}
   ],
   "edges": [
     { "from": 1, "to": 2, "value": 1 },
