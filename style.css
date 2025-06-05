@@ -207,3 +207,10 @@ a{
 .hide{
     display: none;
 }
+
+.infos{
+    width: 40rem;
+    margin: auto;
+    padding: 1rem;
+    font-size: 1.3rem;
+}
