@@ -87,7 +87,8 @@ function drawGraph(graphData = lastGraphData) {
     new vis.Network(container, { nodes, edges }, {
         edges: { arrows: { to: false }, width: 2 },
         nodes: { borderWidth: 2 },
-        physics: { enabled: true, solver: "barnesHut" }
+        physics: { enabled: true, solver: "barnesHut" },
+        layout: {randomSeed:0}
     });
 }
 
