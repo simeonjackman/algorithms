@@ -1,0 +1,268 @@
+\documentclass[12pt, a4]{article}
+
+\usepackage{tabularx}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usepackage{cmbright}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usetikzlibrary{shapes}
+
+\def\assessment{Algorithmen}
+
+\newenvironment{work}[1]{%
+%% Begin entry
+{\Large \textbf{#1}}\vspace{8mm}
+
+\vspace{-0.5cm}
+\begin{tikzpicture}[points/.style={
+        circle, draw, align=center, text width=2.3em, inner sep=1mm,
+        font=\scriptsize
+    }, pointshalf/.style={
+        circle, draw, text width=0pt, inner sep=1.5mm
+    }]
+    \def\start{5}
+    \def\increment{1.25}
+    \node[points] (A) at (\start, 0) {++\\4 P.};
+    \node[pointshalf] (A1) at (\start + \increment, 0) {};
+    \node[points] (B) at (\start + 2 * \increment, 0) {+\\3 P.};
+    \node[pointshalf] (B1) at (\start + 3 * \increment, 0) {};
+    \node[points] (C) at (\start + 4*\increment, 0) {+/-\\2 P.};
+    \node[pointshalf] (C1) at (\start + 5*\increment, 0) {};
+    \node[points] (D) at (\start + 6*\increment, 0) {-\\1 P.};
+    \node[pointshalf] (D1) at (\start + 7*\increment, 0) {};
+    \node[points] (E) at (\start + 8*\increment, 0) {--\\0 P.};
+    \draw[line width=2pt, black] (0, 0) -- (A) -- (A1) -- (B) -- (B1) -- (C) --
+    (C1) -- (D) -- (D1) -- (E);
+\end{tikzpicture}
+%% End entry
+
+\begin{itemize}
+    \setlength\itemsep{-0.5em}
+}{\end{itemize}
+\vspace{3mm}
+}
+\newenvironment{worksmall}[1]{%
+%% Begin entry
+{\Large \textbf{#1}}\vspace{8mm}
+
+\vspace{-0.5cm}
+\begin{tikzpicture}[points/.style={
+        circle, draw, align=center, text width=2.3em, inner sep=1mm,
+        font=\scriptsize
+    }]
+    \def\start{5}
+    \def\increment{2.5}
+    \node[points] (A) at (\start, 0) {++\\2 P.};
+    \node[points] (B) at (\start + \increment, 0) {+\\1.5 P.};
+    \node[points] (C) at (\start + 2*\increment, 0) {+/-\\1 P.};
+    \node[points] (D) at (\start + 3*\increment, 0) {-\\0.5 P.};
+    \node[points] (E) at (\start + 4*\increment, 0) {--\\0 P.};
+    \draw[line width=2pt, black] (0, 0) -- (A) -- (B) -- (C) -- (D) -- (E);
+\end{tikzpicture}
+%% End entry
+
+\begin{itemize}
+    \setlength\itemsep{-0.5em}
+}{\end{itemize}
+\vspace{3mm}}
+
+\begin{document}
+
+\section{Einführung}
+
+Im Rahmen dieses Projekts setzen Sie sich vertieft mit einem spezifischen Algorithmus oder einem Algorithmus-bezogenen Problem auseinander.
+Ziel ist es, sowohl theoretisches Wissen als auch praktische Umsetzungskompetenz zu fördern.
+Dabei sollen Sie nicht nur die Funktionsweise eines Algorithmus nachvollziehen, sondern auch dessen Anwendungsbereiche, Effizienz und mögliche Optimierungen untersuchen.\\
+Die Note dieses Projekts ergibt sich zu 80\% aus dem Projektbericht, welcher als Gruppe Bewertet wird.
+Die restlichen 20\% der Punkte können Sie individuell an der mündlichen Prüfung zum Projektbericht erwerben.
+
+\section{Aufgabenstellung}
+
+\subsection*{Gruppenbildung \& Themenwahl}
+Beginnen Sie damit eine 2er oder 3er Gruppe zu bilden.
+Ihre GruppenmitgliederInnen müssen in der gleichen Praktikumsgruppe sein wie Sie.
+Wählen Sie dann eines der Projekte aus.
+Ein Projekt darf mehrfach gewählt werden.
+
+\subsection*{Planung}
+Sie haben zwei Wochen Zeit um sich in das Projekt einzulesen und eine Planung zu schreiben.
+Überlegen Sie sich als Gruppe, was sie bis am Ende des Projektes erreichen möchten.
+Definieren Sie dann Ihre Ziele als mindestens zwei Meilensteine.
+Ein Meilenstein soll einen wichtigen zu erreichenden Teil ihres Projekts beschreiben. (Beispiele: Code der Vorlage verstanden; Problemstellung in Planungsproblem überführt; Erste Nicht-optimale Lösung zum Problem gefunden. etc.)
+Beginnen Sie dann mit der Wochenplanung.
+Beachten Sie, dass Sie nur jede zweite Woche extra Zeit haben im Praktikum, dies soll in der Planung abgebildet werden.
+Bauen Sie die Meilensteine in Ihrer Wochenplanung ein. \\
+Die Planung (siehe Dokumentvorlage) muss bis spätestens am \textbf{[09.05.2025 23:29]} eingereicht werden.
+Geben Sie die Ausgefüllte Planungsseite des Projektdokuments als PDF auf Teams ab.
+Die Datei muss pro Gruppe nur einmal abgegeben werden.
+\subsection*{Projekt}
+\subsubsection*{Umfang \& Formale Kriterien}
+Basierend auf der Vorlage, die Sie separat erhalten, sollen Sie als Gruppe einen Projektbericht verfassen.
+Eine Person der Gruppe soll den Projektbericht auf OneDrive laden und mit allen TeammitgliederInnen teilen.
+So können Sie als Gruppe gemeinsam am gleichen Dokument arbeiten.
+Pro Gruppenmitglied soll der Projektbericht am Ende 2-3 Seiten Inhalt enthalten.
+\textbf{[2er Gruppen müssen also 4-6 Seiten Inhalt schreiben, 3er Gruppen 6-8 Seiten]}.
+Als Inhalt gelten alle Seiten ausser:
+\begin{itemize}
+    \item Die Titelseite
+    \item Das Inhaltsverzeichnis
+    \item Die Planung
+    \item Das Arbeitsjournal
+    \item Die Quellenangabe
+\end{itemize}
+Der Bericht soll der Struktur der Vorlage entsprechen und soll in der Formatvorlage \textit{Standard} geschrieben werden.
+Die Schriftgrösse darf nicht geändert werden (Aptos 10.5p). 
+Sie dürfen neue Kapitel einfügen, wenn Sie dies für sinvoll erachten.
+Die Reihenfolge der existierenden Kapitel soll jedoch nicht geändert werden.
+Der Projektbericht soll aufzeigen, dass Sie sich als Gruppe vertieft mit dem Thema auseinandergesetzt haben.
+Es sollen folgende Informationen im Projektbericht enthalten sein:
+\begin{description}
+    \item[Einführung] Beschreiben Sie, wie Sie ihre Aufgabenstellung verstanden haben. Kontenxtualisieren Sie, was für einen Bezug das Projekt zum Alltag haben könnte. Warum haben Sie dieses Projekt gewählt? Wie überführen Sie die Problemstellung in ein Planungsproblem? Welche Ansätze eignen sich für das Problem? Was waren Ihre ersten Überlegungen?
+    \item[Algorithmischer Ansatz] Beschreiben Sie hier Ihre konkrete Lösung zum Problem. Dieses Kapitel soll Code, Pseudocode oder eine genaue algorithmische Beschreibung enthalten.
+    \item[Analyse des Algorithmus] Kriegen Sie mit Ihrem Ansatz eine optimale Lösung? Wenn ja, warum? Wenn nein, warum nicht? Brauchen Sie überhaupt eine optimale Lösung für Ihre konkrete Problemstellung? Analysieren Sie, welche der gelernten Kriterien Ihr Lösungsansatz erfüllt. Welche Probelem treten auf, wenn Sie das Problem in der Grösse skalieren? Gibt es sinnvolle Heuristiken (warum)? Reichen simple Algorithmen wie die Breiten- oder Tiefensuche aus, um das Problem zu lösen? Warum? Wie können Sie Ihre Suche Prunen?
+    \item[Reflexion] Was waren die grössten Herausforderungen in diesem Projekt? Warum? Was fanden Sie besonders interessant? Was haben Sie gelernt? Was hätten Sie noch umgesetzt, wenn Sie mehr Zeit gehabt hätten?
+\end{description}
+Neben dem Projektbericht können Sie natürlich auch Code schreiben und abgeben.
+Grundsäztlich können Sie Code via GitHub Repository, als File (Bei WebTygerJython auf Speichern drücken), als Pseudocode oder als algorithmische Beschreibung direkt im Projektbericht abgeben.
+Da die vorgehensweise hier für jede Gruppe und Projekt stark variert, wir der Umgang mit Code mit jeder Gruppe individuel besprochen.
+
+\subsubsection*{Abgabe}
+Das Projekt muss bis spätestens am \textbf{[30.05.2025 23:29]} eingereicht werden.
+Das Projekt muss pro Gruppe nur einmal abgegeben werden.
+
+\subsection*{Verwendung von KI}
+Die Verwendung von KI ist explizit erlaubt. 
+Es gilt jedoch zwei Punkte zu beachten: 
+
+\begin{enumerate}
+    \item Sie müssen jeden Prompt (Interaktion mit einem Sprachmodell wie ChatGPT) dokumentieren.
+    Fügen Sie dazu einen Link zu Ihren Prompts in den Quellenangaben hinzu und beschreiben Sie, wozu Sie den Output verwendet haben.
+    Einen Link können Sie generieren, indem Sie bei ChatGPT auf \textit{[Share] / [Teilen] / [Gemeinsam Nutzen]} drücken.
+    Mit dem generierten Link kriegt man nur Einblick auf die gezeigte Konversation mit der KI, nicht auf andere Konversationen.
+    \textbf{Wichtig:} Der Prompt darf nicht gelöscht werden, bis das Projekt benotet wurde, sonst habe ich keine Einsicht in Ihre Konversationen.
+    \item Sie müssen KI generierte Informationen, Code und Schlüsse selbst nachvollziehen können.
+    Falls Sie Fragen zu KI-generierten Inhalten nicht beantworten können, enthalte ich mir vor unabhängig von der mündlichen Prüfung dafür Punkte abzuziehen. (Siehe Bewertungsraster)
+\end{enumerate}
+
+
+\section{Mündliche Prüfung}
+Die mündliche Prüfung findet in den zwei Wochen vor der Abgabe statt und dauert 5 Minuten.
+Im Gegensatz zur Projektabgabe, findet Sie nicht in Gruppen, sondern einzeln statt.
+Gegen Ende des Projektes vereinbaren wir gemeinsam einen Zeitslot in diesen zwei Wochen.
+Inhaltlich bezieht sich die mündliche Prüfung auf folgende Punkte:
+\begin{itemize}
+    \item Die im Unterricht gelernte Theorie und Fachbegriffe.
+    \item Den Algorithmus in Ihrem Projektbericht.
+    \item Die Reflexionen im Projektbericht.
+\end{itemize} 
+Eine Beispielfrage wäre: \textit{Warum haben Sie für Ihren Algorithmus genau diese Heuristik verwendet?}
+
+
+
+
+
+
+\newpage
+%% Begin header
+\begin{tabularx}{\textwidth}{p{0.5\textwidth}|l}
+    {\Huge Projekt: \assessment} & {\Huge Namen:} \\ \hline
+\end{tabularx}
+\vspace{0.5cm}
+%% End header
+
+
+\begin{worksmall}{Planung}
+    \item Das Projekt wurde zeitlich den Vorgaben entsprechend sinnvoll geplant.
+    \item Meilensteine wurden klar definiert und sind in die Plaung eingeflossen.
+    \item Die Planung wurde eingehalten und das geplante wurde umgesetzt.
+    \item Die Planung wurde rechtzeitig abgegeben.
+\end{worksmall}
+
+\begin{work}{Prozess}
+    \item Die Aufgabe wurde selbstständig angegangen.
+    \item Der Prozess zum Endprodukt ist nachvollziehbar.
+    \item Der Arbeitsprozess zeigt eine kontinuierliche Weiterentwicklung.
+    \item Regelmässige und sinnvolle git Commits, oder Dokumentation des Arbeitsprozesses.
+    \item Es wurde nachvollziehbar reflektiert, was gut und was weniger gut funktioniert hat.
+\end{work}
+
+\begin{work}{Quellen}
+    \item Die Verwendung von KI wurde korrekt deklariert.
+    \item Sie verstehen die von Ihnen verwendeten KI generierten Informationen.
+    \item Quellen wurden korrekt angegeben.
+    \item Quellen wurden korrekt verwendet.
+    \item Die Auswahl der Quellen ist fachlich relevant und vielfältig.
+    \item Es wurde eigenständig aus den Quellen geschlossen und nicht nur übernommen.
+\end{work}
+
+\newpage
+
+\begin{work}{Umsetzung}
+    \item Korrektheit und Tiefe der fachlichen Analyse.
+    \item Die Umsetzung steht im sinnvollen Bezug zur Problemstellung.
+    \item Es wurden passende Algorithmen ausgewählt und korrekt angewendet.
+    \item Funktionalität und Effizienz der Implementierung (falls abgegeben).
+    \item Die Eigenleistung ist im Projektbericht ersichtlich.
+    \item Die Projektspezifischen Aufgaben wurden Umgesetzt.
+ \end{work}
+ 
+\begin{worksmall}{Formale Kriterien}
+    \item Der Projektbericht erfüllt die definierten formalen Kriterien.
+	\item Das Projekt wurde rechtzeitig abgegeben.
+	\item Verständlichkeit und Struktur des schriftlichen Dokuments.
+\end{worksmall}
+
+\begin{work}{Mündliche Prüfung}
+    \item Die Fragen zum Projekt wurden zufriedenstellend beantwortet.
+    \item Fachbegriffe wurden korrekt und angemessen verwendet.
+    \item Es wurde reflektiert, welche Herausforderungen es gab und wie diese gelöst wurden.
+\end{work}
+%% Notenberechnung
+\def\numpoints{20}
+\vfill
+\setlength{\fboxsep}{15pt}
+\[
+    \fbox{$
+            \text{Note} = \dfrac{
+                \begin{tikzpicture}
+                    \node[draw, align=center] {\\\\ {\tiny erreichte Punkte}};
+                \end{tikzpicture}
+            }{\numpoints}\cdot 5+1 \text{
+                (gerundet auf Zehntel, aber höchstens 6)}=\doublebox{\mbox{\hspace*{1cm}}}
+        $}
+\]
+\vfill
+\newpage
+
+\section*{Kommentare zur Bewertung}
+\subsection*{Planung}
+\fbox{%
+  \parbox[b][0.5cm][c]{\textwidth}{\mbox{}}%
+}
+
+\subsection*{Prozess}
+\fbox{%
+  \parbox[b][3cm][c]{\textwidth}{\mbox{}}%
+}
+\subsection*{Quellen}
+\fbox{%
+  \parbox[b][3cm][c]{\textwidth}{\mbox{}}%
+}
+\subsection*{Umsetzung}
+\fbox{%
+  \parbox[b][3cm][c]{\textwidth}{\mbox{}}%
+}
+\subsection*{Formale Kriterien}
+\fbox{%
+  \parbox[b][0.5cm][c]{\textwidth}{\mbox{}}%
+}
+
+
+
+
+\end{document}
