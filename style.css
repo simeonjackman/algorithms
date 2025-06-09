@@ -63,7 +63,7 @@ button:hover{
     margin-top: .5rem;
     margin-bottom: .5rem;
     text-align: center;
-    background-color: lightgray;
+    background-color: lightblue;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -112,17 +112,16 @@ a{
     z-index: 2;
 }
 
-.theory{
-    background-color: black;
-    color: white;
+.easy{
+    background-color: rgba(0, 155, 0, 0.3);
 }
 
-.example{
-    background-color: darkgray;
+.hard{
+    background-color: rgba(255, 0, 0, 0.3);
     color: black;
 }
 
-.example a{
+.hard a{
     color: black;
 }
   
