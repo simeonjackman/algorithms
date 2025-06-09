@@ -1,0 +1,288 @@
+\ProvidesPackage{dclecture}
+
+\usepackage{subfiles}
+
+%%% Packages %%%
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[margin=2cm]{geometry}
+\usepackage{multicol,tikz}
+\usepackage[hyphens]{url}
+\usepackage{amsthm, amssymb,amsmath,etoolbox}
+\usepackage{graphicx}
+\usepackage{sectsty}
+\usepackage{palatino, url, multicol}
+\usepackage{epstopdf,pdfpages}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{shadow}
+\usepackage{wasysym}
+%\usepackage{paralist,cite}
+\usepackage{enumitem}
+\usepackage[]{qrcode}
+\usepackage{marginnote}
+\usepackage{subcaption}
+\usepackage{paracol}
+\usepackage{epsdice}
+\usepackage[paper=a4]{typearea}
+\usepackage{multirow}
+\usepackage[hidelinks]{hyperref} %keine roten Kästen um Links
+\usepackage[style=german, german=swiss]{csquotes}
+\usepackage{fancyvrb}
+\usepackage{tikz}
+\usepackage[backend=biber,style=authoryear,citestyle=authoryear]{biblatex}
+
+
+\graphicspath{{../images/}{images/}}
+
+%%% Change Settings %%%
+
+% Change Color of Section Headings %
+\sectionfont{\color{\farbe}} 
+\subsectionfont{\color{\farbe}} 
+\subsubsectionfont{\color{\farbe}} 
+
+
+
+
+\setlength{\fboxsep}{10pt}
+
+\parskip=.1cm
+\parindent=0cm
+\linespread{1.5}
+
+
+
+
+%%% Convert Graphics Formats %%%
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+
+
+
+%%% Renew Commands %%%
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\thesection}{\arabic{section}}
+
+
+
+
+
+%%% New Commands %%%
+\newcommand{\dg}{^\circ}
+
+\newcommand{\qtext}[1]{\quad\text{#1}\quad}
+
+\newcommand{\vekt}[4]{\vec{#1}=\left(\begin{array}{c}
+    {#2}\\
+    {#3}\\
+    {#4}
+\end{array}\right)
+}
+
+\newcommand{\vek}[3]{\vec{#1}=\left(\begin{array}{c}
+    {#2}\\
+    {#3}
+\end{array}\right)
+}
+
+\newcommand{\vecdd}[2]
+{\begin{pmatrix}
+#1 \\
+#2
+\end{pmatrix}}
+
+
+\newcommand{\vecddd}[3]{\begin{pmatrix}
+    {#1}\\
+    {#2}\\
+    {#3}
+\end{pmatrix}
+}
+
+
+\newcommand{\syst}[4]{
+\begin{array}{|rcl|}
+     #1 & = & #2 \\
+  #3 &  = & #4
+    \end{array}
+ }
+ 
+ \newcommand{\systt}[6]{
+\begin{array}{|rcl|}
+     #1 & = & #2 \\
+  #3 &  = & #4 \\
+  #5 & = & #6
+    \end{array}
+ }
+ 
+ 
+% center graphic with variable width %
+\newcommand{\centfig}[2]{\begin{center}
+\includegraphics[width=#1\columnwidth]{#2}
+\end{center}}
+
+% external sources with QR code in margin %
+\newcommand{\link}[1]{{ \url{#1}\hfill \qrcode[height=1.5cm]{#1}}}
+
+\newcommand{\source}[1]{{\hfill \emph{source: \url{#1}\quad \qrcode[height=1.5cm]{#1}\hfill}}}
+
+\newcommand{\extsource}[1]{\marginpar{\qrcode[height=1.5cm]{#1}}
+{{\url{#1}}}}
+
+\newcommand{\inlinelink}[1]{\normalmarginpar\marginpar{\qrcode[height=1.5cm]{#1}}
+{\url{#1}}}
+
+
+% colored box %
+\newcommand{\coloredbox}[1]{
+\begin{center}
+\colorbox{\farbe!30}{
+\parbox{.75\columnwidth}{
+#1
+}}
+\end{center}
+}
+
+
+
+
+
+\newcommand{\khanbox}[1]{
+\setlength{\fboxsep}{10pt}
+\begin{center}
+\colorbox{\farbe!30}{
+\parbox{.9\textwidth}{{\includegraphics[height=1cm]{khan2.png}\\}  #1}}
+\end{center}
+}
+
+
+
+
+
+\newcommand{\sidenote}[1]{
+\textcolor{red}{\texttt{<side note>}}\\
+{\textcolor{black!90}{\emph{#1}}}
+\\
+\textcolor{red}{\texttt{</side note>}}
+}
+
+
+
+\newcommand{\example}{{\bf Beispiel.  \reversemarginpar
+\marginnote{\includegraphics[width=1.5cm]{example.jpg}}[0.1cm]}}
+
+
+
+
+
+\newcommand{\definition}{{\reversemarginpar
+\marginnote{\includegraphics[width=1.5cm]{Definition.png}}[0.1cm]}}
+
+\newcommand{\attention}{{\reversemarginpar
+\marginnote{\includegraphics[width=1.5cm]{Attention.png}}[0.1cm]}}
+
+\newcommand{\video}{{\reversemarginpar
+\marginnote{\includegraphics[width=1.5cm]{Video.png}}[0.1cm]}}
+
+
+
+
+
+
+
+\newcommand{\qaq}{\quad\text{and}\quad}
+
+\newcommand{\quq}{\quad\text{und}\quad}
+
+\newcommand{\qrq}{\quad\rightarrow\quad}
+
+
+
+
+
+
+
+
+
+%%% Exercise environment %%%
+\def\exname{Aufgabe}
+%\iflanguage{english}{\def\exname{Exercise}}
+
+\iflanguage{ngerman}{\def\exname{Aufgabe}}
+
+
+\newtheoremstyle{myex}
+{2pt}% Space above
+{2pt}% Space below
+{}% Body font
+{}% Indent amount: Indent amount: empty = no indent, \parindent = normal paragraph indent
+{\bf}% Theorem head font
+{.}% Punctuation after theorem head
+%{\newline}% Space after theorem head: Space after theorem head: { } = normal interword space; \newline = linebreak
+{0.5 cm}% Space after theorem head: Space after theorem head: { } = normal interword space; \newline = linebreak
+{}% Theorem head spec (can be left empty, meaning `normal')
+\theoremstyle{myex}
+\newtheorem{exraw}{\exname}
+\makeatletter
+\@addtoreset{exraw}{chapter}
+\makeatother
+\newenvironment{ex}[1][]{
+	\begin{exraw} \label{ex\thechapter.\theexraw}
+}{
+	\end{exraw}
+	\sol{}
+}
+\newcounter{exnum}
+\def\exrawautorefname{\exname}
+%%%%%% End Exercise %%%
+
+
+
+%%% Solutions %%%
+\newcommand{\sol}[2][ex\thechapter.\theexraw]{
+	\csdef{solution\getrefnumber{#1}}{#2}
+}
+\newcommand\printsol[1]{
+	{\bf Lösung \autoref{#1}:} \csuse{solution\getrefnumber{#1}}
+}
+
+\newcounter{printedsol}
+\newcommand\printsols[2]{
+	\setcounter{exnum}{#1}
+	\whileboolexpr{
+	      	test {\ifnumcomp{\value{exnum}}{<}{#2+1}}
+	}{
+		\ifcsvoid{solution\theexnum}{}{ %Print solution only if there is one
+			\ifcsempty{solution\theexnum}{}{%Make sure that the solution is not empty
+				$ $ \\ %TODO nicer
+				\printsol{ex\thechapter.\theexnum}
+			}
+		}
+		\stepcounter{exnum}
+	}
+}
+\newcommand\printallsols{
+	\printsols{1}{\theexraw}
+}
+\newcommand\printcursols{
+	\printsols{\theprintedsol}{\theexraw}
+	\setcounter{printedsol}{\theexraw}
+	\stepcounter{printedsol}
+}
+%%%%%% End Solution %%%
+
+
+
+
+
+
+
+
+
+
+
+
+
