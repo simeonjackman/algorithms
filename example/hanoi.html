@@ -21,7 +21,7 @@
 
                 In diesem Beispiel schauen wir uns das Spiel Türme von Hanoi etwas genauer an.
                 (<a target="_blank" href="https://de.wikipedia.org/wiki/T%C3%BCrme_von_Hanoi">Türme von Hanoi auf Wikipedia</a>)
-                Ziel des Spiels ist es, den kompletten Scheiben-Stapel (in unserem Beispiel gibt es genau zwei Scheiben) vom linken Stapel auf einen anderen Stapel zu versetzen. Hierbei gelten zwei Regeln:
+                Ziel des Spiels ist es, den kompletten Scheiben-Stapel (in unserem Beispiel gibt es genau <b>zwei Scheiben</b>) vom linken Stapel auf einen anderen Stapel zu versetzen. Hierbei gelten zwei Regeln:
             </p>
             <ul>
                 <li>Es darf immer nur eine Scheibe aufs Mal bewegt werden.</li>
@@ -45,6 +45,13 @@
                 <li>
                     Zeichnen Sie den Graphen, für das Spiel. Starten Sie hierfür vom Zustand <b>21;_;_</b> (oder verwenden Sie Ihre eigene Notation).
                     Spielen Sie das Spiel nach, indem Sie jeweils mit Münzen und drei Stapelplätzen vom Startzustand Stück für Stück alle Zustände "erkunden".
+                    <button class="link button" onclick="loadGraphData('../graphs/hanoi.json',maxTreeDepth=5)">Lösung laden</button>
+                </li>
+                <li>
+                    Zeichnen Sie den Baum, für das Spiel. Starten Sie hierfür vom Zustand <b>21;_;_</b> (oder verwenden Sie Ihre eigene Notation).
+                    Spielen Sie das Spiel nach, indem Sie jeweils mit Münzen und drei Stapelplätzen vom Startzustand Stück für Stück alle Zustände "erkunden".
+                    Wenn Sie einen Zustand bereits einmal besucht haben, müssen Sie ihn nicht nochmals notieren.
+                    Wenn Sie bei einem Zielzustand ankommen, können Sie an einer anderen Stelle im Baum weiterfahren.
                     <button class="link button" onclick="loadGraphAndTreeData('../graphs/hanoi.json',maxTreeDepth=5)">Lösung laden</button>
                 </li>
             </ol>
