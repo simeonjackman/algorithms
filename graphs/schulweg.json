@@ -1,18 +1,18 @@
 {
   "nodes": [
-    { "id": 1, "label": "S", "heuristic": 750, "start": true },
-    { "id": 2, "label": "A", "heuristic": 790 },
-    { "id": 3, "label": "B", "heuristic": 840 },
-    { "id": 4, "label": "C", "heuristic": 550 },
-    { "id": 5, "label": "D", "heuristic": 625 },
-    { "id": 6, "label": "E", "heuristic": 345 },
-    { "id": 7, "label": "F", "heuristic": 445 },
-    { "id": 8, "label": "G", "heuristic": 165 },
-    { "id": 9, "label": "H", "heuristic": 265 },
-    { "id": 10, "label": "I", "heuristic": 520 },
-    { "id": 11, "label": "J", "heuristic": 375 },
-    { "id": 12, "label": "K", "heuristic": 230 },
-    { "id": 13, "label": "Z", "end": true }
+    { "id": 1, "label": "S", "heuristic": 750, "start": true, "x":0, "y":0 },
+    { "id": 2, "label": "A", "heuristic": 790, "x":100, "y":-100 },
+    { "id": 3, "label": "B", "heuristic": 840, "x":100, "y":0 },
+    { "id": 4, "label": "C", "heuristic": 550, "x":-100, "y":-100 },
+    { "id": 5, "label": "D", "heuristic": 625, "x":-200, "y":-150 },
+    { "id": 6, "label": "E", "heuristic": 345, "x":-300, "y":-180 },
+    { "id": 7, "label": "F", "heuristic": 445, "x":-320, "y":-80 },
+    { "id": 8, "label": "G", "heuristic": 165, "x":-320, "y":-280 },
+    { "id": 9, "label": "H", "heuristic": 265, "x":-350, "y":-200 },
+    { "id": 10, "label": "I", "heuristic": 520, "x":-320, "y":0 },
+    { "id": 11, "label": "J", "heuristic": 375, "x":-320, "y":-100 },
+    { "id": 12, "label": "K", "heuristic": 230, "x":-320, "y":-200 },
+    { "id": 13, "label": "Z", "end": true, "x":-330, "y":-280 }
   ],
   "edges": [
     { "from": 1, "to": 3, "value": 100 },

@@ -10,6 +10,21 @@
 <body onload="loadGraphAndTreeData('../graphs/schulweg.json',maxTreeDepth=5)">
     <div class="container">
         <div class="sidebar">
+            <h2>Beispiel: Schulweg</h2>
+            <p>
+                In diesem Beispiel schauen wir uns einen möglichen Schulweg nach Hause vom Gymnasium Muttenz an.
+                Betrachten Sie als erstes die Karte auf der rechten Seite.
+                Das Gymnasium Muttenz befindet sich beim Punkt S.
+                Das Zuhause befindet sich beim Punkt Z.
+            </p>
+            <p>
+                Was ist wohl der schnellste Weg nach hause?
+            </p>
+            <p>
+                Um in diesem Beispiel den schnellsten Weg von S nach Z zu finden, ist es sinnvoll eine Heuristik anzuwenden, damit nicht alle möglichen Wegkombinationen durchprobiert werden müssen.
+                Im Graphen rechts wurde als Heuristik die Luftlinie von jedem Knoten zum Ziel verwendet.
+                So hat beispielsweise der Knoten B die Heuristik h=840, weil er sich 840m von Z befindet.
+            </p>
             <h2>Graph JSON Editor</h2>
             <div class="editor-container">
                 <button  class="link button" onclick="updateGraphData()">Aktualisieren</button>
