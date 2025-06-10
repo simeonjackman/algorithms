@@ -1,15 +1,15 @@
 # 📁 Aufbau des Repositories
 example/: Enthält illustrative Beispiele zur Veranschaulichung bestimmter Algorithmen.
 
-graphs/: Implementierungen und Untersuchungen aus der Graphentheorie im JSON Format.
+graphs/: Implementierungen der Graphen im JSON Format.
 
-img/: Visuelle Ressourcen und Diagramme zur Unterstützung der Dokumentation und Code-Erklärungen.
+img/: Bilder und Diagramme zur Unterstützung der Dokumentation und Code-Erklärungen.
 
-projects/: Umfassende Projekte, die mehrere Algorithmen zur Lösung komplexer Probleme integrieren.
+projects/: Projekte, in denen die gelernten Algorithmen zur Anwendung kommen.
 
-theory/: Theoretische Grundlagen zu den vorgestellten Algorithmen.
+theory/: Theoretische Grundlagen zu Graphen, Bäumen und den vorgestellten Algorithmen.
 
-trees/: Datenstrukturen und Algorithmen im Zusammenhang mit Bäumen im JSON Format.
+trees/: Implementierungen der Bäume im JSON Format.
 
 # 🌐 Web-Oberfläche
 Eine interaktive Web-Oberfläche ist [hier](https://simeonjackman.github.io/algorithms/) verfügbar, um einige der Graphen, Bäume und Algorithmen visuell darzustellen und mit ihnen zu interagieren:
