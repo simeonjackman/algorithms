@@ -1,13 +1,13 @@
 {
   "nodes": [
-    { "id": 1, "label": "S", "heuristic": "0", "start": true },
-    { "id": 2, "label": "A", "heuristic": "4" },
-    { "id": 3, "label": "B", "heuristic": "5", "end": true },
-    { "id": 4, "label": "C", "heuristic": "1" },
-    { "id": 5, "label": "D", "heuristic": "3" },
-    { "id": 6, "label": "E", "heuristic": "2" },
-    { "id": 7, "label": "F", "heuristic": "2" },
-    { "id": 8, "label": "G", "heuristic": "3" }
+    { "id": 1, "label": "S\nd=0", "start": true },
+    { "id": 2, "label": "A\nd=4" },
+    { "id": 3, "label": "B\nd=5", "end": true },
+    { "id": 4, "label": "C\nd=1" },
+    { "id": 5, "label": "D\nd=3" },
+    { "id": 6, "label": "E\nd=2" },
+    { "id": 7, "label": "F\nd=2" },
+    { "id": 8, "label": "G\nd=3" }
   ],
   "edges": [
     { "from": 1, "to": 2, "value": 4 },
