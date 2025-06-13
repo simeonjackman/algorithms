@@ -21,11 +21,11 @@ body {
 }
 
 .sidebar {
-    width: 30%;
+    width: 40%;
     min-width: 20rem;
     overflow-y: scroll;
     scrollbar-color: white lightgray;
-    scrollbar-width: thin;
+    scrollbar-width: 1rem;
     background-color: #f4f4f4;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -35,7 +35,7 @@ body {
     width: 100%;
     overflow-y: auto;
     scrollbar-color: white lightgray;
-    scrollbar-width: thin;
+    scrollbar-width: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -43,7 +43,7 @@ body {
 .canvas {
     height: 30rem;
     border: 1px solid #ddd;
-    margin: 1rem;
+    margin: 2rem;
     margin-bottom: 0;
 }
 
