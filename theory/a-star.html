@@ -39,12 +39,34 @@
             <h3>Übungen 1</h3>
             <ol>
                 <li>
-                    Wenden Sie A* an und zeichnen Sie den Baum, welcher daraus resultiert.
+                    Wenden Sie A* ohne Pruning an und zeichnen Sie den Baum bis zur Tiefe 3, welcher daraus resultiert.
                     In welcher Reihenfolge werden die verschiedenen Pfade abgesucht?
                     <div class="flex">
                         <button class="link button" onclick="loadTreeData('../trees/a-star.json')">Zwischenschritt laden</button>
-                        <button class="link button" onclick="loadTreeData('../trees/a-star2.json')">Lösung laden</button>
-                    </div>                
+                        <button class="link button" onclick="loadTreeData('../trees/a-star2.json');show('A');show('B')">Lösung laden</button>
+                    </div>
+                    <p class="solution" id="A">
+                        Mit dem A*-Algorithmus werden die Knoten in steigender Reihenfolge der <b>f(n)</b>-Werte geöffnet:
+                        <ol class="solution" id="B">
+                            <li>S, da f = 2</li>
+                            <li>B (von S), da f = 3</li>
+                            <li>A (von S,B), da f = 3</li>
+                            <li>A (von S), da F = 4</li>
+                            <li>S (von S,B), da F = 4</li>
+                            <li>B (von S,B,A), da F = 5</li>
+                            <li>B (von S,A), da F = 6</li>
+                            <li><b>G</b> (von S,B,A), da F = 6</li>
+                            <li>A (von S,B,S), da F = 6</li>
+                            <li><b>G</b> (von S,A), da F = 7</li>
+                            <li>S (von S,B,A), da F = 7</li>
+                            <li>B (von S,B,S), da F = 7</li>
+                            <li>A (von S,A,B), da F = 7</li>
+                            <li>S (von S,A,B), da F = 7</li>
+                            <li>S (von S,A), da F = 8</li>
+                            <li>B (von S,A,S), da F = 9</li>
+                            <li>A (von S,A,S), da F = 10</li>
+                        </ol>
+                    </p>
                 </li>
             </ol>
             </div>
