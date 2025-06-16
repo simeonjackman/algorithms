@@ -107,7 +107,7 @@ a{
     align-items: center;
     position: relative;
     transition: all 0.5s ease;
-    margin: 1rem;
+    margin: .5rem;
     padding: 1rem;
 }
   
@@ -196,6 +196,7 @@ a{
     margin-left: .5rem;
     margin-right: .5rem;
     transition: all 0.5s ease;
+    vertical-align: middle;
 }
 
 .option-buttons > button:hover {
