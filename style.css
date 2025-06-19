@@ -6,6 +6,10 @@ body {
     overflow: hidden;
 }
 
+p{
+    text-align: justify;
+}
+
 .title{
     height: 100%;
     overflow-y: scroll;
@@ -227,4 +231,5 @@ a{
     margin: auto;
     padding: 1rem;
     font-size: 1.3rem;
+    text-align: justify;
 }

@@ -32,43 +32,43 @@
                 <b>A*</b>  untersucht den Knoten n, bei welchem <i>f(n)  = g(n) + h(n)</i> minimal ist.
             </div>
             <div class="hard excercise">
-            <h3>Beispiel 1 - Heuristik mit Anzahl Knotensprüngen</h3>
-            <button class="link button" onclick="loadGraphData('../graphs/a-star.json',maxTreeDepth=3);hideTree()">Beispiel 1 laden</button>
-            <p>Wir eine Heuristik, die die Anzahl der verbleibenden Sprünge zum Ziel schätzt.
-            Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel notwendig sind.</p>
-            <h3>Übungen 1</h3>
-            <ol>
-                <li>
-                    Wenden Sie A* ohne Pruning an und zeichnen Sie den Baum bis zur Tiefe 3, welcher daraus resultiert.
-                    In welcher Reihenfolge werden die verschiedenen Pfade abgesucht?
-                    <div class="flex">
-                        <button class="link button" onclick="loadTreeData('../trees/a-star.json')">Zwischenschritt laden</button>
-                        <button class="link button" onclick="loadTreeData('../trees/a-star2.json');show('A');show('B')">Lösung laden</button>
-                    </div>
-                    <p class="solution" id="A">
-                        Mit dem A*-Algorithmus werden die Knoten in steigender Reihenfolge der <b>f(n)</b>-Werte geöffnet:
-                        <ol class="solution" id="B">
-                            <li>S, da f = 2</li>
-                            <li>B (von S), da f = 3</li>
-                            <li>A (von S,B), da f = 3</li>
-                            <li>A (von S), da F = 4</li>
-                            <li>S (von S,B), da F = 4</li>
-                            <li>B (von S,B,A), da F = 5</li>
-                            <li>B (von S,A), da F = 6</li>
-                            <li><b>G</b> (von S,B,A), da F = 6</li>
-                            <li>A (von S,B,S), da F = 6</li>
-                            <li><b>G</b> (von S,A), da F = 7</li>
-                            <li>S (von S,B,A), da F = 7</li>
-                            <li>B (von S,B,S), da F = 7</li>
-                            <li>A (von S,A,B), da F = 7</li>
-                            <li>S (von S,A,B), da F = 7</li>
-                            <li>S (von S,A), da F = 8</li>
-                            <li>B (von S,A,S), da F = 9</li>
-                            <li>A (von S,A,S), da F = 10</li>
-                        </ol>
-                    </p>
-                </li>
-            </ol>
+                <h3>Beispiel 1 - Heuristik mit Anzahl Knotensprüngen</h3>
+                <button class="link button" onclick="loadGraphData('../graphs/a-star.json',maxTreeDepth=3);hideTree()">Beispiel 1 laden</button>
+                <p>Wir eine Heuristik, die die Anzahl der verbleibenden Sprünge zum Ziel schätzt.
+                Dazu wird vom Ziel aus für jeden Knoten gezählt, wie viel Sprünge bis zum Ziel notwendig sind.</p>
+                <h3>Übungen 1</h3>
+                <ol>
+                    <li>
+                        Wenden Sie A* ohne Pruning an und zeichnen Sie den Baum bis zur Tiefe 3, welcher daraus resultiert.
+                        In welcher Reihenfolge werden die verschiedenen Pfade abgesucht?
+                        <div class="flex">
+                            <button class="link button" onclick="loadTreeData('../trees/a-star.json')">Zwischenschritt laden</button>
+                            <button class="link button" onclick="loadTreeData('../trees/a-star2.json');show('A');show('B')">Lösung laden</button>
+                        </div>
+                        <p class="solution" id="A">
+                            Mit dem A*-Algorithmus werden die Knoten in steigender Reihenfolge der <b>f(n)</b>-Werte geöffnet:
+                            <ol class="solution" id="B">
+                                <li>S, da f = 2</li>
+                                <li>B (von S), da f = 3</li>
+                                <li>A (von S,B), da f = 3</li>
+                                <li>A (von S), da F = 4</li>
+                                <li>S (von S,B), da F = 4</li>
+                                <li>B (von S,B,A), da F = 5</li>
+                                <li>B (von S,A), da F = 6</li>
+                                <li><b>G</b> (von S,B,A), da F = 6</li>
+                                <li>A (von S,B,S), da F = 6</li>
+                                <li><b>G</b> (von S,A), da F = 7</li>
+                                <li>S (von S,B,A), da F = 7</li>
+                                <li>B (von S,B,S), da F = 7</li>
+                                <li>A (von S,A,B), da F = 7</li>
+                                <li>S (von S,A,B), da F = 7</li>
+                                <li>S (von S,A), da F = 8</li>
+                                <li>B (von S,A,S), da F = 9</li>
+                                <li>A (von S,A,S), da F = 10</li>
+                            </ol>
+                        </p>
+                    </li>
+                </ol>
             </div>
             <a class="link hard" href="../example/schulweg.html">Beispiel: Schulweg</a>
             <a class="link button" href="../index.html">Zurück zum Menu</a>
