@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    { "id": 1, "label": "S\nd=0", "start": true, "x":0, "y":0 },
+    { "id": 2, "label": "A\nd=250", "x":100, "y":-100 },
+    { "id": 3, "label": "B\nd=100", "x":100, "y":0 },
+    { "id": 4, "label": "C\nd=290", "x":-100, "y":-100 },
+    { "id": 5, "label": "D\nd=150", "x":-200, "y":-150 },
+    { "id": 6, "label": "E\nd=unendlich", "x":-300, "y":-180 },
+    { "id": 7, "label": "F\nd=380", "x":-320, "y":-80 },
+    { "id": 8, "label": "G\nd=885", "x":-320, "y":-280 },
+    { "id": 9, "label": "H\nd=unendlich", "x":-350, "y":-200 },
+    { "id": 10, "label": "I\nd=unendlich", "x":-320, "y":0 },
+    { "id": 11, "label": "J\nd=unendlich", "x":-320, "y":-100 },
+    { "id": 12, "label": "K\nd=unendlich", "x":-320, "y":-200 },
+    { "id": 13, "label": "Z\nd=unendlich", "end": true, "x":-330, "y":-280 }
+  ],
+  "edges": [
+    { "from": 1, "to": 3, "value": 100 },
+    { "from": 1, "to": 5, "value": 150 },
+    { "from": 2, "to": 3, "value": 150 },
+    { "from": 2, "to": 4, "value": 250 },
+    { "from": 2, "to": 8, "value": 635 },
+    { "from": 4, "to": 5, "value": 140 },
+    { "from": 4, "to": 6, "value": 235 },
+    { "from": 5, "to": 7, "value": 230 },
+    { "from": 6, "to": 7, "value": 135 },
+    { "from": 6, "to": 9, "value": 115 },
+    { "from": 7, "to": 11, "value": 135 },
+    { "from": 8, "to": 9, "value": 220 },
+    { "from": 8, "to": 13, "value": 160 },
+    { "from": 9, "to": 12, "value": 80 },
+    { "from": 10, "to": 11, "value": 140 },
+    { "from": 11, "to": 12, "value": 150 },
+    { "from": 12, "to": 13, "value": 230 }
+  ]
+}
+
+  

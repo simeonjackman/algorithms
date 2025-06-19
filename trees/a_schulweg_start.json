@@ -1,0 +1,7 @@
+{
+  "nodes": [
+    { "id": 1, "label": "S\nf=750\ng=0", "heuristic":750, "start": true}
+  ],
+  "edges": [
+  ]
+}

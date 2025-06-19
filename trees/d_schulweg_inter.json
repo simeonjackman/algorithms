@@ -1,0 +1,19 @@
+{
+  "nodes": [
+    { "id": 1, "label": "S\nd=0", "start": true },
+    { "id": 2, "label": "A\nd=250" },
+    { "id": 3, "label": "B\nd=100" },
+    { "id": 4, "label": "C\nd=290" },
+    { "id": 5, "label": "D\nd=150" },
+    { "id": 7, "label": "F\nd=380" },
+    { "id": 8, "label": "G\nd=885" }
+  ],
+  "edges": [
+    { "from": 1, "to": 3, "value": 100 },
+    { "from": 1, "to": 5, "value": 150 },
+    { "from": 2, "to": 3, "value": 150 },
+    { "from": 2, "to": 8, "value": 635 },
+    { "from": 4, "to": 5, "value": 140 },
+    { "from": 5, "to": 7, "value": 230 }
+  ]
+}

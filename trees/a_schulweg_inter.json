@@ -1,0 +1,15 @@
+{
+  "nodes": [
+    { "id": 1, "label": "S\nf=750\ng=0", "heuristic":750, "start": true},
+    { "id": 3, "label": "B\nf=940\ng=100", "heuristic":840 },
+    { "id": 4, "label": "C\nf=840\ng=290", "heuristic": 550 },
+    { "id": 5, "label": "D\nf=775\ng=150", "heuristic":625 },
+    { "id": 7, "label": "F\nf=825\ng=380", "heuristic": 445 }
+  ],
+  "edges": [
+      { "from": 1, "to": 3, "value": 100 },
+      { "from": 1, "to": 5, "value": 150 },
+      { "from": 4, "to": 5, "value": 140 },
+      { "from": 5, "to": 7, "value": 230 }
+  ]
+}

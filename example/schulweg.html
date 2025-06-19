@@ -7,24 +7,67 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="loadGraphAndTreeData('../graphs/schulweg.json',maxTreeDepth=5)">
+<body>
     <div class="container">
         <div class="sidebar">
             <h2>Beispiel: Schulweg</h2>
             <p>
                 In diesem Beispiel schauen wir uns einen möglichen Schulweg nach Hause vom Gymnasium Muttenz an.
-                Betrachten Sie als erstes die Karte auf der rechten Seite.
+                Betrachten Sie als erstes die Karte und den Graphen auf der rechten Seite.
                 Das Gymnasium Muttenz befindet sich beim Punkt S.
                 Das Zuhause befindet sich beim Punkt Z.
             </p>
             <p>
                 Was ist wohl der schnellste Weg nach hause?
             </p>
-            <p>
-                Um in diesem Beispiel den schnellsten Weg von S nach Z zu finden, ist es sinnvoll eine Heuristik anzuwenden, damit nicht alle möglichen Wegkombinationen durchprobiert werden müssen.
-                Im Graphen rechts wurde als Heuristik die Luftlinie von jedem Knoten zum Ziel verwendet.
-                So hat beispielsweise der Knoten B die Heuristik h=840, weil er sich 840m von Z befindet.
-            </p>
+            <div class="hard excercise">
+                <h3>Beispiel - Schulweg</h3>
+                <p>
+                    Die Kantenlängen wurden hier mit Google Maps gemessen und geben die jeweilige Distanz zwischen zwei Knoten an.
+                    Wir suchen also den Weg von S nach Z, für den die Summe der Distanzwerte der Knoten minimal ist.
+                </p>
+                <h3>Übungen</h3>
+                <ol>
+                    <li>
+                        Wenden Sie Dijkstras Algorithmus an, bis Sie den ersten, kürzesten Weg zum Ziel finden. 
+                        <div class="flex">
+                            <button class="link button" onclick="loadGraphData('../graphs/d_schulweg_start.json');loadTreeData('../trees/d_schulweg_start.json')">Startzustand laden</button>
+                            <button class="link button" onclick="loadGraphData('../graphs/d_schulweg_inter.json');loadTreeData('../trees/d_schulweg_inter.json')">Zwischenschritt laden</button>
+                            <button class="link button" onclick="loadGraphData('../graphs/d_schulweg_sol.json');loadTreeData('../trees/d_schulweg_sol.json');show('A')">Lösung laden</button>
+                        </div>
+                        <p class="solution" id="A">
+                            Der schnellste Weg ergibt sich über den Weg S → D → F → J → K → G. Für diesen Weg legt man 895m zurück.
+                        </p>
+                    </li>
+                    <li>
+                        Um in diesem Beispiel den schnellsten Weg von S nach Z zu finden, ist es sinnvoll eine Heuristik anzuwenden, damit nicht alle möglichen Wegkombinationen durchprobiert werden müssen.
+                        Im Graphen rechts wurde als Heuristik die Luftlinie von jedem Knoten zum Ziel verwendet.
+                        So hat beispielsweise der Knoten B die Heuristik h=840, weil er sich 840m von Z befindet.
+                        Wenden Sie A* an bis Sie den ersten, kürzesten Weg zum Ziel finden. 
+                        In welcher Reihenfolge werden die verschiedenen Pfade abgesucht?
+                        <div class="flex">
+                            <button class="link button" onclick="loadGraphData('../graphs/a_schulweg_start.json',maxTreeDepth=5);loadTreeData('../trees/a_schulweg_start.json')">Startzustand laden</button>
+                            <button class="link button" onclick="loadGraphData('../graphs/a_schulweg_inter.json',maxTreeDepth=5);loadTreeData('../trees/a_schulweg_inter.json')">Zwischenschritt laden</button>
+                            <button class="link button" onclick="loadGraphData('../graphs/a_schulweg_sol.json',maxTreeDepth=5);loadTreeData('../trees/a_schulweg_sol.json');show('B');show('C')">Lösung laden</button>
+                        </div>
+                        <p class="solution" id="B">
+                            Mit dem A*-Algorithmus werden die Knoten in steigender Reihenfolge der <b>f(n)</b>-Werte geöffnet:
+                            <ol class="solution" id="C">
+                                <li>S, da f = 750</li>
+                                <li>D (von S), da f = 775</li>
+                                <li>F (von S,D), da f = 825</li>
+                                <li>C (von S,D), da F = 840</li>
+                                <li>E (von S,D,F), da F = 860</li>
+                                <li>E (von S,D,C), da F = 870, geprunt, da Knoten bereits günstiger erreicht.</li>
+                                <li>J (von S,D,F), da F = 890</li>
+                                <li>H (von S,D,F,E), da F = 895</li>
+                                <li>K (von S,D,F,J), da F = 905</li>
+                                <li><b>G</b> (von S,D,F,J,K), da F = 905</li>
+                            </ol>
+                        </p>
+                    </li>
+                </ol>
+            </div>
             <h2>Graph JSON Editor</h2>
             <div class="editor-container">
                 <button  class="link button" onclick="updateGraphData()">Aktualisieren</button>
@@ -38,20 +81,8 @@
                 <img class="img" src="../img/routenplanung.png"></img>
                 <a target="_blank" href="https://www.google.com/maps/@47.5361079,7.6378884,544m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoASAFQAw%3D%3D">Link zu google Maps</a>
             </div>
-            <h2>Graph</h2>
             <div id="graph-container" class="canvas"></div>
-            <h2>Baum</h2>
-            <div id="tree-container" class="canvas"></div>
-            <div class="options">
-                <div class="option-buttons">
-                    Tiefe: <span id="max-depth"></span>
-                    <button class="button" onclick="decreaseMaxDepth()">-</button>
-                    <button class="button" onclick="increaseMaxDepth()">+</button>
-                </div>
-                <div class="option-buttons">
-                    <button id="toggle-pruning" class="button" onclick="togglePruning()"></button>
-                </div>
-            </div>
+            <div id="tree-container" style="display:none;" class="canvas"></div>
         </div>
     </div>
     <script src="../script.js"></script>

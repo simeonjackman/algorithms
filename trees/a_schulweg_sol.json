@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    { "id": 1, "label": "S\nf=750\ng=0", "heuristic":750, "start": true},
+    { "id": 2, "label": "A\nf=1330\ng=540", "heuristic": 790 },
+    { "id": 3, "label": "B\nf=940\ng=100", "heuristic":840 },
+    { "id": 4, "label": "C\nf=840\ng=290", "heuristic": 550 },
+    { "id": 5, "label": "D\nf=775\ng=150", "heuristic":625 },
+    { "id": 6, "label": "E\nf=860\ng=515", "heuristic": 345 },
+    { "id": 7, "label": "F\nf=825\ng=380", "heuristic": 445 },
+    { "id": 9, "label": "H\nf=895\ng=630", "heuristic": 265 },
+    { "id": 10, "label": "I\nf=1175\ng=655", "heuristic": 520 },
+    { "id": 11, "label": "J\nf=890\ng=515", "heuristic": 375 },
+    { "id": 12, "label": "K\nf=905\ng=675", "heuristic": 230},
+    { "id": 13, "label": "Z\nf=905\ng=905", "heuristic": 0, "end": true},
+    { "id": 14, "label": "K\nf=940\ng=710", "heuristic": 230},
+    { "id": 15, "label": "E\nf=870\ng=525", "heuristic": 345 }
+  ],
+  "edges": [
+      { "from": 1, "to": 3, "value": 100 },
+      { "from": 1, "to": 5, "value": 150 },
+      { "from": 2, "to": 4, "value": 250 },
+      { "from": 4, "to": 5, "value": 140 },
+      { "from": 4, "to": 15, "value": 235 },
+      { "from": 5, "to": 7, "value": 230 },
+      { "from": 6, "to": 7, "value": 135 },
+      { "from": 6, "to": 9, "value": 115 },
+      { "from": 7, "to": 11, "value": 135 },
+      { "from": 9, "to": 14, "value": 80 },
+      { "from": 10, "to": 11, "value": 140 },
+      { "from": 11, "to": 12, "value": 150 },
+      { "from": 12, "to": 13, "value": 230 }
+  ]
+}
