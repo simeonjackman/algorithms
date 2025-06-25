@@ -11,8 +11,8 @@
     { "id": 9, "label": "H\nf=895\ng=630", "heuristic": 265, "x":-350, "y":-200 },
     { "id": 10, "label": "I\nf=1175\ng=655", "heuristic": 520, "x":-320, "y":0 },
     { "id": 11, "label": "J\nf=890\ng=515", "heuristic": 375, "x":-320, "y":-100 },
-    { "id": 12, "label": "K\nf=905\ng=675", "heuristic": 230, "x":-320, "y":-200 },
-    { "id": 13, "label": "Z\nf=905\ng=905", "heuristic": 0, "end": true, "x":-330, "y":-280 }
+    { "id": 12, "label": "K\nf=895\ng=655", "heuristic": 230, "x":-320, "y":-200 },
+    { "id": 13, "label": "Z\nf=895\ng=895", "heuristic": 0, "end": true, "x":-330, "y":-280 }
   ],
   "edges": [
     { "from": 1, "to": 3, "value": 100 },

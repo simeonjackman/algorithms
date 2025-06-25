@@ -10,8 +10,8 @@
     { "id": 9, "label": "H\nf=895\ng=630", "heuristic": 265 },
     { "id": 10, "label": "I\nf=1175\ng=655", "heuristic": 520 },
     { "id": 11, "label": "J\nf=890\ng=515", "heuristic": 375 },
-    { "id": 12, "label": "K\nf=905\ng=675", "heuristic": 230},
-    { "id": 13, "label": "Z\nf=905\ng=905", "heuristic": 0, "end": true},
+    { "id": 12, "label": "K\nf=895\ng=665", "heuristic": 230},
+    { "id": 13, "label": "Z\nf=895\ng=895", "heuristic": 0, "end": true},
     { "id": 14, "label": "K\nf=940\ng=710", "heuristic": 230},
     { "id": 15, "label": "E\nf=870\ng=525", "heuristic": 345 }
   ],
