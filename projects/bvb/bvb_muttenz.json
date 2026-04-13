@@ -1,0 +1,47 @@
+{
+  "nodes": [
+    { "id": 1, "label": "Basel, Dreispitz (10/36/47)", "heuristic": "?" },
+    { "id": 2, "label": "Basel, St. Jakob (14/36/47)", "heuristic": "?" },
+    { "id": 3, "label": "Muttenz, Freidorf (14)", "heuristic": "?" },
+    { "id": 4, "label": "Muttenz, Käppeli (14)", "heuristic": "?" },
+    { "id": 5, "label": "Muttenz, Zum Park (14)", "heuristic": "?", "end": true },
+    { "id": 6, "label": "Muttenz, Schützenhausstrasse (14)", "heuristic": "?" },
+    { "id": 7, "label": "Muttenz, Dorf (14/60)", "heuristic": "?" },
+    { "id": 8, "label": "Basel, Ulmenweg (36)", "heuristic": "?" },
+    { "id": 9, "label": "Basel, Redingstrasse (36/46)", "heuristic": "?", "start": true },
+    { "id": 10, "label": "Muttenz, Pantheon (46/47)", "heuristic": "?" },
+    { "id": 11, "label": "Muttenz, Fachhochschule (46/47)", "heuristic": "?" },
+    { "id": 12, "label": "Muttenz, Bahnhof (46/47/60)", "heuristic": "?" },
+    { "id": 17, "label": "Muttenz, Kirschgartenstrasse (60)", "heuristic": "?" },
+    { "id": 13, "label": "Muttenz, Mittenza (60)", "heuristic": "?" },
+    { "id": 14, "label": "Muttenz, Hallenbad (60)", "heuristic": "?" },
+    { "id": 15, "label": "Muttenz, Unterwart (60)", "heuristic": "?" },
+    { "id": 16, "label": "Münchenstein, Neuewelt (10/60)", "heuristic": "?" }
+  ],
+  "edges": [
+    { "from": 2, "to": 3, "value": 1 },
+    { "from": 3, "to": 4, "value": 1 },
+    { "from": 4, "to": 5, "value": 1 },
+    { "from": 5, "to": 6, "value": 1 },
+    { "from": 6, "to": 7, "value": 1 },
+
+    { "from": 1, "to": 2, "value": 2 },
+    { "from": 2, "to": 8, "value": 2 },
+    { "from": 8, "to": 9, "value": 1 },
+
+    { "from": 9, "to": 10, "value": 4 },
+    { "from": 10, "to": 11, "value": 2 },
+    { "from": 11, "to": 12, "value": 2 },
+
+    { "from": 2, "to": 10, "value": 4 },
+
+    { "from": 12, "to": 17, "value": 1 },
+    { "from": 17, "to": 7, "value": 1 },
+    { "from": 13, "to": 7, "value": 1 },
+    { "from": 13, "to": 14, "value": 2 },
+    { "from": 14, "to": 15, "value": 2 },
+    { "from": 15, "to": 16, "value": 2 },
+
+    { "from": 1, "to": 16, "value": 7 }
+  ]
+}
