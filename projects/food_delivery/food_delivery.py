@@ -95,15 +95,14 @@ def search(start):
             # Feld wurde bereits besucht
             if (x, y) in visited:
                 continue
+            updated_orders = copy.deepcopy(current.o)
             if (x, y) in current.o:
                 # Zustand ist Lieferstandort, wir haben also ein eine Lieferung gemacht
                 # Die gemachte Lieferung wird aus der noch zu machenden Lieferung entfernt
-                updated_orders = copy.deepcopy(current.o)
                 updated_orders.remove((x,y))
-                queue.append(Node(x, y, current, g=current.g + 1, h=heuristic(x,y,updated_orders), o=updated_orders))
-                continue
-            else: 
-                queue.append(Node(x, y, current, g=current.g + 1, h=heuristic(x,y,current.o), o=current.o))
+            # Jetzt fügen wird den neuen Zustand in der queue ein
+            queue.append(Node(x, y, current, g=current.g + 1, h=heuristic(x,y,updated_orders), o=updated_orders))
+            
         # Mit dieser Funktion können Sie die Liste der noch nicht besuchten Knoten sortieren:
         # queue.sort(key=lambda n: n.h)
     return [], counter
@@ -118,5 +117,4 @@ else:
     draw_board(None,0,path) # Lösung zeichnen
     print(path)
     print("Ziel in " + str(len(path) - 1) + " Schritten erreicht")
-
 
