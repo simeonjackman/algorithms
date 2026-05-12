@@ -31,6 +31,13 @@
             <div class="banner">
                 <b>A*</b>  untersucht den Knoten n, bei welchem <i>f(n)  = g(n) + h(n)</i> minimal ist.
             </div>
+             <p>
+                A* findet immer dann eine optimale Lösung, wenn die verwendete Heuristik zulässig ist.
+            </p>
+            <div class="banner">
+                Eine Heuristik h ist <b>zulässig</b>, wenn Sie die wahren Kosten zum Ziel h* nie überschätzt.
+                Es gilt also für die Heuristik: h(n) &le; h*(n).
+            </div>
             <div class="hard excercise">
                 <h3>Beispiel 1 - Heuristik mit Anzahl Knotensprüngen</h3>
                 <button class="link button" onclick="loadGraphData('../graphs/a-star.json',maxTreeDepth=3);hideTree()">Beispiel 1 laden</button>
@@ -70,6 +77,7 @@
                     </li>
                 </ol>
             </div>
+            
             <a class="link hard" href="../example/schulweg.html">Beispiel: Schulweg</a>
             <a class="link button" href="../index.html">Zurück zum Menu</a>
         </div>
